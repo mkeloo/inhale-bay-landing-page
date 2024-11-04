@@ -1,12 +1,20 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import heroBgImage from "@/public/hero/hero-bg2.jpg";
 import heroVapePic from "@/public/hero/hero-vape2.webp";
+import CustomSvgCursor from "./CustomSVGCursor";
 import { Gem } from "lucide-react";
 
 const Hero = () => {
+  const [showCustomCursor, setShowCustomCursor] = useState(true);
+
   return (
-    <div className="relative w-full h-[85vh] flex items-center justify-center text-white bg-black">
+    <div
+      className="relative w-full h-[85vh] flex items-center justify-center text-white bg-black"
+      onMouseEnter={() => setShowCustomCursor(true)}
+      onMouseLeave={() => setShowCustomCursor(false)}
+    >
       {/* Background Image */}
       {/* <Image
         src={heroBgImage}
@@ -28,7 +36,7 @@ const Hero = () => {
         <source src="/hero/hero-bg-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
+
       {/* Hero Content Container */}
       <div className="w-full h-full max-w-7xl mx-auto flex items-center justify-center">
         <div className="relative z-10 flex items-center justify-between w-full h-[85vh]">
@@ -73,6 +81,9 @@ const Hero = () => {
 
       {/* Optional Gradient Overlay */}
       {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 z-0"></div> */}
+
+      {/* Custom SVG Cursor */}
+      <CustomSvgCursor isVisible={showCustomCursor} />
     </div>
   );
 };
