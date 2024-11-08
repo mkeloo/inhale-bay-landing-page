@@ -70,3 +70,56 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Keyframes for expanding line */
+@keyframes expandLine {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100vw;
+  }
+}
+
+/* Keyframes for sliding panels */
+@keyframes slideOutUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Expanding line animation */
+.animate-expand-line {
+  animation: expandLine 1.5s ease forwards;
+}
+
+/* Slide-out animations with delay */
+.loader-up.slide-out {
+  animation: slideOutUp 1.5s ease forwards;
+}
+
+.loader-down.slide-out {
+  animation: slideOutDown 1.5s ease forwards;
+}
+
+/* Color transition */
+.loader-up,
+.loader-down {
+  transition: background-color 2.5s ease;
+}
