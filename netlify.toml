@@ -1,4 +1,22 @@
 [[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Encoding = "gzip"
+    
+[[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2037 23:55:55 GMT"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2037 23:55:55 GMT"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Expires = "Thu, 31 Dec 2037 23:55:55 GMT"
