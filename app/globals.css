@@ -83,14 +83,20 @@ body {
   }
 }
 
-/* Keyframes for sliding panels */
+/* Keyframes for sliding panels with acceleration and deceleration */
 @keyframes slideOutUp {
   0% {
     transform: translateY(0);
   }
 
+  30% {
+    transform: translateY(-70%);
+    /* Speed up */
+  }
+
   100% {
     transform: translateY(-100%);
+    /* Settle */
   }
 }
 
@@ -99,11 +105,16 @@ body {
     transform: translateY(0);
   }
 
+  30% {
+    transform: translateY(70%);
+    /* Speed up */
+  }
+
   100% {
     transform: translateY(100%);
+    /* Settle */
   }
 }
-
 /* Expanding line animation */
 .animate-expand-line {
   animation: expandLine 1.5s ease forwards;

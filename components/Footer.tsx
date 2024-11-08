@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { MapPin, Mail } from "lucide-react";
 import navbarLogo from "@/public/logo/inhalebayLogo-nav1.svg";
+import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
+
+const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,16 +12,14 @@ const Footer = () => {
   return (
     <footer className="relative h-[40vh] w-full text-white py-8 px-6 flex flex-col justify-between">
       {/* Background Video */}
-      <video
+      <VideoPlayer
+        src={heroBgVideo}
+        className="absolute inset-0 w-full h-full object-cover z-[-10] opacity-50"
         autoPlay
         loop
-        muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-[-10] opacity-50"
-      >
-        <source src="/hero/hero-bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        muted
+      />
 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">

@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/public/logo/inhalebayLogo-nav1.svg";
 
+const heroBgImage1 = "/assets/hero/hero-bg2.jpg";
+const heroBgImage2 = "/assets/hero/smoking-background.png";
+
 const Loader: React.FC = () => {
   const [lineExpanded, setLineExpanded] = useState(false);
   const [startSlideOut, setStartSlideOut] = useState(false);
@@ -48,18 +51,39 @@ const Loader: React.FC = () => {
         ></div>
       </div>
 
-      {/* Top and bottom panels with slide-out */}
+      {/* Top and bottom panels with slide-out and background image */}
       <div className="absolute inset-0 flex flex-col">
+        {/* Top panel with background image */}
         <div
-          className={`h-1/2 w-full bg-black transition-transform duration-500 ${
+          className={`relative h-1/2 w-full rounded-bl-[200px] overflow-hidden bg-black transition-transform duration-500 ${
             startSlideOut ? "loader-up slide-out" : "loader-up"
           }`}
-        ></div>
+        >
+          <Image
+            src={heroBgImage1}
+            alt="Background with smoke"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="absolute inset-0 rounded-bl-[200px] opacity-50"
+          />
+        </div>
+
+        {/* Bottom panel with background image */}
         <div
-          className={`h-1/2 w-full bg-black transition-transform duration-500 ${
+          className={`relative h-1/2 w-full rounded-tr-[200px] overflow-hidden bg-black transition-transform duration-500 ${
             startSlideOut ? "loader-down slide-out" : "loader-down"
           }`}
-        ></div>
+        >
+          <Image
+            src={heroBgImage2}
+            alt="Background with smoke"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="absolute inset-0 rounded-tr-[200px] opacity-50"
+          />
+        </div>
       </div>
     </div>
   );
