@@ -1,36 +1,22 @@
-// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
-      test: /\.(mp4|webm|ogg)$/,
+      test: /\.(mp4|webm|ogg|svg|png|jpg|jpeg)$/,
       use: [
         {
           loader: "file-loader",
           options: {
-            name: "[name].[ext]",
-            outputPath: "static/videos/",
-            publicPath: "/_next/static/videos/",
+            name: "[name].[contenthash].[ext]",
+            outputPath: "static/media/",
+            publicPath: "/_next/static/media/",
           },
         },
       ],
     });
 
     return config;
-  },
-  async headers() {
-    return [
-      {
-        source: "/_next/static/videos/:path*", // This matches your videos directory
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable", // 1-year cache with immutability
-          },
-        ],
-      },
-    ];
   },
 };
 

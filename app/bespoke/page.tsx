@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
-import LostMaryVideo from "@/assets/bespoke_ads/lostmarylong.mp4";
+
+const LostMaryVideo = "/assets/bespoke_ads/lostmarylong.mp4";
 
 const BespokeAdsPage = () => {
   return (
