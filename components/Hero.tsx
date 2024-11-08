@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import heroBgImage from "@/public/hero/hero-bg2.jpg";
-import heroVapePic from "@/public/hero/hero-vape2.webp";
 import CustomSvgCursor from "./CustomSVGCursor";
 import { Gem } from "lucide-react";
+import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
+
+const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
+const heroVapePic = "/assets/hero/hero-vape2.webp";
 
 const Hero = () => {
   const [showCustomCursor, setShowCustomCursor] = useState(true);
@@ -26,16 +28,14 @@ const Hero = () => {
       /> */}
 
       {/* Background Video */}
-      <video
+      <VideoPlayer
+        src={heroBgVideo}
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-50" // Tailwind classes for styling
         autoPlay
         loop
-        muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
-      >
-        <source src="/hero/hero-bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        muted
+      />
 
       {/* Hero Content Container */}
       <div className="w-full h-full max-w-7xl mx-auto flex items-center justify-center">
@@ -71,6 +71,8 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="hidden md:flex w-1/2 h-full items-center justify-center">
             <Image
+              height={800}
+              width={800}
               src={heroVapePic}
               alt="Hero Vape Image"
               className="object-cover w-full h-[80%]	"

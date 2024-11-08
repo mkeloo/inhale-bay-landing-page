@@ -8,6 +8,7 @@ interface VideoPlayerProps {
   autoPlay?: boolean;
   muted?: boolean;
   loop?: boolean;
+  playsInline?: boolean;
   preload?: "auto" | "metadata" | "none";
 }
 
@@ -18,6 +19,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   autoPlay = true, // Auto-play enabled by default
   muted = true, // Muted by default
   loop = true, // Loop enabled by default
+  playsInline = true,
   preload = "auto",
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,6 +53,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       autoPlay={autoPlay}
       muted={muted}
       loop={loop} // Enable looping
+      playsInline={playsInline}
       preload={preload}
       onContextMenu={(e) => e.preventDefault()} // Disable right-click context menu
     >
