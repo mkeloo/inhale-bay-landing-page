@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import cursorIcon from "@/assets/hookah.svg";
+import cursorIcon from "@/public/assets/hookah.svg";
 // import cursorIcon from "@/public/globe.svg";
 
 const CustomSvgCursor = ({ isVisible }: { isVisible: boolean }) => {
