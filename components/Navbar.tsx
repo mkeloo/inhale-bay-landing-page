@@ -12,16 +12,16 @@ const Navbar = () => {
         <div className="flex justify-center items-center ">
           <div className="px-8 py-4 rounded-full bg-gradient-to-r from-lime-500 to-emerald-500 font-semibold text-md space-x-8 shadow-md shadow-green-700">
             <a
-              href="#"
+              href="/"
               className="text-black transition-colors duration-300 p-2 rounded-lg hover:text-green-500 hover:bg-blue-600"
             >
               Home
             </a>
             <a
-              href="#testimonials"
+              href="/bespoke"
               className="text-black transition-colors duration-300 p-2 rounded-lg hover:text-green-500 hover:bg-blue-600"
             >
-              Testimonials
+              Bespoke
             </a>
             <a
               href="#deals"
@@ -34,13 +34,15 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="flex justify-center">
-          <Image
-            src={navbarLogo}
-            alt="Inhale Bay Logo"
-            width={95}
-            height={18}
-            className="my-4"
-          />
+          <a href="/">
+            <Image
+              src={navbarLogo}
+              alt="Inhale Bay Logo"
+              width={95}
+              height={18}
+              className="my-4"
+            />
+          </a>
         </div>
 
         {/* Buttons */}
