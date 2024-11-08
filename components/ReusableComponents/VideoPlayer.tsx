@@ -30,6 +30,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       muted={muted}
       loop={loop} // Enable looping
       preload={preload}
+      onContextMenu={(e) => e.preventDefault()} // Disable right-click context menu
     >
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
