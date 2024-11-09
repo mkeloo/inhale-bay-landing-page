@@ -8,7 +8,7 @@ const LostMaryShortVideo2 = "/assets/bespoke_ads/lostmaryshort2.mp4";
 
 const BespokeAdsPage = () => {
   return (
-    <div className="max-w-7xl mx-auto w-full h-full px-8 py-12">
+    <div className="max-w-screen-2xl mx-auto w-full h-full px-8 py-12">
       {/* Title */}
       <div className="flex items-center justify-center mb-12">
         <h1 className="text-5xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
