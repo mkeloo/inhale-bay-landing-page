@@ -17,10 +17,10 @@ const BespokeAdsPage = () => {
       </div>
 
       {/* Long Wide Ad */}
-      <div className="mb-16 px-4">
+      <div className="mb-16  max-w-[1600px] h-[750px] px-4">
         <VideoPlayer
           src={LostMaryLongVideo}
-          className="w-full max-w-[1600px] h-[800px] mx-auto rounded-lg shadow-lg"
+          className="w-full h-full mx-auto rounded-2xl shadow-lg"
           autoPlay
           muted
         />
@@ -30,19 +30,19 @@ const BespokeAdsPage = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
         <VideoPlayer
           src={LostMaryShortVideo1}
-          className="w-full h-[700px] rounded-lg shadow-lg"
+          className="w-full h-full rounded-2xl shadow-lg"
           autoPlay
           muted
         />
         <VideoPlayer
           src={LostMaryShortVideo2}
-          className="w-full h-[700px] rounded-lg shadow-lg"
+          className="w-full h-full rounded-2xl shadow-lg"
           autoPlay
           muted
         />
         <VideoPlayer
           src={LostMaryShortVideo1}
-          className="w-full h-[700px] rounded-lg shadow-lg"
+          className="w-full h-full rounded-2xl shadow-lg"
           autoPlay
           muted
         />
