@@ -31,13 +31,13 @@ const Loader: React.FC = () => {
           startSlideOut ? "opacity-0" : "opacity-100"
         }`}
       >
-        <div className="bg-black px-4 py-2 rounded-xl shadow-2xl flex flex-col items-center justify-center">
+        <div className="bg-black sm:px-2 md:px-3 lg:px-4 py-2 rounded-xl shadow-2xl flex flex-col items-center justify-center">
           <Image
             src={logo}
             alt="Inhale Bay Logo"
             width={120}
             height={25}
-            className="my-4"
+            className="my-2 md:my-4"
           />
         </div>
       </div>
@@ -55,7 +55,7 @@ const Loader: React.FC = () => {
       <div className="absolute inset-0 flex flex-col">
         {/* Top panel with background image */}
         <div
-          className={`relative h-1/2 w-full rounded-bl-[200px] overflow-hidden bg-black transition-transform duration-500 ${
+          className={`relative h-1/2 w-full sm:rounded-bl-[50px] md:rounded-bl-[100px] lg:rounded-bl-[200px] overflow-hidden bg-black transition-transform duration-500 ${
             startSlideOut ? "loader-up slide-out" : "loader-up"
           }`}
         >
@@ -65,13 +65,13 @@ const Loader: React.FC = () => {
             layout="fill"
             objectFit="cover"
             quality={100}
-            className="absolute inset-0 rounded-bl-[200px] opacity-50"
+            className="absolute inset-0 sm:rounded-bl-[50px] md:rounded-bl-[100px] lg:rounded-bl-[200px] opacity-50"
           />
         </div>
 
         {/* Bottom panel with background image */}
         <div
-          className={`relative h-1/2 w-full rounded-tr-[200px] overflow-hidden bg-black transition-transform duration-500 ${
+          className={`relative h-1/2 w-full sm:rounded-tr-[50px] md:rounded-tr-[100px] lg:rounded-tr-[200px] overflow-hidden bg-black transition-transform duration-500 ${
             startSlideOut ? "loader-down slide-out" : "loader-down"
           }`}
         >
@@ -81,7 +81,7 @@ const Loader: React.FC = () => {
             layout="fill"
             objectFit="cover"
             quality={100}
-            className="absolute inset-0 rounded-tr-[200px] opacity-50"
+            className="absolute inset-0 sm:rounded-tr-[50px] md:rounded-tr-[100px] lg:rounded-tr-[200px] opacity-50"
           />
         </div>
       </div>
