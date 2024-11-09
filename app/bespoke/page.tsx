@@ -19,6 +19,11 @@ const BespokeAdsPage = () => {
         </h1>
       </div> */}
 
+      {/* Deal Long Video Ad */}
+      <div className="mb-12">
+        <DealsLongVideo />
+      </div>
+
       {/* Long Wide Ad */}
       <div className="mb-12  max-w-[1600px] h-[750px] px-4">
         <VideoPlayer
@@ -29,10 +34,7 @@ const BespokeAdsPage = () => {
         />
       </div>
 
-      <div className="mb-12">
-        <DealsLongVideo />
-      </div>
-
+      {/* Deal Short Video Ad */}
       <div className="mb-12">
         <DealsShortVideo />
       </div>
