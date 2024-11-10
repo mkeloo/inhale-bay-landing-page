@@ -143,3 +143,31 @@ body {
 .loader-down {
   transition: background-color 2.5s ease;
 }
+
+
+/* Underline animation */
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  transition: color 0.02s ease-in-out;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  /* Adjust offset as needed */
+  left: 0;
+  width: 100%;
+  height: 8px;
+  /* Adjust thickness as needed */
+  background-color: #84cc16;
+  /* Lime color for the underline */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s ease-in-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+}

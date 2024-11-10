@@ -41,7 +41,11 @@ const Hero2 = () => {
             <div className="w-full h-1/2 flex items-center justify-start">
               <h1 className="text-7xl font-grotesk font-bold mb-2 py-2">
                 Find Your Flow <br />
-                at <span className="bg-clip text-lime-400">Inhale Bay</span>
+                at{" "}
+                <span className="bg-clip text-lime-400 underline-animation">
+                  Inhale Ba
+                </span>
+                <span className="bg-clip text-lime-400">y</span>
               </h1>
             </div>
             {/* Image Containers */}
@@ -149,7 +153,7 @@ const Hero2 = () => {
           <div className="h-full w-[50%] flex items-center justify-center">
             <p className="text-[23px] text-left font-medium font-inter">
               Discover premium vapes, hookahs, e-cigarettes, & more. <br />
-              <span className="font-inter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-lime-500">
+              <span className="font-inter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-lime-500">
                 Enjoy exclusive deals & promotions for all your smoking needs.
               </span>
             </p>
