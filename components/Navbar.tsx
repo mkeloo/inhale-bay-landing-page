@@ -13,19 +13,19 @@ const Navbar = () => {
           <div className="px-8 py-4 rounded-full bg-gradient-to-r from-lime-500 to-emerald-500 font-semibold text-md space-x-8 shadow-md shadow-green-700">
             <a
               href="/"
-              className="text-black transition-colors duration-300 p-2 rounded-lg hover:text-green-500 hover:bg-blue-600"
+              className="text-black transition-transform duration-300 p-2 rounded-lg hover:scale-120"
             >
               Home
             </a>
             <a
               href="/bespoke"
-              className="text-black transition-colors duration-300 p-2 rounded-lg hover:text-green-500 hover:bg-blue-600"
+              className="text-black transition-transform duration-300 p-2 rounded-lg hover:scale-120"
             >
               Bespoke
             </a>
             <a
               href="#deals"
-              className="text-black transition-colors duration-300 p-2 rounded-lg hover:text-green-500 hover:bg-blue-600"
+              className="text-black transition-transform duration-300 p-2 rounded-lg hover:scale-120"
             >
               Deals
             </a>

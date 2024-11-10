@@ -4,6 +4,16 @@ import Image from "next/image";
 import CustomSvgCursor from "./CustomSVGCursor";
 import { Gem, ArrowRight } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
+import { motion } from "framer-motion";
+import {
+  desVariants,
+  tagVariants,
+  titleVariants,
+  slideInRightVariants,
+  slideInVariants,
+  fadeVariants,
+  quickPopUpVariants,
+} from "@/lib/animation";
 
 const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
 const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
@@ -25,7 +35,7 @@ const Hero2 = () => {
       {/* Background Video */}
       <VideoPlayer
         src={heroBgVideo2}
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-65"
         autoPlay
         loop
         playsInline
@@ -39,18 +49,28 @@ const Hero2 = () => {
           {/* Left-Top Content */}
           <div className="w-1/2 h-full gap-4 flex flex-col items-center justify-center">
             <div className="w-full h-1/2 flex items-center justify-start">
-              <h1 className="text-7xl font-grotesk font-bold mb-2 py-2">
+              <motion.h1
+                initial="offscreen"
+                animate={"onscreen"}
+                whileInView={"stay"}
+                variants={slideInVariants}
+                className="text-7xl font-grotesk font-bold mb-2 py-2"
+              >
                 Find Your Flow <br />
                 at{" "}
                 <span className="bg-clip text-lime-400 underline-animation">
                   Inhale Ba
                 </span>
                 <span className="bg-clip text-lime-400">y</span>
-              </h1>
+              </motion.h1>
             </div>
             {/* Image Containers */}
             <div className="w-full h-1/2  flex items-center justify-center gap-6">
-              <div
+              <motion.div
+                initial="offscreen"
+                animate={"onscreen"}
+                whileInView={"stay"}
+                variants={slideInVariants}
                 style={{
                   background:
                     "linear-gradient(to right, rgba(248, 113, 113, 0.7), rgba(59, 130, 246, 0.7))",
@@ -77,8 +97,12 @@ const Hero2 = () => {
                     </button>
                   </div>
                 </div> */}
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                initial="offscreen"
+                animate={"onscreen"}
+                whileInView={"stay"}
+                variants={quickPopUpVariants}
                 style={{
                   background:
                     "linear-gradient(to right, rgba(34, 197, 94, 0.7), rgba(13, 148, 136, 0.7))",
@@ -105,11 +129,15 @@ const Hero2 = () => {
                     </button>
                   </div>
                 </div> */}
-              </div>
+              </motion.div>
             </div>
           </div>
           {/* Right-Top Content */}
-          <div
+          <motion.div
+            initial="offscreen"
+            animate={"onscreen"}
+            whileInView={"stay"}
+            variants={slideInRightVariants}
             style={{
               background:
                 "linear-gradient(to right, rgba(96, 165, 250, 0.7), rgba(79, 70, 229, 0.7))",
@@ -121,7 +149,7 @@ const Hero2 = () => {
               alt="Deal 6"
               layout="fill"
               objectFit="cover"
-              className=" transform transition-transform duration-200 group-hover/image:scale-110"
+              className="opacity-100 transform transition-transform duration-200 group-hover/image:scale-110"
             />
             {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
               <div className="bg-orange-700 bg-opacity-60 p-4 rounded-lg">
@@ -136,30 +164,46 @@ const Hero2 = () => {
                 </button>
               </div>
             </div> */}
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Content */}
         <div className="w-full h-[25%] flex items-center justify-end gap-4">
           <div className="w-[25%] h-full flex items-center justify-start">
-            <h1 className="text-3xl font-poppins font-semibold mb-2 py-2 ">
+            <motion.h3
+              initial="offscreen"
+              animate={"onscreen"}
+              whileInView={"stay"}
+              variants={slideInVariants}
+              className="text-3xl font-poppins font-semibold mb-2 py-2 "
+            >
               Where{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
                 Quality{" "}
               </span>
               meets <span className="bg-clip text-lime-400">Excellence</span>
-            </h1>
+            </motion.h3>
           </div>
           <div className="h-full w-[50%] flex items-center justify-center">
-            <p className="text-[23px] text-left font-medium font-inter">
+            <motion.p
+              initial="offscreen"
+              animate={"onscreen"}
+              whileInView={"stay"}
+              variants={quickPopUpVariants}
+              className="text-[23px] text-left font-medium font-inter"
+            >
               Discover premium vapes, hookahs, e-cigarettes, & more. <br />
               <span className="font-inter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-lime-500">
                 Enjoy exclusive deals & promotions for all your smoking needs.
               </span>
-            </p>
+            </motion.p>
           </div>
           <div className="w-[25%] h-full flex items-center justify-center ">
-            <a
+            <motion.a
+              initial="offscreen"
+              animate={"onscreen"}
+              whileInView={"stay"}
+              variants={slideInRightVariants}
               href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
@@ -170,7 +214,7 @@ const Hero2 = () => {
                 strokeWidth={2}
                 className="ml-2 transform transition-transform duration-200 group-hover/btn:scale-110 group-hover/btn:translate-x-2"
               />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
