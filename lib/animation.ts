@@ -100,6 +100,23 @@ export const quickPopUpVariants = {
   },
 };
 
+export const slideDownVariant = {
+  offscreen: {
+    opacity: 0,
+    y: -30,
+  },
+  stay: { opacity: 1 },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 2.2,
+      delay: 2.7,
+    },
+  },
+};
+
 // slide in from left to right using a delay variant
 export const slideInVariants = {
   offscreen: {

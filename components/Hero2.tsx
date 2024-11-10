@@ -142,7 +142,7 @@ const Hero2 = () => {
               background:
                 "linear-gradient(to right, rgba(96, 165, 250, 0.7), rgba(79, 70, 229, 0.7))",
             }}
-            className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-blue-400 to-indigo-900 hover:shadow-2xl hover:shadow-blue-500 duration-300 transition-shadow"
+            className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-blue-400 to-indigo-900 hover:shadow-2xl hover:shadow-blue-700 duration-300 transition-shadow"
           >
             <Image
               src={deal1Img}
