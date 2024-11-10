@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
 import Deals from "@/components/Deals";
 

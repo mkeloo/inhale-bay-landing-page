@@ -8,6 +8,10 @@ import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
 const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
 const heroVapePic = "/assets/hero/hero-vape2.webp";
 
+const deal4Img = "/assets/deals/southconnect-deals4.png";
+const deal5Img = "/assets/deals/southconnect-deals5.png";
+const deal6Img = "/assets/deals/geekbar-deals6.png";
+
 const Hero = () => {
   const [showCustomCursor, setShowCustomCursor] = useState(true);
 
@@ -17,16 +21,6 @@ const Hero = () => {
       onMouseEnter={() => setShowCustomCursor(true)}
       onMouseLeave={() => setShowCustomCursor(false)}
     >
-      {/* Background Image */}
-      {/* <Image
-        src={heroBgImage}
-        alt="Background with smoke"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        className="absolute inset-0 z-0 opacity-50"
-      /> */}
-
       {/* Background Video */}
       <VideoPlayer
         src={heroBgVideo}
@@ -80,9 +74,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Optional Gradient Overlay */}
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 z-0"></div> */}
 
       {/* Custom SVG Cursor */}
       <CustomSvgCursor isVisible={showCustomCursor} />

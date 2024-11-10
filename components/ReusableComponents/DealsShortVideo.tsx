@@ -87,7 +87,7 @@ const DealsShortVideo = () => {
               layout="fill"
               objectFit="cover"
               className="opacity-75 transform transition-transform duration-200 group-hover/image:scale-110"
-            />
+            />x
             <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
               <div className="bg-blue-800 bg-opacity-60 p-4 rounded-lg">
                 <h2 className="text-3xl font-bold">Starter Kits</h2>
