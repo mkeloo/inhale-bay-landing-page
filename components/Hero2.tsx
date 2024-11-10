@@ -15,9 +15,7 @@ import {
   quickPopUpVariants,
 } from "@/lib/animation";
 
-const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
 const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
-const heroVapePic = "/assets/hero/hero-vape2.webp";
 
 const deal1Img = "/assets/deals/vtouch-deals2.png";
 const deal4Img = "/assets/deals/southconnect-deals4.png";
@@ -207,9 +205,11 @@ const Hero2 = () => {
               href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn my-4 text-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 px-10 py-4 rounded-lg mt-2 flex items-center text-black hover:text-white font-semibold hover:scale-105 duration-400 transition"
+              className="group/btn my-4 text-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 px-10 py-4 rounded-lg mt-2 flex items-center text-black hover:text-white font-semibold duration-400 transition"
             >
-              Visit Our Store
+              <span className="transition-transform duration-200 group-hover/btn:scale-110">
+                Visit Our Store
+              </span>
               <Gem
                 strokeWidth={2}
                 className="ml-2 transform transition-transform duration-200 group-hover/btn:scale-110 group-hover/btn:translate-x-2"
