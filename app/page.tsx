@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
 import Deals from "@/components/Deals";
+import LocationMap from "@/components/LocationMap";
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -32,6 +33,7 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
+        <LocationMap />
         <Deals />
         <Footer />
       </div>
