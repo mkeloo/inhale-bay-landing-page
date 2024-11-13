@@ -14,6 +14,7 @@ const config: Config = {
         grotesk: "var(--font-grotesk)",
         inter: "var(--font-inter)",
         poppins: "var(--font-poppins)",
+        oxanium: "var(--font-oxanium)",
       },
       colors: {
         background: "hsl(var(--background))",
