@@ -1,18 +1,52 @@
 // pages/bespoke.tsx
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
 import DealsShortVideo from "@/components/ReusableComponents/DealsShortVideo";
 import DealsLongVideo from "@/components/ReusableComponents/DealsLongVideo";
 import Loader from "@/components/Loader";
 
-const LostMaryLongVideo = "/assets/bespoke_ads/lostmarylong.mp4";
+// Budzooka Long Video Ads
 const Budzooka1LongVideo = "/assets/bespoke_ads/budzooka_vape_gun1.mp4";
 const Budzooka2LongVideo = "/assets/bespoke_ads/budzooka_vape_gun2.mp4";
+
+const BudzookaVideos = [
+  Budzooka1LongVideo,
+  Budzooka2LongVideo,
+  Budzooka1LongVideo, // Repeat as needed
+];
+
+// Vape Long Video Ads
+const LostMaryLongVideo1 = "/assets/bespoke_ads/lostmarylong.mp4";
+const LostMaryLongVideo2 = "/assets/bespoke_ads/lostmarylong2.mp4";
+const RazLong = "/assets/bespoke_ads/razlong.mp4";
+const SouthConnectLong = "/assets/bespoke_ads/southconnectlong.mp4";
+const VapeWatchLong2 = "/assets/bespoke_ads/vapewatchlong2.mp4";
+const VTouchLong = "/assets/bespoke_ads/vtouchlong.mp4";
+
+// Array of vape video sources
+const vapeVideos = [
+  LostMaryLongVideo1,
+  LostMaryLongVideo2,
+  RazLong,
+  SouthConnectLong,
+  VapeWatchLong2,
+  VTouchLong,
+];
+
 
 
 const BespokeAdsPage = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [showBudzooka, setShowBudzooka] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowBudzooka((prev) => !prev); // Toggle between Budzooka and Vape videos
+    }, 35000); // Shortened to 5 seconds for testing; adjust to 30000 for production
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, []);
 
   useEffect(() => {
     // Automatically mark loading as complete after 3 seconds
@@ -24,59 +58,39 @@ const BespokeAdsPage = () => {
   }, []);
 
   return (
-    <>
-      {/* Render Loader until loading is complete */}
-      {!loadingComplete && <Loader />}
-
-      {/* Main content fades in immediately after loading is complete */}
-      <div
-        className={`${loadingComplete ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-300 max-w-screen-2xl mx-auto w-full h-full px-8 py-12`}
-      >
-        {/* Title */}
-        {/* <div className="flex items-center justify-center mb-12">
-          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
-            Bespoke Ads Page
-          </h1>
-        </div> */}
-
-        {/* Deal Long Video Ad */}
-        {/* <div className="mb-12">
-          <DealsLongVideo />
-        </div> */}
-
-        {/* Long Wide Ad */}
-        <div className="mb-12 max-w-[1600px] h-[750px] px-4">
-          <VideoPlayer
-            src={Budzooka1LongVideo}
-            className="w-full h-full mx-auto rounded-2xl shadow-lg"
-            autoPlay
-            muted
-          />
-        </div>
-        <div className="mb-12 max-w-[1600px] h-[750px] px-4">
-          <VideoPlayer
-            src={Budzooka2LongVideo}
-            className="w-full h-full mx-auto rounded-2xl shadow-lg"
-            autoPlay
-            muted
-          />
-        </div>
-        <div className="mb-12 max-w-[1600px] h-[750px] px-4">
-          <VideoPlayer
-            src={Budzooka1LongVideo}
-            className="w-full h-full mx-auto rounded-2xl shadow-lg"
-            autoPlay
-            muted
-          />
-        </div>
-
-        {/* Deal Short Video Ad */}
-        {/* <div className="mb-12">
-          <DealsShortVideo />
-        </div> */}
-      </div>
-    </>
+    <div key={showBudzooka ? "Budzooka" : "Vape"}>
+      {showBudzooka ? (
+        // Budzooka Long Video Ads
+        <>
+          {BudzookaVideos.map((videoSrc, index) => (
+            <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
+              <VideoPlayer
+                src={videoSrc}
+                className="w-full h-full mx-auto rounded-2xl shadow-lg"
+                autoPlay
+                muted
+                loop
+              />
+            </div>
+          ))}
+        </>
+      ) : (
+        // Vape Long Video Ads
+        <>
+          {vapeVideos.slice(0, 3).map((videoSrc, index) => (
+            <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
+              <VideoPlayer
+                src={videoSrc}
+                className="w-full h-full mx-auto rounded-2xl shadow-lg"
+                autoPlay
+                muted
+                loop
+              />
+            </div>
+          ))}
+        </>
+      )}
+    </div>
   );
 };
 
