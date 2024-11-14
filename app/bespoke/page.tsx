@@ -74,39 +74,42 @@ const BespokeAdsPage = () => {
   }, [showBudzooka]);
 
   return (
-    <div key={showBudzooka ? "Budzooka" : "Vape"}>
-      {showBudzooka ? (
-        // Budzooka Long Video Ads
-        <>
-          {BudzookaVideos.map((videoSrc, index) => (
-            <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
-              <VideoPlayer
-                src={videoSrc}
-                className="w-full h-full mx-auto rounded-2xl shadow-lg"
-                autoPlay
-                muted
-                loop
-              />
-            </div>
-          ))}
-        </>
-      ) : (
-        // Randomized Vape Long Video Ads
-        <>
-          {randomVapeVideos.slice(0, 3).map((videoSrc, index) => (
-            <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
-              <VideoPlayer
-                src={videoSrc}
-                className="w-full h-full mx-auto rounded-2xl shadow-lg"
-                autoPlay
-                muted
-                loop
-              />
-            </div>
-          ))}
-        </>
-      )}
-    </div>
+    <>
+      <div key={showBudzooka ? "Budzooka" : "Vape"}>
+        {showBudzooka ? (
+          // Budzooka Long Video Ads
+          <>
+            {BudzookaVideos.map((videoSrc, index) => (
+              <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
+                <VideoPlayer
+                  src={videoSrc}
+                  className="w-full h-full mx-auto rounded-2xl shadow-lg"
+                  autoPlay
+                  muted
+                  loop
+                />
+              </div>
+            ))}
+          </>
+        ) : (
+          // Randomized Vape Long Video Ads
+          <>
+            {randomVapeVideos.slice(0, 3).map((videoSrc, index) => (
+              <div key={index} className="mb-12 max-w-[1600px] h-[750px] px-4">
+                <VideoPlayer
+                  src={videoSrc}
+                  className="w-full h-full mx-auto rounded-2xl shadow-lg"
+                  autoPlay
+                  muted
+                  loop
+                />
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+      <h1 className="text-7xl flex items-center bg-clip text-lime-400 justify-center font-grotesk font-bold mb-2 pb-2">Inhale Bay Smoke Shop</h1>
+    </>
   );
 };
 
