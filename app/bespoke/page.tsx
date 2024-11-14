@@ -108,7 +108,7 @@ const BespokeAdsPage = () => {
           </>
         )}
       </div>
-      <h1 className="text-7xl flex items-center bg-clip text-lime-400 justify-center font-grotesk font-bold mb-2 pb-2">Inhale Bay Smoke Shop</h1>
+      <h1 className="text-8xl flex items-center bg-clip text-lime-400 justify-center uppercase font-grotesk font-bold pb-2 tracking-widest">Inhale Bay Smoke Shop</h1>
     </>
   );
 };
