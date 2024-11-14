@@ -58,15 +58,6 @@ const BespokeAdsPage = () => {
   const [randomVapeVideos, setRandomVapeVideos] = useState<string[]>([]); // Explicitly set type to string[]
 
 
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowBudzooka((prev) => !prev); // Toggle between Budzooka and Vape videos
-    }, 35000); // 35 seconds for production
-
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setShowBudzooka((prev) => !prev); // Toggle between Budzooka and Vape videos
