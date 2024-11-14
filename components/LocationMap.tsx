@@ -6,17 +6,15 @@ import { Phone, MapPin, Clock } from 'lucide-react';
 
 const LocationMap = () => {
   return (
-    <div className="w-full h-full flex flex-col md:flex-row items-start justify-center gap-8 px-4 md:px-12 py-8 pt-12">
+    <div id="contact" className="max-w-screen-2xl mx-auto w-full h-full flex flex-col md:flex-row items-start justify-between gap-8 px-4 md:px-12 py-20 my-10">
       {/* Contact Form on the Left Side */}
-      <div className="w-full md:w-1/2 bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
-        <h2 className="text-3xl font-bold text-emerald-600 mb-4">
-          Reach Out To Us
-        </h2>
+      <div className="w-full md:w-1/2 min-h-[800]  rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
+
         <ContactForm />
       </div>
 
       {/* Location Details and Map on the Right Side */}
-      <div className="w-full md:w-1/2 flex flex-col gap-6 h-full flex-grow">
+      <div className="w-full md:w-1/2 min-h-[800] flex flex-col gap-6 h-full flex-grow">
         {/* Location Details */}
         <div className="bg-[#1b1b1b] p-8 rounded-lg shadow-lg w-full text-white flex-grow flex flex-col">
           <h2 className="text-[40px] font-normal font-oxanium mb-6">Our Information</h2>
@@ -56,7 +54,7 @@ const LocationMap = () => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d399.8839927706971!2d-81.65004248473093!3d30.375641192942126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b1f5522ae43f%3A0x38c6fe019b5911a8!2sInhale%20Bay%20Smoke%20Shop!5e0!3m2!1sen!2sus!4v1731225942948!5m2!1sen!2sus"
           width="100%"
-          height="400"
+          height="370"
           style={{ border: 0, borderRadius: "0.75rem" }}
           allowFullScreen
           loading="lazy"

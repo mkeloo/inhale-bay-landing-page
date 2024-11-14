@@ -74,7 +74,7 @@ const Footer = () => {
               <li className="flex items-center">
                 <MapPin className="mr-2 w-5 h-5" />
                 <a
-                  href="https://goo.gl/maps/example"
+                  href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"

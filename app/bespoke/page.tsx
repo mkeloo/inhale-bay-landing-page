@@ -7,6 +7,9 @@ import DealsLongVideo from "@/components/ReusableComponents/DealsLongVideo";
 import Loader from "@/components/Loader";
 
 const LostMaryLongVideo = "/assets/bespoke_ads/lostmarylong.mp4";
+const Budzooka1LongVideo = "/assets/bespoke_ads/budzooka_vape_gun1.mp4";
+const Budzooka2LongVideo = "/assets/bespoke_ads/budzooka_vape_gun2.mp4";
+
 
 const BespokeAdsPage = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -27,9 +30,8 @@ const BespokeAdsPage = () => {
 
       {/* Main content fades in immediately after loading is complete */}
       <div
-        className={`${
-          loadingComplete ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-300 max-w-screen-2xl mx-auto w-full h-full px-8 py-12`}
+        className={`${loadingComplete ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-300 max-w-screen-2xl mx-auto w-full h-full px-8 py-12`}
       >
         {/* Title */}
         {/* <div className="flex items-center justify-center mb-12">
@@ -39,14 +41,30 @@ const BespokeAdsPage = () => {
         </div> */}
 
         {/* Deal Long Video Ad */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <DealsLongVideo />
-        </div>
+        </div> */}
 
         {/* Long Wide Ad */}
         <div className="mb-12 max-w-[1600px] h-[750px] px-4">
           <VideoPlayer
-            src={LostMaryLongVideo}
+            src={Budzooka1LongVideo}
+            className="w-full h-full mx-auto rounded-2xl shadow-lg"
+            autoPlay
+            muted
+          />
+        </div>
+        <div className="mb-12 max-w-[1600px] h-[750px] px-4">
+          <VideoPlayer
+            src={Budzooka2LongVideo}
+            className="w-full h-full mx-auto rounded-2xl shadow-lg"
+            autoPlay
+            muted
+          />
+        </div>
+        <div className="mb-12 max-w-[1600px] h-[750px] px-4">
+          <VideoPlayer
+            src={Budzooka1LongVideo}
             className="w-full h-full mx-auto rounded-2xl shadow-lg"
             autoPlay
             muted
@@ -54,9 +72,9 @@ const BespokeAdsPage = () => {
         </div>
 
         {/* Deal Short Video Ad */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <DealsShortVideo />
-        </div>
+        </div> */}
       </div>
     </>
   );
