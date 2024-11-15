@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { XIcon } from "lucide-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
@@ -81,7 +82,9 @@ export function ImageDialog({
                 className="relative cursor-pointer group w-[320px] h-[300px] rounded-md overflow-hidden "
                 onClick={() => setIsImageOpen(true)}
             >
-                <img
+                <Image
+                    width={320}
+                    height={300}
                     src={imageSrc}
                     alt={imageAlt}
                     loading="lazy"
@@ -109,10 +112,12 @@ export function ImageDialog({
                                 <XIcon className="size-5" />
                             </motion.button>
                             <div className="w-full h-full max-w-[90vw] max-h-[80vh] border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
-                                <img
+                                <Image
                                     src={imageSrc}
                                     alt={imageAlt}
                                     loading="lazy"
+                                    width={700}
+                                    height={700}
                                     className="w-full h-full object-cover rounded-2xl"
                                 />
                             </div>
