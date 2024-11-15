@@ -111,7 +111,7 @@ export function ImageDialog({
                             >
                                 <XIcon className="size-5" />
                             </motion.button>
-                            <div className="w-full h-full max-w-[90vw] max-h-[80vh] border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
+                            <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
                                 <Image
                                     src={imageSrc}
                                     alt={imageAlt}
