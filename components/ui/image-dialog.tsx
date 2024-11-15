@@ -119,6 +119,7 @@ export function ImageDialog({
                                     width={700}
                                     height={700}
                                     className="w-full h-full object-cover rounded-2xl"
+                                    priority // Forces immediate loading
                                 />
                             </div>
                         </motion.div>
