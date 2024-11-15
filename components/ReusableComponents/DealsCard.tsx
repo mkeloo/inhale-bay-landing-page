@@ -27,13 +27,13 @@ const DealsCard: React.FC<DealsCardProps> = ({
 }) => {
     return (
         <div
-            className={`relative group/image rounded-lg shadow-md text-white overflow-hidden bg-gradient-to-r ${bgGradient}`}
-            style={{ height: "350px", width: "100%" }}
+            className={`relative group/image rounded-2xl shadow-md text-white overflow-hidden bg-gradient-to-r ${bgGradient}`}
+            style={{ height: "350px", width: "102%" }}
         >
             {/* Background Video */}
             <VideoPlayer
                 src={heroBgVideo2}
-                className="absolute inset-0 w-full h-full object-cover z-0 opacity-65"
+                className="absolute inset-0 w-full rounded-2xl h-full object-cover z-0 opacity-65"
                 autoPlay
                 loop
                 playsInline
