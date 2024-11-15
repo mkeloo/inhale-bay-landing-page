@@ -5,9 +5,10 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
-import ExampleComponent from "@/components/GalleryView";
+import GalleryView from "@/components/GalleryView";
 import Deals from "@/components/Deals";
 import LocationMap from "@/components/LocationMap";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -33,9 +34,10 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
-        <ExampleComponent />
-        <LocationMap />
         <Deals />
+        <Testimonials />
+        <LocationMap />
+        <GalleryView />
         <Footer />
       </div>
     </>

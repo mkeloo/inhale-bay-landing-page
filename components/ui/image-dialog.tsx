@@ -144,11 +144,7 @@ export function ImageDialog({
                             >
                                 <XIcon strokeWidth={2} />
                             </motion.button>
-                            <motion.div initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                onClick={() => setIsImageOpen(false)}
-                                exit={{ opacity: 0 }}
-                                className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
+                            <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
                                 <Image
                                     src={currentImage.src}
                                     alt={currentImage.alt || "Gallery Image"}
@@ -177,7 +173,7 @@ export function ImageDialog({
                                 >
                                     <ChevronRight strokeWidth={2} />
                                 </button>
-                            </motion.div>
+                            </div>
                         </motion.div>
                     </motion.div>
                 )}

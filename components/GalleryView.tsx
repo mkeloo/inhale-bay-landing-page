@@ -4,7 +4,7 @@ import { ImageDialog } from "@/components/ui/image-dialog";
 import { Skeleton } from "@/components/ui/skeleton";
 import { images } from "@/lib/stuff";
 
-export default function ImageDialogDemo() {
+export default function GalleryView() {
     const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
     useEffect(() => {

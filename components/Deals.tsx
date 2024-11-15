@@ -19,7 +19,7 @@ const Deals = () => {
         className="absolute inset-0 z-[-10] opacity-50"
       />
       <div className="max-w-7xl mx-auto w-full h-full px-12">
-        <div className="flex items-center justify-start mb-8 py-8">
+        <div className="flex items-center justify-center mb-8 py-8">
           <h1 className="text-6xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
             Deals & Promotions
           </h1>
