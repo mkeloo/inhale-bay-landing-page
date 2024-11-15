@@ -115,7 +115,7 @@ export function ImageDialog({
                     >
                         <motion.div
                             {...selectedAnimation}
-                            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                            // transition={{ type: "spring", damping: 30, stiffness: 300 }}
                             className="relative w-full max-w-4xl mx-4 md:mx-0"
                         >
                             <motion.button
