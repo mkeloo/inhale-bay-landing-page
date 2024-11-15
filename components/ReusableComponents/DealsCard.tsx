@@ -46,7 +46,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
                 width={500}
                 height={500}
                 alt={`${vape_company} deal`}
-                className="opacity-100 absolute inset-0 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
+                className="opacity-100 absolute inset-0 object-cover transform transition-transform duration-500 group-hover/image:scale-125"
                 style={{
                     width: "90%", // Adjust the width to your preference
                     height: "90%", // Adjust the height to your preference
@@ -104,11 +104,11 @@ const DealsCard: React.FC<DealsCardProps> = ({
                                 </React.Fragment>
                             ))}
                         </p>
-                        <button className="w-[40%] uppercase text-lg group/btn bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white px-2 py-3 rounded-lg flex items-center justify-center  font-bold hover:scale-105 duration-200 transition-transform">
+                        <button className="w-[40%] uppercase text-lg bg-gradient-to-r from-yellow-500 to-orange-500 group-hover/image:from-pink-600 group-hover/image:to-red-600 text-black group-hover/image:text-white px-2 py-3 rounded-lg flex items-center justify-center  font-bold group-hover/image:scale-105 duration-200 transition-transform">
                             Visit
                             <Store
                                 strokeWidth={2}
-                                className="ml-1 transform transition-transform duration-200 group-hover/btn:rotate-12"
+                                className="ml-1 transform transition-transform duration-200 group-hover/image:rotate-12"
                             />
                         </button>
                     </div>
