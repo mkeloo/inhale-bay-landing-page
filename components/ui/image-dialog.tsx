@@ -131,7 +131,7 @@ export function ImageDialog({
                         animate={{ opacity: 1 }}
                         onClick={() => setIsImageOpen(false)}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
+                        className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-md"
                     >
                         <motion.div
                             {...selectedAnimation}
