@@ -115,7 +115,7 @@ export function ImageDialog({
                                 <Image
                                     src={imageSrc}
                                     alt={imageAlt}
-                                    loading="lazy"
+                                    loading="eager"
                                     width={700}
                                     height={700}
                                     className="w-full h-full object-cover rounded-2xl"
