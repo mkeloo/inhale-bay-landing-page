@@ -18,7 +18,7 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="w-full sticky top-0 bg-black  mx-auto flex justify-center items-center h-auto   shadow-lg shadow-slate-800 z-[99]">
+    <nav className="w-full  bg-black  mx-auto flex justify-center items-center h-auto   shadow-lg shadow-slate-800 z-[99]">
       <div className="w-full max-w-7xl mx-auto grid grid-cols-3 ">
         {/* Links */}
         <motion.div

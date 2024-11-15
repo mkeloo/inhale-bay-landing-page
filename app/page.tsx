@@ -5,6 +5,7 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
+import ExampleComponent from "@/components/GalleryView";
 import Deals from "@/components/Deals";
 import LocationMap from "@/components/LocationMap";
 
@@ -27,12 +28,12 @@ export default function Home() {
 
       {/* Main content fades in immediately after loading is complete */}
       <div
-        className={`${
-          loadingComplete ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-300`}
+        className={`${loadingComplete ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-300`}
       >
         <Navbar />
         <Hero />
+        <ExampleComponent />
         <LocationMap />
         <Deals />
         <Footer />
