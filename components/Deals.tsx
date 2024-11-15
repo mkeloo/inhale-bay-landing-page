@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import DealsBentoBox from "./DealsBentoBox";
+import DealsCard from "./ReusableComponents/DealsCard";
+import { deals } from '@/lib/deals';
+
 
 const heroBgImage = "/assets/hero/hero-bg2.jpg";
 
@@ -23,7 +26,23 @@ const Deals = () => {
         </div>
 
         {/* Bento Box Items */}
-        <DealsBentoBox />
+        {/* <DealsBentoBox /> */}
+
+        {/* Deals Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
+          {deals.map((deal) => (
+            <DealsCard
+              key={deal.id}
+              vape_company={deal.vape_company}
+              base_deal={deal.base_deal}
+              discount_percent={deal.discount_percent}
+              deal_tagline={deal.deal_tagline}
+              short_title={deal.short_title}
+              imgSrc={deal.imgSrc}
+              bgGradient={deal.bgGradient}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
