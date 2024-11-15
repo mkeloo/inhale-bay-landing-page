@@ -21,7 +21,7 @@ export default function ImageDialogDemo() {
 
     return (
         <div className="max-w-screen-2xl mx-auto px-4 md:px-12 py-20 my-10">
-            <h1 className="flex items-center justify-center text-6xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
+            <h1 className="flex items-center justify-center text-6xl font-extrabold bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent">
                 Take a look at our Store!
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 my-14">
