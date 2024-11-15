@@ -1,29 +1,39 @@
 "use client";
 import React from "react";
 import ContactForm from "./ContactForm";
+import Image from "next/image";
 import { Phone, MapPin, Clock } from 'lucide-react';
+const heroBgImage = "/assets/hero/bg-smoke3.jpg";
 
 
 const LocationMap = () => {
   return (
-    <div id="contact" className="max-w-screen-2xl mx-auto w-full h-full flex flex-col md:flex-row items-start justify-between gap-8 px-4 md:px-12 py-20 my-10">
-      {/* Contact Form on the Left Side */}
-      <div className="w-full md:w-1/2 min-h-[800]  rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
+    <div id="contact" className="max-w-screen-2xl mx-auto bg-black relative w-full h-full flex flex-col md:flex-row items-start justify-between gap-8 px-4 md:px-12 py-20 my-10">
 
+      {/* Contact Form on the Left Side */}
+      <div className="w-full md:w-1/2 min-h-[800] z-10  rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
         <ContactForm />
       </div>
 
       {/* Location Details and Map on the Right Side */}
       <div className="w-full md:w-1/2 min-h-[800] flex flex-col gap-6 h-full flex-grow">
+
         {/* Location Details */}
-        <div className="bg-[#1b1b1b] p-8 rounded-lg shadow-lg w-full text-white flex-grow flex flex-col">
+        <div className="relative bg-black p-8 z-20 rounded-lg shadow-lg w-full text-white flex-grow flex flex-col">
+          <Image
+            src={heroBgImage}
+            alt="Background with smoke"
+            width={500}
+            height={500}
+            className="absolute inset-0 w-full rounded-lg h-full object-cover -z-10 opacity-60"
+          />
           <h2 className="text-[40px] font-normal font-oxanium mb-6">Our Information</h2>
 
           {/* Phone Number */}
           <div className="flex items-center mb-4">
             <Phone className="text-yellow-500 mr-3" size={32} strokeWidth={2} />
             <div>
-              <p className="text-lg">904-766-8500</p>
+              <p className="text-xl font-grotesk font-semibold tracking-wider">904-766-8500</p>
             </div>
           </div>
 
@@ -31,7 +41,7 @@ const LocationMap = () => {
           <div className="flex items-center mb-4">
             <MapPin className="text-yellow-500 mr-3" size={32} strokeWidth={2} />
             <div>
-              <p className="text-lg">5751 N Main St <br />
+              <p className="text-xl font-grotesk font-semibold tracking-wider">5751 N Main St <br />
                 Suite #108, <br />
                 Jacksonville, FL 32208
               </p>
@@ -42,9 +52,9 @@ const LocationMap = () => {
           <div className="flex items-center mb-6">
             <Clock className="text-yellow-500 mr-3" size={32} strokeWidth={2} />
             <div>
-              <p className="text-lg">
-                <span className="font-semibold">Mon - Sat:</span> 10:00 AM - 8:00 PM <br />
-                <span className="font-semibold">Sun:</span> 12:00 PM - 8:00 PM
+              <p className="text-xl font-grotesk font-semibold tracking-wider">
+                <span className="font-bold font-poppins">Mon - Sat:</span> 10:00 AM - 8:00 PM <br />
+                <span className="font-bold font-poppins">Sun:</span> 12:00 PM - 8:00 PM
               </p>
             </div>
           </div>

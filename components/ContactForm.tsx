@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 const ContactForm = () => {
   return (
-    <div className="bg-[#1b1b1b] px-8 pt-8 min-h-[800px] rounded-lg shadow-md w-full h-full ">
+    <div className="bg-neutral-900 px-8 pt-8 min-h-[800px] rounded-lg shadow-md w-full h-full ">
       <h2 className="text-[40px] font-normal font-oxanium mb-2">Reach Out To Us</h2>
 
       <div className="space-y-6">
