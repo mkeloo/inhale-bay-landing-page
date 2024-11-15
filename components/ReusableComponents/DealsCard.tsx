@@ -46,7 +46,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
                 width={500}
                 height={500}
                 alt={`${vape_company} deal`}
-                className="opacity-100 absolute inset-0 object-cover transform transition-transform duration-500 group-hover/image:scale-125"
+                className="opacity-100 absolute inset-0 object-cover transform transition-transform duration-300 group-hover/image:scale-110"
                 style={{
                     width: "90%", // Adjust the width to your preference
                     height: "90%", // Adjust the height to your preference
