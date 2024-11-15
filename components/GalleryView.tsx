@@ -37,7 +37,7 @@ export default function ImageDialogDemo() {
                         {/* Display ImageDialog after loading completes */}
                         {loadedImages[index] && (
                             <ImageDialog
-                                animationStyle="from-top"
+                                animationStyle="left-in-right-out"
                                 images={images.map((img) => ({ src: img.src, alt: `Gallery Image ${index + 1}` }))}
                                 initialIndex={index}
                                 className="w-full h-full"
