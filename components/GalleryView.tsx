@@ -8,15 +8,18 @@ export default function ImageDialogDemo() {
     const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
     useEffect(() => {
-        // Set a timer for each image to simulate loading time
-        images.forEach((_, index) => {
-            setTimeout(() => {
-                setLoadedImages((prevState) => ({
-                    ...prevState,
-                    [index]: true,
-                }));
-            }, 2000); // 2000ms delay
-        });
+        // Simulate image loading with a 2000ms delay for each image
+        const timer = setTimeout(() => {
+            // Mark all images as loaded after the delay
+            const loaded = images.reduce((acc, _, index) => {
+                acc[index] = true;
+                return acc;
+            }, {} as { [key: number]: boolean });
+            setLoadedImages(loaded);
+        }, 2000);
+
+        // Clean up the timer on unmount
+        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -27,16 +30,17 @@ export default function ImageDialogDemo() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 my-14">
                 {images.map((imageSrc, index) => (
                     <div key={index} className="relative flex items-center justify-center">
-                        {/* Show Skeleton while timer is running */}
+                        {/* Show Skeleton while loading is simulated */}
                         {!loadedImages[index] && (
                             <Skeleton className="w-full h-full aspect-[4/3] rounded-md" />
                         )}
-                        {/* Display ImageDialog after timer completes */}
+                        {/* Display ImageDialog after loading completes */}
                         {loadedImages[index] && (
                             <ImageDialog
                                 animationStyle="from-top"
-                                imageSrc={imageSrc.src}
-                                imageAlt={`Gallery Image ${index + 1}`}
+                                images={images.map((img) => ({ src: img.src, alt: `Gallery Image ${index + 1}` }))}
+                                initialIndex={index}
+                                className="w-full h-full"
                             />
                         )}
                     </div>

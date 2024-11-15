@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { XIcon } from "lucide-react";
+import { XIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -19,12 +19,19 @@ type AnimationStyle =
 
 interface ImageDialogProps {
     animationStyle?: AnimationStyle;
-    imageSrc: string;
-    imageAlt?: string;
+    images: { src: string; alt?: string }[];
+    initialIndex?: number;
     className?: string;
 }
 
-const animationVariants = {
+// Define a type that maps each AnimationStyle to its corresponding variant object
+type AnimationVariants = Record<AnimationStyle, {
+    initial: { [key: string]: any };
+    animate: { [key: string]: any };
+    exit: { [key: string]: any };
+}>;
+
+const animationVariants: AnimationVariants = {
     "from-bottom": {
         initial: { y: "100%", opacity: 0 },
         animate: { y: 0, opacity: 1 },
@@ -69,37 +76,50 @@ const animationVariants = {
 
 export function ImageDialog({
     animationStyle = "from-center",
-    imageSrc,
-    imageAlt = "Gallery Image",
+    images,
+    initialIndex = 0,
     className,
 }: ImageDialogProps) {
     const [isImageOpen, setIsImageOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const selectedAnimation = animationVariants[animationStyle];
 
-    // Add preload link when component mounts
+    // Add preload link for each image when component mounts
     useEffect(() => {
-        const link = document.createElement("link");
-        link.rel = "preload";
-        link.as = "image";
-        link.href = imageSrc;
-        document.head.appendChild(link);
+        images.forEach((image) => {
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = image.src;
+            document.head.appendChild(link);
 
-        return () => {
-            document.head.removeChild(link);
-        };
-    }, [imageSrc]);
+            return () => {
+                document.head.removeChild(link);
+            };
+        });
+    }, [images]);
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const handlePrevious = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    const currentImage = images[currentIndex];
 
     return (
         <div className={cn("relative", className)}>
             <div
-                className="relative cursor-pointer group w-[320px] h-[300px] rounded-md overflow-hidden "
+                className="relative cursor-pointer group w-[320px] h-[300px] rounded-md overflow-hidden"
                 onClick={() => setIsImageOpen(true)}
             >
                 <Image
                     width={320}
                     height={300}
-                    src={imageSrc}
-                    alt={imageAlt}
+                    src={images[initialIndex].src}
+                    alt={images[initialIndex].alt || "Gallery Image"}
                     loading="lazy"
                     className="w-full h-full object-cover transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md"
                 />
@@ -115,25 +135,44 @@ export function ImageDialog({
                     >
                         <motion.div
                             {...selectedAnimation}
-                            // transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                            transition={{ type: "spring", damping: 30, stiffness: 300 }}
                             className="relative w-full max-w-4xl mx-4 md:mx-0"
                         >
                             <motion.button
                                 onClick={() => setIsImageOpen(false)}
-                                className="absolute -top-10 -right-10 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black"
+                                className="absolute -top-10 -right-10 text-xl  ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
                             >
-                                <XIcon className="size-5" />
+                                <XIcon strokeWidth={2} />
                             </motion.button>
                             <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
                                 <Image
-                                    src={imageSrc}
-                                    alt={imageAlt}
+                                    src={currentImage.src}
+                                    alt={currentImage.alt || "Gallery Image"}
                                     loading="eager"
                                     width={700}
                                     height={700}
                                     className="w-full h-full object-cover rounded-2xl"
                                     priority
                                 />
+                                {/* Previous and Next Buttons */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handlePrevious();
+                                    }}
+                                    className="absolute left-2 top-1/2 transform -translate-y-1/2 ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
+                                >
+                                    <ChevronLeft strokeWidth={2} />
+                                </button>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleNext();
+                                    }}
+                                    className="absolute right-2 top-1/2 transform -translate-y-1/2  ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
+                                >
+                                    <ChevronRight strokeWidth={2} />
+                                </button>
                             </div>
                         </motion.div>
                     </motion.div>
