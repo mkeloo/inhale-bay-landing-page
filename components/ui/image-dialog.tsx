@@ -88,7 +88,7 @@ export function ImageDialog({
                     src={imageSrc}
                     alt={imageAlt}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
+                    className="w-full h-full object-cover transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md"
                 />
             </div>
             <AnimatePresence>
