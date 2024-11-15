@@ -33,7 +33,7 @@ const LocationMap = () => {
           <div className="flex items-center mb-4">
             <Phone className="text-yellow-500 mr-3" size={32} strokeWidth={2} />
             <div>
-              <p className="text-xl font-grotesk font-semibold tracking-wider">904-766-8500</p>
+              <p className="text-xl font-grotesk font-semibold tracking-wider">904-290-3459</p>
             </div>
           </div>
 
@@ -53,8 +53,8 @@ const LocationMap = () => {
             <Clock className="text-yellow-500 mr-3" size={32} strokeWidth={2} />
             <div>
               <p className="text-xl font-grotesk font-semibold tracking-wider">
-                <span className="font-bold font-poppins">Mon - Sat:</span> 10:00 AM - 8:00 PM <br />
-                <span className="font-bold font-poppins">Sun:</span> 12:00 PM - 8:00 PM
+                <span className="font-bold font-poppins">Everyday:</span> 10:00 AM - 8:00 PM <br />
+                {/* <span className="font-bold font-poppins">Sun:</span> 12:00 PM - 8:00 PM */}
               </p>
             </div>
           </div>
