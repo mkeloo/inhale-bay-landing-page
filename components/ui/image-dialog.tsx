@@ -153,6 +153,7 @@ export function ImageDialog({
                                     height={700}
                                     className="w-full h-full object-cover rounded-2xl"
                                     priority
+                                    blurDataURL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ892yAZwMtYITiw-2CeOBbqlhd5dDkWZ_Pyw&s"
                                 />
                                 {/* Previous and Next Buttons */}
                                 <button
