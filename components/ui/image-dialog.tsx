@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { XIcon } from "lucide-react";
 import Image from "next/image";
@@ -76,6 +76,19 @@ export function ImageDialog({
     const [isImageOpen, setIsImageOpen] = useState(false);
     const selectedAnimation = animationVariants[animationStyle];
 
+    // Add preload link when component mounts
+    useEffect(() => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.href = imageSrc;
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, [imageSrc]);
+
     return (
         <div className={cn("relative", className)}>
             <div
@@ -119,7 +132,7 @@ export function ImageDialog({
                                     width={700}
                                     height={700}
                                     className="w-full h-full object-cover rounded-2xl"
-                                    priority // Forces immediate loading
+                                    priority
                                 />
                             </div>
                         </motion.div>
