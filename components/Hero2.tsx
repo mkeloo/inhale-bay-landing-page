@@ -78,9 +78,9 @@ const Hero2 = () => {
                 <Image
                   src={deal5Img}
                   alt="Deal 5"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-100 transform transition-transform duration-200 group-hover/image:scale-110"
+                  width={500}
+                  height={500}
+                  className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
                 />
                 {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
                   <div className="bg-blue-800 bg-opacity-60 p-4 rounded-lg">
@@ -110,9 +110,9 @@ const Hero2 = () => {
                 <Image
                   src={deal4Img}
                   alt="Deal 4"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-100 transform transition-transform duration-200 group-hover/image:scale-110"
+                  width={500}
+                  height={500}
+                  className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
                 />
                 {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
                   <div className="bg-teal-700 bg-opacity-60 p-4 rounded-lg">
@@ -145,9 +145,9 @@ const Hero2 = () => {
             <Image
               src={deal1Img}
               alt="Deal 6"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-100 transform transition-transform duration-200 group-hover/image:scale-110"
+              width={500}
+              height={500}
+              className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
             />
             {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
               <div className="bg-orange-700 bg-opacity-60 p-4 rounded-lg">

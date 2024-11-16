@@ -1,9 +1,9 @@
-import deal1 from "@/public/assets/deals/geekbar-deals6.png";
-import deal2 from "@/public/assets/deals/orian-deals3.png";
-import deal3 from "@/public/assets/deals/raz-deals1.webp";
-import deal4 from "@/public/assets/deals/southconnect-deals4.png";
-import deal5 from "@/public/assets/deals/southconnect-deals5.png";
-import deal6 from "@/public/assets/deals/vtouch-deals2.png";
+import deal1 from "../public/assets/deals/geekbar-deals6.png";
+import deal2 from "../public/assets/deals/orian-deals3.png";
+import deal3 from "../public/assets/deals/raz-deals1.webp";
+import deal4 from "../public/assets/deals/southconnect-deals4.png";
+import deal5 from "../public/assets/deals/southconnect-deals5.png";
+import deal6 from "../public/assets/deals/vtouch-deals2.png";
 
 
 

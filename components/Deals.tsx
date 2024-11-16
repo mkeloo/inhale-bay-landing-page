@@ -13,10 +13,10 @@ const Deals = () => {
       <Image
         src={heroBgImage}
         alt="Background with smoke"
-        layout="fill"
-        objectFit="cover"
+        width={500}
+        height={500}
         quality={100}
-        className="absolute inset-0 z-[-10] opacity-50"
+        className="absolute object-cover inset-0 z-[-10] opacity-50"
       />
       <div className="max-w-7xl mx-auto w-full h-full px-12">
         <div className="flex items-center justify-center mb-8 py-8">

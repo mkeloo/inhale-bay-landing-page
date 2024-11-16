@@ -25,10 +25,10 @@ const ReviewCard = ({
             <Image
                 src={heroBgImage}
                 alt="Background with smoke"
-                layout="fill"
-                objectFit="cover"
+                width={500}
+                height={500}
                 quality={100}
-                className="absolute inset-0 z-[-10] opacity-50"
+                className="absolute object-cover inset-0 z-[-10] opacity-50"
             />
             {/* Quote Icon */}
             <Quote

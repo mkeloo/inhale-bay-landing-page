@@ -56,14 +56,7 @@ const Loader: React.FC = () => {
           className={`relative h-1/2 w-full sm:rounded-bl-[50px] md:rounded-bl-[100px] lg:rounded-b-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-up slide-out" : "loader-up"
             }`}
         >
-          {/* <Image
-            src={heroBgImage1}
-            alt="Background with smoke"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            className="absolute inset-0 sm:rounded-bl-[50px] md:rounded-bl-[100px] lg:rounded-b-[100px] opacity-50"
-          /> */}
+
         </div>
 
         {/* Bottom panel with background image */}
@@ -71,14 +64,6 @@ const Loader: React.FC = () => {
           className={`relative h-1/2 w-full sm:rounded-tr-[50px] md:rounded-tr-[100px] lg:rounded-t-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-down slide-out" : "loader-down"
             }`}
         >
-          {/* <Image
-            src={heroBgImage1}
-            alt="Background with smoke"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            className="absolute inset-0 sm:rounded-tr-[50px] md:rounded-tr-[100px] lg:rounded-t-[100px] opacity-50"
-          /> */}
         </div>
       </div>
     </div>
