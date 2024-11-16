@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXT_SHARP_PATH=\"node_modules/sharp\" next build",
     "start": "NEXT_SHARP_PATH=\"node_modules/sharp\" next start",
     "lint": "next lint"
   },
