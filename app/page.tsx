@@ -14,43 +14,32 @@ export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [isAgeVerified, setIsAgeVerified] = useState(false);
   const [isLocalStorageChecked, setIsLocalStorageChecked] = useState(false);
-  const [isPageReload, setIsPageReload] = useState(false);
 
   useEffect(() => {
-    // Check localStorage flags
+    // Check if age verification was already completed
     const ageVerified = localStorage.getItem("ageVerified");
-    const pageVisited = sessionStorage.getItem("pageVisited");
-
     if (ageVerified === "true") {
       setIsAgeVerified(true);
     }
-
-    if (!pageVisited) {
-      // Mark this session as first visit
-      sessionStorage.setItem("pageVisited", "true");
-      setIsPageReload(true); // Consider as reload or first load
-    } else {
-      setLoadingComplete(true); // Skip loader for navigation back
-    }
-
-    setIsLocalStorageChecked(true);
+    setIsLocalStorageChecked(true); // Ensure this runs before rendering
   }, []);
 
   useEffect(() => {
-    if (isAgeVerified && isPageReload && !loadingComplete) {
-      // Mark loading as complete after 2.7 seconds for reloads
+    if (isAgeVerified) {
+      // Mark loading as complete after 2.7 seconds
       const timeout = setTimeout(() => {
         setLoadingComplete(true);
-        setIsPageReload(false); // Reset reload state
       }, 2700);
+
+      // Save the age verification status to localStorage
+      localStorage.setItem("ageVerified", "true");
 
       return () => clearTimeout(timeout);
     }
-  }, [isAgeVerified, isPageReload, loadingComplete]);
+  }, [isAgeVerified]);
 
   const handleAgeAccept = () => {
     setIsAgeVerified(true);
-    localStorage.setItem("ageVerified", "true");
   };
 
   if (!isLocalStorageChecked) {
@@ -63,10 +52,10 @@ export default function Home() {
       {/* Show Age Verification first */}
       {!isAgeVerified && <AgeVerification onAccept={handleAgeAccept} />}
 
-      {/* Show Loader only for reloads */}
-      {isAgeVerified && isPageReload && !loadingComplete && <Loader />}
+      {/* Show Loader after age is verified */}
+      {isAgeVerified && !loadingComplete && <Loader />}
 
-      {/* Show main content after age verification and loading */}
+      {/* Show main content after both age verification and loading are complete */}
       <div
         className={`${loadingComplete && isAgeVerified ? "opacity-100" : "opacity-0"
           } transition-opacity duration-300`}
