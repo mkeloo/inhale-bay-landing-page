@@ -84,11 +84,12 @@ export function ImageDialog({
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const selectedAnimation = animationVariants[animationStyle];
 
-    // Add preload link for each image when component mounts
+    const preloadedImages = new Set<string>(); // Global Set to track preloaded images
+
     useEffect(() => {
-        // Preload only images not currently displayed
         images.forEach((image, index) => {
-            if (index !== initialIndex) {
+            if (!preloadedImages.has(image.src) && index !== initialIndex) {
+                preloadedImages.add(image.src); // Add the image URL to the set
                 const link = document.createElement("link");
                 link.rel = "preload";
                 link.as = "image";
