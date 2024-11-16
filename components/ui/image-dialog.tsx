@@ -86,18 +86,21 @@ export function ImageDialog({
 
     // Add preload link for each image when component mounts
     useEffect(() => {
-        images.forEach((image) => {
-            const link = document.createElement("link");
-            link.rel = "preload";
-            link.as = "image";
-            link.href = image.src;
-            document.head.appendChild(link);
+        // Preload only images not currently displayed
+        images.forEach((image, index) => {
+            if (index !== initialIndex) {
+                const link = document.createElement("link");
+                link.rel = "preload";
+                link.as = "image";
+                link.href = image.src;
+                document.head.appendChild(link);
 
-            return () => {
-                document.head.removeChild(link);
-            };
+                return () => {
+                    document.head.removeChild(link);
+                };
+            }
         });
-    }, [images]);
+    }, [images, initialIndex]);
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
