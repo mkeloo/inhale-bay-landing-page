@@ -132,7 +132,7 @@ export function ImageDialog({
                                     alt={currentImage.alt || "Gallery Image"}
                                     width={700}
                                     height={700}
-                                    loading="lazy"
+                                    loading="eager"
                                     sizes="100vw"
                                     fetchPriority="high"
                                     className="w-full h-full object-cover rounded-2xl"
