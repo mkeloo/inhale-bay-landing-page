@@ -75,9 +75,6 @@ const animationVariants: Record<
     },
 };
 
-// Global Set to track preloaded images across renders
-const preloadedImages = new Set<string>();
-
 export function ImageDialog({
     animationStyle = "from-center",
     images,
@@ -87,18 +84,6 @@ export function ImageDialog({
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const selectedAnimation = animationVariants[animationStyle];
-
-    // Preload images globally only once
-    images.forEach((image) => {
-        if (!preloadedImages.has(image.src)) {
-            preloadedImages.add(image.src);
-            const link = document.createElement("link");
-            link.rel = "preload";
-            link.as = "image";
-            link.href = image.src;
-            document.head.appendChild(link);
-        }
-    });
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
