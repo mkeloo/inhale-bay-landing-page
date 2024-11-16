@@ -127,14 +127,14 @@ export function ImageDialog({
                                 <XIcon strokeWidth={2} />
                             </motion.button>
                             <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
-                                <Image
+                                <img
                                     src={currentImage.src}
                                     alt={currentImage.alt || "Gallery Image"}
                                     width={700}
                                     height={700}
+                                    loading="eager"
                                     sizes="100vw"
                                     className="w-full h-full object-cover rounded-2xl"
-                                    priority={true}
                                 />
                                 {/* Previous and Next Buttons */}
                                 <button
