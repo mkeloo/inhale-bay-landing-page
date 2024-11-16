@@ -133,6 +133,7 @@ export function ImageDialog({
                                     loading="eager"
                                     width={700}
                                     height={700}
+                                    sizes="100vw"
                                     className="w-full h-full object-cover rounded-2xl"
                                     priority
                                 />
