@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { XIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -24,14 +24,15 @@ interface ImageDialogProps {
     className?: string;
 }
 
-// Define a type that maps each AnimationStyle to its corresponding variant object
-type AnimationVariants = Record<AnimationStyle, {
-    initial: { [key: string]: any };
-    animate: { [key: string]: any };
-    exit: { [key: string]: any };
-}>;
-
-const animationVariants: AnimationVariants = {
+// Define animation variants
+const animationVariants: Record<
+    AnimationStyle,
+    {
+        initial: { [key: string]: any };
+        animate: { [key: string]: any };
+        exit: { [key: string]: any };
+    }
+> = {
     "from-bottom": {
         initial: { y: "100%", opacity: 0 },
         animate: { y: 0, opacity: 1 },
@@ -74,6 +75,9 @@ const animationVariants: AnimationVariants = {
     },
 };
 
+// Global Set to track preloaded images across renders
+const preloadedImages = new Set<string>();
+
 export function ImageDialog({
     animationStyle = "from-center",
     images,
@@ -84,24 +88,17 @@ export function ImageDialog({
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const selectedAnimation = animationVariants[animationStyle];
 
-    const preloadedImages = new Set<string>(); // Global Set to track preloaded images
-
-    useEffect(() => {
-        images.forEach((image, index) => {
-            if (!preloadedImages.has(image.src) && index !== initialIndex) {
-                preloadedImages.add(image.src); // Add the image URL to the set
-                const link = document.createElement("link");
-                link.rel = "preload";
-                link.as = "image";
-                link.href = image.src;
-                document.head.appendChild(link);
-
-                return () => {
-                    document.head.removeChild(link);
-                };
-            }
-        });
-    }, [images, initialIndex]);
+    // Preload images globally only once
+    images.forEach((image) => {
+        if (!preloadedImages.has(image.src)) {
+            preloadedImages.add(image.src);
+            const link = document.createElement("link");
+            link.rel = "preload";
+            link.as = "image";
+            link.href = image.src;
+            document.head.appendChild(link);
+        }
+    });
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -137,14 +134,10 @@ export function ImageDialog({
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-md"
                     >
-                        <motion.div
-                            {...selectedAnimation}
-                            // transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                            className="relative w-full max-w-4xl mx-4 md:mx-0"
-                        >
+                        <motion.div {...selectedAnimation} className="relative w-full max-w-4xl mx-4 md:mx-0">
                             <motion.button
                                 onClick={() => setIsImageOpen(false)}
-                                className="absolute -top-10 -right-10 text-xl  ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
+                                className="absolute -top-10 -right-10 text-xl ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
                             >
                                 <XIcon strokeWidth={2} />
                             </motion.button>
