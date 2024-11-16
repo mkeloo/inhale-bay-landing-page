@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin, Mail, ArrowUpRight } from "lucide-react";
 import navbarLogo from "@/public/logo/inhalebayLogo-nav1.svg";
-import { motion } from "framer-motion";
-import { slideDownVariant } from "@/lib/animation";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -33,11 +31,7 @@ const Navbar = () => {
     >
       <div className="w-full max-w-7xl mx-auto grid grid-cols-3">
         {/* Links */}
-        <motion.div
-          initial="offscreen"
-          animate={"onscreen"}
-          whileInView={"stay"}
-          variants={slideDownVariant}
+        <div
           className="flex justify-center items-center"
         >
           <div className="px-6 py-3 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 font-semibold text-md space-x-2 shadow-md shadow-green-700">
@@ -63,7 +57,7 @@ const Navbar = () => {
               <ArrowUpRight className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1" strokeWidth={2} />
             </a>
           </div>
-        </motion.div>
+        </div>
 
         {/* Logo */}
         <div className="flex justify-center">
@@ -75,11 +69,7 @@ const Navbar = () => {
         {/* Buttons */}
         <div className="flex justify-center items-center space-x-10 px-4">
           {/* Contact Us Button */}
-          <motion.button
-            initial="offscreen"
-            animate={"onscreen"}
-            whileInView={"stay"}
-            variants={slideDownVariant}
+          <button
             className="p-[3px] relative"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
@@ -87,14 +77,10 @@ const Navbar = () => {
               <Mail className="w-5 h-5" strokeWidth={2} />
               <span>Contact</span>
             </a>
-          </motion.button>
+          </button>
 
           {/* Map Button */}
-          <motion.button
-            initial="offscreen"
-            animate={"onscreen"}
-            whileInView={"stay"}
-            variants={slideDownVariant}
+          <button
             className="p-[3px] relative"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
@@ -104,7 +90,7 @@ const Navbar = () => {
               <MapPin className="w-5 h-5" strokeWidth={2} />
               <span>Location</span>
             </a>
-          </motion.button>
+          </button>
         </div>
       </div>
     </nav>
