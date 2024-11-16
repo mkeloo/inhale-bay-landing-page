@@ -1,4 +1,4 @@
-import image1 from '@/public/assets/sample_images/image1.webp';
+import image1 from 'https://asset.gecdesigns.com/img/wallpapers/blue-purple-beautiful-scenery-ultra-hd-wallpaper-4k-sr10012421-1706505497434-cover.webp';
 import image2 from '@/public/assets/sample_images/image2.jpg';
 import image3 from '@/public/assets/sample_images/image3.jpg';
 import image4 from '@/public/assets/sample_images/image4.jpg';
