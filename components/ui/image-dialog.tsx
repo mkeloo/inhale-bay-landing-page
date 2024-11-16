@@ -130,7 +130,6 @@ export function ImageDialog({
                                 <Image
                                     src={currentImage.src}
                                     alt={currentImage.alt || "Gallery Image"}
-                                    loading="eager"
                                     width={700}
                                     height={700}
                                     sizes="100vw"
