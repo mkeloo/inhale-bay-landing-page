@@ -62,7 +62,14 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex justify-center">
           <a href="/" className="bg-black py-3.5 px-2 shadow-2xl">
-            <Image src={navbarLogo} alt="Inhale Bay Logo" width={95} height={18} className="" />
+            <Image
+              src={navbarLogo}
+              alt="Inhale Bay Logo"
+              width={95}
+              height={18}
+              className=""
+              priority={true}
+            />
           </a>
         </div>
 
