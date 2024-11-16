@@ -9,29 +9,31 @@ import GalleryView from "@/components/GalleryView";
 import Deals from "@/components/Deals";
 import LocationMap from "@/components/LocationMap";
 import Testimonials from "@/components/Testimonials";
+import AgeVerification from "@/components/AgeVerification";
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [isAgeVerified, setIsAgeVerified] = useState(false);
 
   useEffect(() => {
-    // Automatically mark loading as complete after 3 seconds
     const timeout = setTimeout(() => {
       setLoadingComplete(true);
-    }, 2700); // Adjust to the duration of your animations
+    }, 2700);
 
     return () => clearTimeout(timeout);
   }, []);
 
+  const handleAgeAccept = () => {
+    setIsAgeVerified(true);
+  };
+
   return (
     <>
-      {/* Render Loader until loading is complete */}
       {!loadingComplete && <Loader />}
 
-      {/* Main content fades in immediately after loading is complete */}
-      <div
-        className={`${loadingComplete ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-300`}
-      >
+      {loadingComplete && !isAgeVerified && <AgeVerification onAccept={handleAgeAccept} />}
+
+      <div className={`${loadingComplete && isAgeVerified ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}>
         <Navbar />
         <Hero />
         <Deals />
