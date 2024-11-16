@@ -134,6 +134,7 @@ export function ImageDialog({
                                     height={700}
                                     loading="lazy"
                                     sizes="100vw"
+                                    fetchPriority="high"
                                     className="w-full h-full object-cover rounded-2xl"
                                 />
                                 {/* Previous and Next Buttons */}
