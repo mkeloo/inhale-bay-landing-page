@@ -9,16 +9,32 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false); // Hide on scroll down
-      } else {
-        setIsVisible(true); // Show on scroll up
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Always show navbar at the very top
+          if (currentScrollY === 0) {
+            setIsVisible(true);
+          } else if (currentScrollY > lastScrollY) {
+            setIsVisible(false); // Hide on scroll down
+          } else {
+            setIsVisible(true); // Show on scroll up
+          }
+
+          setLastScrollY(currentScrollY);
+          ticking = false;
+        });
+
+        ticking = true;
       }
-      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -31,30 +47,37 @@ const Navbar = () => {
     >
       <div className="w-full max-w-7xl mx-auto grid grid-cols-3">
         {/* Links */}
-        <div
-          className="flex justify-center items-center"
-        >
+        <div className="flex justify-center items-center">
           <div className="px-6 py-3 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 font-semibold text-md space-x-2 shadow-md shadow-green-700">
             <a
               href="/"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex justify-center items-center"
             >
               Home
-              <ArrowUpRight className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1" strokeWidth={2} />
+              <ArrowUpRight
+                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
+                strokeWidth={2}
+              />
             </a>
             <a
               href="/bespoke"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               Bespoke
-              <ArrowUpRight className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1" strokeWidth={2} />
+              <ArrowUpRight
+                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
+                strokeWidth={2}
+              />
             </a>
             <a
               href="#deals"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               Deals
-              <ArrowUpRight className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1" strokeWidth={2} />
+              <ArrowUpRight
+                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
+                strokeWidth={2}
+              />
             </a>
           </div>
         </div>
@@ -76,23 +99,25 @@ const Navbar = () => {
         {/* Buttons */}
         <div className="flex justify-center items-center space-x-10 px-4">
           {/* Contact Us Button */}
-          <button
-            className="p-[3px] relative"
-          >
+          <button className="p-[3px] relative">
             <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
-            <a href="#contact" className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent">
+            <a
+              href="#contact"
+              className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent"
+            >
               <Mail className="w-5 h-5" strokeWidth={2} />
               <span>Contact</span>
             </a>
           </button>
 
           {/* Map Button */}
-          <button
-            className="p-[3px] relative"
-          >
+          <button className="p-[3px] relative">
             <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
-            <a href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank" rel="noopener noreferrer" className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent"
+            <a
+              href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent"
             >
               <MapPin className="w-5 h-5" strokeWidth={2} />
               <span>Location</span>
