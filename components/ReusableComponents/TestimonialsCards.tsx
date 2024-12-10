@@ -1,13 +1,10 @@
-import { cn } from "@/lib/utils";
+'use client';
+
 import Marquee from "@/components/ui/marquee";
 import { Quote, Star, ExternalLink } from 'lucide-react';
-import { reviews } from '@/lib/reviews';
 import Image from "next/image";
+
 const heroBgImage = "/assets/hero/hero-bg2.jpg";
-
-
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
     name,
@@ -71,10 +68,21 @@ const ReviewCard = ({
     );
 };
 
+interface TestimonialsCardsProps {
+    reviews: Array<{
+        name: string;
+        body: string;
+        stars: number;
+        link: string;
+    }>;
+}
 
-export default function TestimonialsCards() {
+export default function TestimonialsCards({ reviews }: TestimonialsCardsProps) {
+    const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+    const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
+
     return (
-        <div className="relative flex h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-background md:shadow-xl">
+        <div className="relative flex h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
             <Marquee pauseOnHover className="[--duration:50s]">
                 {firstRow.map((review) => (
                     <ReviewCard key={review.name} {...review} />
