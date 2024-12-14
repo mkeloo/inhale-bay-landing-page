@@ -14,6 +14,6 @@ export const fetchReviews = async () => {
         throw new Error(error.message);
     }
 
-    console.log('Reviews fetched successfully:', data);
+    // console.log('Reviews fetched successfully:', data);
     return data ?? [];
 };

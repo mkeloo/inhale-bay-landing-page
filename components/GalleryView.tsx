@@ -2,24 +2,24 @@
 import { useEffect, useState } from "react";
 import { ImageDialog } from "@/components/ui/image-dialog";
 import { Skeleton } from "@/components/ui/skeleton";
-import { images } from "@/lib/stuff";
+import { images } from "@/lib/imagesLinks";
 
 export default function GalleryView() {
     const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
     useEffect(() => {
-        // Simulate image loading with a 2000ms delay for each image
-        const timer = setTimeout(() => {
-            // Mark all images as loaded after the delay
-            const loaded = images.reduce((acc, _, index) => {
-                acc[index] = true;
-                return acc;
-            }, {} as { [key: number]: boolean });
-            setLoadedImages(loaded);
-        }, 2000);
-
-        // Clean up the timer on unmount
-        return () => clearTimeout(timer);
+        const loadImages = () => {
+            const loaded: { [key: number]: boolean } = {};
+            images.forEach((_, index) => {
+                const img = new Image();
+                img.src = images[index];
+                img.onload = () => {
+                    loaded[index] = true;
+                    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+                };
+            });
+        };
+        loadImages();
     }, []);
 
     return (
@@ -30,15 +30,16 @@ export default function GalleryView() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 my-14">
                 {images.map((imageSrc, index) => (
                     <div key={index} className="relative flex items-center justify-center">
-                        {/* Show Skeleton while loading is simulated */}
-                        {!loadedImages[index] && (
+                        {/* Show Skeleton while loading */}
+                        {!loadedImages[index] ? (
                             <Skeleton className="w-full h-full aspect-[4/3] rounded-md" />
-                        )}
-                        {/* Display ImageDialog after loading completes */}
-                        {loadedImages[index] && (
+                        ) : (
                             <ImageDialog
                                 animationStyle="left-in-right-out"
-                                images={images.map((img) => ({ src: img.src, alt: `Gallery Image ${index + 1}` }))}
+                                images={images.map((img, idx) => ({
+                                    src: img,
+                                    alt: `Gallery Image ${idx + 1}`,
+                                }))}
                                 initialIndex={index}
                                 className="w-full h-full"
                             />
