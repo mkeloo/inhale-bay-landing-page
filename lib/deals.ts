@@ -1,9 +1,9 @@
-import deal1 from "../public/assets/deals/geekbar-deals6.png";
-import deal2 from "../public/assets/deals/orian-deals3.png";
-import deal3 from "../public/assets/deals/raz-deals1.webp";
-import deal4 from "../public/assets/deals/southconnect-deals4.png";
-import deal5 from "../public/assets/deals/southconnect-deals5.png";
-import deal6 from "../public/assets/deals/vtouch-deals2.png";
+import deal1 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/geekbar-deals6.png";
+import deal2 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/orian-deals3.png";
+import deal3 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/raz-deals1.webp";
+import deal4 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals4.png";
+import deal5 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals5.png";
+import deal6 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/vtouch-deals2.png";
 
 
 
@@ -20,7 +20,7 @@ export const deals = [
         discount_percent: "25",
         deal_tagline: "BUY 1 for $10, GET 2 for $15",
         short_title: "Orion Exclusive Offer",
-        imgSrc: deal1.src,
+        imgSrc: 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/geekbar-deals6.png',
         bgGradient: "from-orange-400 to-yellow-500",
     },
     {
@@ -35,7 +35,7 @@ export const deals = [
         discount_percent: "25",
         deal_tagline: "BUY 1 for $10, GET 2 for $15",
         short_title: "Tyson Limited Time Deal",
-        imgSrc: deal2.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/orian-deals3.png",
         bgGradient: "from-purple-400 to-pink-500",
     },
     {
@@ -50,7 +50,7 @@ export const deals = [
         discount_percent: "33",
         deal_tagline: "BUY 1 for $15, GET 2 for $20",
         short_title: "Space Mary Savings",
-        imgSrc: deal3.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/raz-deals1.webp",
         bgGradient: "from-blue-400 to-orange-500",
     },
     {
@@ -65,7 +65,7 @@ export const deals = [
         discount_percent: "20",
         deal_tagline: "BUY 1 for $25, GET 2 for $40",
         short_title: "V Touch Mega Deal",
-        imgSrc: deal4.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals4.png",
         bgGradient: "from-blue-400 to-indigo-900",
     },
     {
@@ -80,7 +80,7 @@ export const deals = [
         discount_percent: "20",
         deal_tagline: "BUY 1 for $25, GET 2 for $40",
         short_title: "South Connect Offer",
-        imgSrc: deal5.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals5.png",
         bgGradient: "from-purple-400 to-lime-500",
     },
     {
@@ -95,7 +95,7 @@ export const deals = [
         discount_percent: "17",
         deal_tagline: "BUY 1 for $18, GET 2 for $30",
         short_title: "Geek Bar 15K Promotion",
-        imgSrc: deal6.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/vtouch-deals2.png",
         bgGradient: "from-yellow-400 to-orange-500",
     },
     {
@@ -110,7 +110,7 @@ export const deals = [
         discount_percent: "21",
         deal_tagline: "BUY 1 for $19, GET 2 for $30",
         short_title: "Lost Mary Value Pack",
-        imgSrc: deal1.src,
+        imgSrc: 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/geekbar-deals6.png',
         bgGradient: "from-orange-400 to-yellow-500",
     },
     {
@@ -125,7 +125,7 @@ export const deals = [
         discount_percent: "12.5",
         deal_tagline: "BUY 1 for $20, GET 2 for $35",
         short_title: "Geek Bar 25K Deal",
-        imgSrc: deal2.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/orian-deals3.png",
         bgGradient: "from-purple-400 to-pink-500",
     },
     {
@@ -140,7 +140,7 @@ export const deals = [
         discount_percent: "12.5",
         deal_tagline: "BUY 1 for $20, GET 2 for $35",
         short_title: "Quasar 25K Savings",
-        imgSrc: deal3.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/raz-deals1.webp",
         bgGradient: "from-blue-400 to-lime-500",
     },
     {
@@ -155,7 +155,7 @@ export const deals = [
         discount_percent: "15",
         deal_tagline: "BUY 1 for $10, GET 2 for $17",
         short_title: "Fume Extra Limited Deal",
-        imgSrc: deal4.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals4.png",
         bgGradient: "from-blue-400 to-indigo-900",
     },
     {
@@ -170,7 +170,7 @@ export const deals = [
         discount_percent: "22",
         deal_tagline: "BUY 1 for $16, GET 2 for $25",
         short_title: "Off Stamp 9K Kit Discount",
-        imgSrc: deal5.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/southconnect-deals5.png",
         bgGradient: "from-green-400 to-lime-500",
     },
     {
@@ -185,7 +185,7 @@ export const deals = [
         discount_percent: "15",
         deal_tagline: "BUY 1 for $10, GET 2 for $17",
         short_title: "Off Stamp 9K No Kit Offer",
-        imgSrc: deal6.src,
+        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/vtouch-deals2.png",
         bgGradient: "from-green-400 to-orange-500",
     },
     {
@@ -200,7 +200,7 @@ export const deals = [
         discount_percent: "20",
         deal_tagline: "BUY 1 for $25, GET 2 for $40",
         short_title: "Vape Watch Combo Deal",
-        imgSrc: deal1.src,
+        imgSrc: 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/geekbar-deals6.png',
         bgGradient: "from-orange-400 to-yellow-500",
     }
 ];

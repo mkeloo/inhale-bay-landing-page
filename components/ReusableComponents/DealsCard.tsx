@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
-const heroBgVideo2 = "/assets/hero/hero-vape-smoke.mp4";
+const heroBgVideo2 = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/hero-vape-smoke.mp4";
 
 
 interface DealsCardProps {
