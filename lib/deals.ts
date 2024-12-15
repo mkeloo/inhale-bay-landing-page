@@ -9,51 +9,6 @@ import deal6 from "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/pu
 
 export const deals = [
     {
-        id: 1,
-        vape_company: "Orion",
-        base_deal: [
-            {
-                buy_1: "$10",
-                buy_2: "$15"
-            }
-        ],
-        discount_percent: "25",
-        deal_tagline: "BUY 1 for $10, GET 2 for $15",
-        short_title: "Orion Exclusive Offer",
-        imgSrc: 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/geekbar-deals6.png',
-        bgGradient: "from-orange-400 to-yellow-500",
-    },
-    {
-        id: 2,
-        vape_company: "Tyson",
-        base_deal: [
-            {
-                buy_1: "$10",
-                buy_2: "$15"
-            }
-        ],
-        discount_percent: "25",
-        deal_tagline: "BUY 1 for $10, GET 2 for $15",
-        short_title: "Tyson Limited Time Deal",
-        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/orian-deals3.png",
-        bgGradient: "from-purple-400 to-pink-500",
-    },
-    {
-        id: 3,
-        vape_company: "Space Mary",
-        base_deal: [
-            {
-                buy_1: "$15",
-                buy_2: "$20"
-            }
-        ],
-        discount_percent: "33",
-        deal_tagline: "BUY 1 for $15, GET 2 for $20",
-        short_title: "Space Mary Savings",
-        imgSrc: "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/raz-deals1.webp",
-        bgGradient: "from-blue-400 to-orange-500",
-    },
-    {
         id: 4,
         vape_company: "V Touch",
         base_deal: [

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
 import GalleryView from "@/components/GalleryView";
+import DealsFlowerBuds from "@/components/DealsFlowerBuds";
 import Deals from "@/components/Deals";
 import LocationMap from "@/components/LocationMap";
 import Testimonials from "@/components/Testimonials";
@@ -62,6 +63,7 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
+        <DealsFlowerBuds />
         <Deals />
         <Testimonials />
         <LocationMap />

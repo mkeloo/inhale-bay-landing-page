@@ -7,6 +7,20 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // FROM Classes
+    {
+      pattern: /from-(red|orange|yellow|green|blue|indigo|purple|pink|lime|teal|cyan|gray)-[1-9]00/,
+    },
+    // VIA Classes
+    {
+      pattern: /via-(red|orange|yellow|green|blue|indigo|purple|pink|lime|teal|cyan|gray)-[1-9]00/,
+    },
+    // TO Classes
+    {
+      pattern: /to-(red|orange|yellow|green|blue|indigo|purple|pink|lime|teal|cyan|gray|slate)-[1-9]00/,
+    },
+  ],
   theme: {
     extend: {
       fontFamily: {
