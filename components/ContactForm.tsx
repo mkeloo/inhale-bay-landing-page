@@ -13,6 +13,7 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState<boolean | null>(null); // Track success or failure state
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -23,9 +24,10 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatusMessage("");
+    setIsSuccess(null);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contacdt", {
         method: "POST", // Ensure this is a POST request
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -33,6 +35,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         setStatusMessage("Your message has been sent successfully!");
+        setIsSuccess(true); // Success state
         setFormData({
           fullName: "",
           email: "",
@@ -43,10 +46,12 @@ const ContactForm = () => {
       } else {
         const error = await response.json();
         setStatusMessage(`Failed to send message: ${error.error}`);
+        setIsSuccess(false); // Failure state
       }
     } catch (error) {
       console.error("Error:", error);
       setStatusMessage("An error occurred. Please try again.");
+      setIsSuccess(false); // Failure state
     }
 
     setIsSubmitting(false);
@@ -140,7 +145,7 @@ const ContactForm = () => {
         <div className="w-full h-full flex items-center justify-center">
           <button
             type="submit"
-            className="group/btn my-2 text-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 mt-6 px-10 py-4 rounded-lg flex items-center text-black hover:text-white font-semibold duration-400 transition"
+            className="group/btn my-2 text-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 px-10 py-4 rounded-lg flex items-center text-black hover:text-white font-semibold duration-400 transition"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending..." : "Send Message"}
@@ -154,9 +159,12 @@ const ContactForm = () => {
 
       {/* Status Message */}
       {statusMessage && (
-        <p className="mt-4 text-center text-yellow-400 font-semibold">
+        <div
+          className={`mt-4 text-center p-4 rounded-lg font-semibold ${isSuccess ? "bg-green-200 text-green-700" : "bg-red-200 text-red-700"
+            }`}
+        >
           {statusMessage}
-        </p>
+        </div>
       )}
     </div>
   );
