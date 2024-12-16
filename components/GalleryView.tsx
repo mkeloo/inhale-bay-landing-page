@@ -29,10 +29,13 @@ export default function GalleryView() {
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 my-14">
                 {images.map((imageSrc, index) => (
-                    <div key={index} className="relative flex items-center justify-center">
+                    <div
+                        key={index}
+                        className="relative flex items-center justify-center w-full aspect-[4/3] rounded-md overflow-hidden"
+                    >
                         {/* Show Skeleton while loading */}
                         {!loadedImages[index] ? (
-                            <Skeleton className="w-full h-full aspect-[4/3] rounded-md" />
+                            <Skeleton className="w-full h-full rounded-md" />
                         ) : (
                             <ImageDialog
                                 animationStyle="left-in-right-out"
@@ -41,7 +44,7 @@ export default function GalleryView() {
                                     alt: `Gallery Image ${idx + 1}`,
                                 }))}
                                 initialIndex={index}
-                                className="w-full h-full"
+                                className="w-full h-full object-cover"
                             />
                         )}
                     </div>
