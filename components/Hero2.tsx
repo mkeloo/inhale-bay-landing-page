@@ -21,6 +21,12 @@ const deal1Img = "/assets/deals/vtouch-deals2.png";
 const deal4Img = "/assets/deals/southconnect-deals4.png";
 const deal5Img = "/assets/deals/geekbar-deals6.png";
 
+// Hero Section Images
+const vapesImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroVapesRaz.webp";
+const flowerBudsImag = 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroTHC-A.webp';
+const bongsImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroBongsGeneric.webp";
+
+
 const Hero2 = () => {
   const [showCustomCursor, setShowCustomCursor] = useState(true);
 
@@ -62,6 +68,7 @@ const Hero2 = () => {
                 <span className="bg-clip text-lime-400">y</span>
               </motion.h1>
             </div>
+
             {/* Image Containers */}
             <div className="w-full h-1/2  flex items-center justify-center gap-6">
               <motion.div
@@ -71,30 +78,17 @@ const Hero2 = () => {
                 variants={slideInVariants}
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(248, 113, 113, 0.7), rgba(59, 130, 246, 0.7))",
+                    "linear-gradient(90deg, rgba(255,0,0,0.7) 0%, rgba(173,0,255,0.5) 50%, rgba(32,81,181,0.7) 100%)",
                 }}
-                className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-red-400 to-blue-500 hover:shadow-2xl hover:shadow-pink-500 duration-300 transition-shadow"
+                className="group/image flex items-center justify-center w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-red-400 to-blue-500 hover:shadow-2xl hover:shadow-pink-500 duration-300 transition-shadow"
               >
                 <Image
-                  src={deal5Img}
-                  alt="Deal 5"
+                  src={vapesImg}
+                  alt="Hero Vapes Image"
                   width={500}
                   height={500}
-                  className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
+                  className="opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md"
                 />
-                {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
-                  <div className="bg-blue-800 bg-opacity-60 p-4 rounded-lg">
-                    <h2 className="text-3xl font-bold">Starter Kits</h2>
-                    <p className="text-lg">Perfect for beginners</p>
-                    <button className="group/btn bg-rose-400 p-4 rounded-lg mt-2 flex items-center text-white font-semibold hover:scale-105 duration-200 transition-transform">
-                      Shop Now
-                      <ArrowRight
-                        strokeWidth={3}
-                        className="ml-1 transform transition-transform duration-200 group-hover/btn:translate-x-2"
-                      />
-                    </button>
-                  </div>
-                </div> */}
               </motion.div>
               <motion.div
                 initial="offscreen"
@@ -103,32 +97,25 @@ const Hero2 = () => {
                 variants={quickPopUpVariants}
                 style={{
                   background:
-                    "linear-gradient(to right, rgba(34, 197, 94, 0.7), rgba(13, 148, 136, 0.7))",
+                    "linear-gradient(180deg, rgba(84,255,0,0.7) 0%, rgba(35,238,0,0.9) 50%, rgba(8,80,0,1) 100%)",
                 }}
-                className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-green-400 to-teal-500 hover:shadow-2xl hover:shadow-lime-500 duration-300 transition-shadow"
+                className="group/image flex items-end justify-center w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-green-400 to-teal-500 hover:shadow-2xl hover:shadow-lime-500 duration-300 transition-shadow px-4"
               >
+                {/* Badge */}
+                <div className="absolute top-4 left-2 px-4 z-[12] py-2 rounded-full text-white text-sm font-bold flex justify-center items-center bg-blue-700">
+                  THC-A
+                </div>
+
                 <Image
-                  src={deal4Img}
-                  alt="Deal 4"
+                  src={flowerBudsImag}
+                  alt="Thc Flower Buds"
                   width={500}
                   height={500}
-                  className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
+                  className="opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md -mb-6"
                 />
-                {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
-                  <div className="bg-teal-700 bg-opacity-60 p-4 rounded-lg">
-                    <h2 className="text-3xl font-bold">Buy 1 Get 1 Free</h2>
-                    <p className="text-md">Exclusive offer on select items</p>
-                    <button className="group/btn bg-teal-500 p-4 rounded-lg mt-2 flex items-center text-white font-semibold hover:scale-105 duration-200 transition-transform">
-                      Shop Now
-                      <ArrowRight
-                        strokeWidth={3}
-                        className="ml-1 transform transition-transform duration-200 group-hover/btn:translate-x-2"
-                      />
-                    </button>
-                  </div>
-                </div> */}
               </motion.div>
             </div>
+
           </div>
           {/* Right-Top Content */}
           <motion.div
@@ -138,30 +125,17 @@ const Hero2 = () => {
             variants={slideInRightVariants}
             style={{
               background:
-                "linear-gradient(to right, rgba(96, 165, 250, 0.7), rgba(79, 70, 229, 0.7))",
+                "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(46,45,45,0.35) 50%, rgba(255,255,255,0.35) 100%)",
             }}
-            className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-blue-400 to-indigo-900 hover:shadow-2xl hover:shadow-blue-700 duration-300 transition-shadow"
+            className="group/image w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-blue-700 duration-300 transition-shadow flex items-center justify-center backdrop-blur-md"
           >
             <Image
-              src={deal1Img}
-              alt="Deal 6"
-              width={500}
-              height={500}
+              src={bongsImg}
+              alt="Bongs"
+              width={460}
+              height={460}
               className="opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110"
             />
-            {/* <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
-              <div className="bg-orange-700 bg-opacity-60 p-4 rounded-lg">
-                <h2 className="text-3xl font-bold">Limited Edition</h2>
-                <p className="text-lg">Exclusive limited-time items</p>
-                <button className="group/btn bg-yellow-400 p-4 rounded-lg mt-2 flex items-center text-white font-semibold hover:scale-105 duration-200 transition-transform">
-                  Shop Now
-                  <ArrowRight
-                    strokeWidth={3}
-                    className="ml-1 transform transition-transform duration-200 group-hover/btn:translate-x-2"
-                  />
-                </button>
-              </div>
-            </div> */}
           </motion.div>
         </div>
 
@@ -190,7 +164,7 @@ const Hero2 = () => {
               variants={quickPopUpVariants}
               className="text-[23px] text-left font-medium font-inter"
             >
-              Discover premium vapes, hookahs, e-cigarettes, & more. <br />
+              Discover premium vapes, THC-A Flower, Bongs, & more. <br />
               <span className="font-inter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-lime-500">
                 Enjoy exclusive deals & promotions for all your smoking needs.
               </span>
