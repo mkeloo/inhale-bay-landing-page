@@ -7,7 +7,7 @@ export async function POST(request: Request) {
         const { fullName, email, phone, subject, message } = await request.json();
 
         const data = await resend.emails.send({
-            from: "Contact Form <your@email.com>", // Verified sender
+            from: "Contact Form <onboarding@resend.dev>", // Verified sender
             to: "inhalebaysmokeshop@gmail.com",    // Receiving email
             subject: subject || "New Contact Form Submission",
             html: `
