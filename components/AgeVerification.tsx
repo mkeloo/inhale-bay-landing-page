@@ -16,6 +16,7 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center px-4 md:px-6 lg:px-8 py-20 z-50">
+
             {/* Background Image */}
             <Image
                 src={heroBgImage2}
