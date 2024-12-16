@@ -15,6 +15,9 @@ interface DealFlowerBudCardProps {
     bgGradient: string;
 }
 
+// remove 1, 2, 5, 8, 9, 14, 15, 17, 18, 23, 25, 27
+// add 3 more.
+
 const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
     id,
     budName,
