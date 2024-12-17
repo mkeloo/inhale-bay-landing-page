@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full sticky top-0 bg-black mx-auto h-auto shadow-lg shadow-slate-800 z-[99] transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+      className={`w-full sticky top-0 bg-black/75 backdrop-blur-md mx-auto h-auto shadow-lg shadow-slate-800 z-[99] transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="bg-black py-2 px-2 shadow-2xl">
+          <a href="/" className="bg-black py-2 px-2 shadow-2xl rounded-2xl">
             <Image
               src={navbarLogo}
               alt="Inhale Bay Logo"
