@@ -14,37 +14,49 @@ import AgeVerification from "@/components/AgeVerification";
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [isAgeVerified, setIsAgeVerified] = useState(false);
-  const [isLocalStorageChecked, setIsLocalStorageChecked] = useState(false);
+  const [isSessionStorageChecked, setIsSessionStorageChecked] = useState(false);
 
+  // Check sessionStorage for age verification
   useEffect(() => {
-    // Check if age verification was already completed
-    const ageVerified = localStorage.getItem("ageVerified");
-    if (ageVerified === "true") {
-      setIsAgeVerified(true);
+    const ageVerified = sessionStorage.getItem("ageVerified");
+    const verificationTime = sessionStorage.getItem("ageVerifiedTime");
+
+    if (ageVerified === "true" && verificationTime) {
+      const currentTime = new Date().getTime();
+      const timeDifference = currentTime - Number(verificationTime);
+
+      // Check if 2 hours (7200000ms) have passed
+      if (timeDifference < 7200000) {
+        setIsAgeVerified(true);
+      } else {
+        sessionStorage.removeItem("ageVerified");
+        sessionStorage.removeItem("ageVerifiedTime");
+      }
     }
-    setIsLocalStorageChecked(true); // Ensure this runs before rendering
+
+    setIsSessionStorageChecked(true);
   }, []);
 
+  // Handle age verification accept
+  const handleAgeAccept = () => {
+    const currentTime = new Date().getTime();
+    sessionStorage.setItem("ageVerified", "true");
+    sessionStorage.setItem("ageVerifiedTime", currentTime.toString());
+    setIsAgeVerified(true);
+  };
+
+  // Simulate a loader after age verification
   useEffect(() => {
     if (isAgeVerified) {
-      // Mark loading as complete after 2.7 seconds
       const timeout = setTimeout(() => {
         setLoadingComplete(true);
       }, 2700);
-
-      // Save the age verification status to localStorage
-      localStorage.setItem("ageVerified", "true");
-
       return () => clearTimeout(timeout);
     }
   }, [isAgeVerified]);
 
-  const handleAgeAccept = () => {
-    setIsAgeVerified(true);
-  };
-
-  if (!isLocalStorageChecked) {
-    // Render nothing until localStorage is checked
+  if (!isSessionStorageChecked) {
+    // Render nothing until sessionStorage is checked
     return null;
   }
 

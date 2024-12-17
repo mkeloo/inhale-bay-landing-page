@@ -63,20 +63,20 @@ const Navbar = () => {
               />
             </a>
             <a
-              href="/bespoke"
+              href="#flowerDeals"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
-              Bespoke
+              THC-A Buds
               <ArrowUpRight
                 className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
                 strokeWidth={2}
               />
             </a>
             <a
-              href="#deals"
+              href="#vapeDeals"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
-              Deals
+              Vapes
               <ArrowUpRight
                 className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
                 strokeWidth={2}
@@ -152,11 +152,11 @@ const Navbar = () => {
             <a href="/" className="block text-white text-lg hover:bg-lime-500 duration-200  py-2 px-3 rounded-lg">
               Home
             </a>
-            <a href="/bespoke" className="block text-white text-lg hover:bg-lime-500 py-2 px-3 rounded-lg">
-              Bespoke
+            <a href="#flowerDeals" className="block text-white text-lg hover:bg-lime-500 py-2 px-3 rounded-lg">
+              THC-A Buds
             </a>
-            <a href="#deals" className="block text-white text-lg hover:bg-lime-500 py-2 px-3 rounded-lg">
-              Deals
+            <a href="#vapeDeals" className="block text-white text-lg hover:bg-lime-500 py-2 px-3 rounded-lg">
+              Vapes
             </a>
             <a href="#contact" className="block text-white text-lg hover:bg-lime-500 py-2 px-3 rounded-lg">
               Contact

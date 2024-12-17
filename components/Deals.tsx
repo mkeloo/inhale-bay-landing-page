@@ -9,7 +9,7 @@ const heroBgImage = "/assets/hero/hero-bg2.jpg";
 
 const Deals = () => {
   return (
-    <div id="deals" className="relative w-full h-full py-8 pt-16 pb-16 ">
+    <div id="vapeDeals" className="relative w-full h-full py-8 pt-16 pb-16 ">
       {/* <Image
         src={heroBgImage}
         alt="Background with smoke"
