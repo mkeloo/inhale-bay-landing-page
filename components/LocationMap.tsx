@@ -8,15 +8,15 @@ const heroBgImage = "/assets/hero/bg-smoke3.jpg";
 
 const LocationMap = () => {
   return (
-    <div id="contact" className="max-w-screen-2xl mx-auto bg-black relative w-full h-full flex flex-col md:flex-row items-start justify-between gap-8 px-4 md:px-12 py-20 my-10">
+    <div id="contact" className="max-w-screen-2xl mx-auto bg-black relative w-full h-full flex flex-col lg:flex-row items-start justify-between gap-8 px-4 md:px-12 py-20 my-10">
 
       {/* Contact Form on the Left Side */}
-      <div className="w-full md:w-1/2 min-h-[800] z-10  rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
+      <div className="w-full lg:w-1/2 min-h-[800] z-10  rounded-lg shadow-lg flex flex-col items-stretch h-full flex-grow">
         <ContactForm />
       </div>
 
       {/* Location Details and Map on the Right Side */}
-      <div className="w-full md:w-1/2 min-h-[800] flex flex-col gap-6 h-full flex-grow">
+      <div className="w-full lg:w-1/2 min-h-[800] flex flex-col gap-6 h-full flex-grow">
 
         {/* Location Details */}
         <div className="relative bg-black p-8 z-20 rounded-lg shadow-lg w-full text-white flex-grow flex flex-col">
@@ -64,12 +64,12 @@ const LocationMap = () => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d399.8839927706971!2d-81.65004248473093!3d30.375641192942126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b1f5522ae43f%3A0x38c6fe019b5911a8!2sInhale%20Bay%20Smoke%20Shop!5e0!3m2!1sen!2sus!4v1731225942948!5m2!1sen!2sus"
           width="100%"
-          height="370"
+          height="400"
           style={{ border: 0, borderRadius: "0.75rem" }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className="shadow-lg w-full flex-grow min-h-[400px]"
+          className="shadow-lg w-full flex-grow md:min-h-[250px] lg:min-h-[420px]"
         ></iframe>
       </div>
     </div>

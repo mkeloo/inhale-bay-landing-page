@@ -98,7 +98,7 @@ export function ImageDialog({
     return (
         <div className={cn("relative", className)}>
             <div
-                className="relative cursor-pointer group w-[320px] h-[300px] rounded-md overflow-hidden"
+                className="relative cursor-pointer group w-full h-full rounded-md overflow-hidden"
                 onClick={() => setIsImageOpen(true)}
             >
                 <Image

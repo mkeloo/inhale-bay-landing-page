@@ -23,9 +23,9 @@ const Testimonials = () => {
 
     return (
         <div id="testimonials" className="relative w-full h-full py-8 pt-16 pb-16 bg-black">
-            <div className="max-w-7xl mx-auto w-full h-full px-12">
+            <div className="max-w-7xl mx-auto w-full h-full px-4 md:px-6 lg:px-12">
                 <div className="flex items-center justify-center mb-8 py-8">
-                    <h1 className="text-6xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
                         What Customers Say About Us!
                     </h1>
                 </div>
