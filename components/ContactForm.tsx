@@ -58,7 +58,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-neutral-900 px-8 pt-8 min-h-[800px] rounded-lg shadow-md w-full h-full">
+    <div id="contact" className="bg-neutral-900 px-8 pt-8 min-h-[800px] rounded-lg shadow-md w-full h-full">
       <h2 className="text-[40px] font-normal font-oxanium mb-2">Reach Out To Us</h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">

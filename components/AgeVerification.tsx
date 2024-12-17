@@ -4,8 +4,8 @@ import Image from "next/image";
 import navbarLogo from "@/public/logo/inhalebayLogo-nav1.svg";
 import { useRouter } from "next/navigation";
 
-const heroBgImage = "/assets/hero/smoking-background.png";
-const heroBgImage2 = "/assets/hero/hero-bg3.jpg";
+const heroBgImage = "/assets/hero/smoking-background.webp";
+const heroBgImage2 = "/assets/hero/hero-bg3.webp";
 
 const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
     const router = useRouter();

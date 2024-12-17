@@ -10,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative h-[40vh] w-full text-white py-8 px-6 flex flex-col justify-between">
+    <footer className="relative h-auto lg:h-[40vh] w-full text-white py-8 px-6 flex flex-col justify-between">
       {/* Background Video */}
       <VideoPlayer
         src={heroBgVideo}
@@ -22,10 +22,10 @@ const Footer = () => {
       />
 
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
         {/* Logo */}
-        <div className="w-1/3 flex items-center justify-start">
-          <div className="bg-black px-4 py-2 rounded-xl shadow-2xl flex flex-col items-center justify-center ">
+        <div className="w-full lg:w-1/3 flex items-center justify-center lg:justify-start mb-6 lg:mb-0">
+          <div className="bg-black px-4 py-2 rounded-xl shadow-2xl flex flex-col items-center justify-center">
             <Image
               src={navbarLogo}
               alt="Inhale Bay Logo"
@@ -38,24 +38,39 @@ const Footer = () => {
         </div>
 
         {/* Main Navigation Links */}
-        <div className="w-2/3 flex items-start justify-between gap-8">
+        <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-2">
               <li>
                 <a href="#home" className="hover:underline">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#deals" className="hover:underline">
-                  Deals
+                <a href="#flowerDeals" className="hover:underline">
+                  THC-A Buds
+                </a>
+              </li>
+              <li>
+                <a href="#vapeDeals" className="hover:underline">
+                  Vapes
                 </a>
               </li>
               <li>
                 <a href="#testimonials" className="hover:underline">
                   Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:underline">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="hover:underline">
+                  Gallery
                 </a>
               </li>
             </ul>
@@ -67,8 +82,11 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <Mail className="mr-2 w-5 h-5" />
-                <a href="mailto:info@example.com" className="hover:underline">
-                  info@example.com
+                <a
+                  href="mailto:inhalebaysmokeshop@gmail.com"
+                  className="hover:underline"
+                >
+                  Email Us
                 </a>
               </li>
               <li className="flex items-center">
@@ -106,8 +124,8 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="border-t border-gray-700 pt-4 text-center">
-        <p className="text-md text-gray-400">
-          © {currentYear} Inhale Bay. All rights reserved.
+        <p className="text-sm md:text-md text-gray-400">
+          © {new Date().getFullYear()} Inhale Bay. All rights reserved.
         </p>
       </div>
     </footer>

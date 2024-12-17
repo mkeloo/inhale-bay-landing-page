@@ -23,7 +23,7 @@ export default function GalleryView() {
     }, []);
 
     return (
-        <div className="max-w-screen-2xl mx-auto px-4 md:px-12 py-20 my-10">
+        <div id="gallery" className="max-w-screen-2xl mx-auto px-4 md:px-12 py-20 my-10">
             <h1 className="flex items-center justify-center text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent">
                 Take a look at our Store!
             </h1>

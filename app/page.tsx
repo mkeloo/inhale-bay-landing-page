@@ -71,16 +71,18 @@ export default function Home() {
       {/* Show main content after both age verification and loading are complete */}
       <div
         className={`${loadingComplete && isAgeVerified ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-300 px-4 lg:px-0`}
+          } transition-opacity duration-300`}
       >
         <Navbar />
         <Hero />
-        <DealsFlowerBuds />
-        <Deals />
-        <Testimonials />
-        <LocationMap />
-        <GalleryView />
-        {/* <Footer /> */}
+        <div className="px-4 lg:px-0">
+          <DealsFlowerBuds />
+          <Deals />
+          <Testimonials />
+          <LocationMap />
+          <GalleryView />
+        </div>
+        <Footer />
       </div>
     </>
   );

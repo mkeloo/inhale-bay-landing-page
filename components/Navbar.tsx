@@ -57,30 +57,30 @@ const Navbar = () => {
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex justify-center items-center"
             >
               Home
-              <ArrowUpRight
+              {/* <ArrowUpRight
                 className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
                 strokeWidth={2}
-              />
+              /> */}
             </a>
             <a
               href="#flowerDeals"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               THC-A Buds
-              <ArrowUpRight
+              {/* <ArrowUpRight
                 className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
                 strokeWidth={2}
-              />
+              /> */}
             </a>
             <a
               href="#vapeDeals"
               className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               Vapes
-              <ArrowUpRight
+              {/* <ArrowUpRight
                 className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
                 strokeWidth={2}
-              />
+              /> */}
             </a>
           </div>
         </div>
