@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import DealsBentoBox from "./DealsBentoBox";
 import DealsCard from "./ReusableComponents/DealsCard";
 import { deals } from '@/lib/deals';
 
@@ -24,9 +23,6 @@ const Deals = () => {
             Deals & Promotions
           </h1>
         </div>
-
-        {/* Bento Box Items */}
-        {/* <DealsBentoBox /> */}
 
         {/* Deals Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">

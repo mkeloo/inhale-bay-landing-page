@@ -6,7 +6,7 @@ import Hero from "@/components/Hero2";
 import Footer from "@/components/Footer";
 import GalleryView from "@/components/GalleryView";
 import DealsFlowerBuds from "@/components/DealsFlowerBuds";
-import Deals from "@/components/Deals";
+import Deals from "@/components/DealsVapes";
 import LocationMap from "@/components/LocationMap";
 import Testimonials from "@/components/Testimonials";
 import AgeVerification from "@/components/AgeVerification";

@@ -29,13 +29,13 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
             {/* Content */}
             <div className="relative bg-black z-10 text-white border-slate-500 border-2 rounded-2xl shadow-lg p-4 md:p-6 lg:p-8 w-full max-w-sm md:max-w-lg lg:max-w-2xl text-center">
                 {/* Overlay Image */}
-                <Image
+                {/* <Image
                     src={heroBgImage}
                     alt="Background with smoke"
                     width={500}
                     height={500}
                     className="absolute inset-0 w-full h-full object-cover -z-10 opacity-50 rounded-2xl"
-                />
+                /> */}
 
                 {/* Title */}
                 <h2 className="text-lg md:text-xl lg:text-2xl font-oxanium font-bold mb-4 p-2 rounded-2xl bg-lime-400 text-black">
