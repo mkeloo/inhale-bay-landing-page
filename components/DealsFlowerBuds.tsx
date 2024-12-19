@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import DealsCard from "./ReusableComponents/DealsCard";
-import { deals } from '@/lib/deals';
 import { dealsFlowerBuds } from "@/lib/dealsFlowerBuds";
 import DealFlowerBudCard from "./ReusableComponents/DealFlowerBudCard";
 

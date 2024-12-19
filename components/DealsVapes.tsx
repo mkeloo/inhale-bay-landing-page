@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import DealsCard from "./ReusableComponents/DealsCard";
+import DealsCard from "./ReusableComponents/DealVapeCard";
 import { deals } from '@/lib/deals';
 
 
