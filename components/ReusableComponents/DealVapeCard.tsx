@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
-const heroBgVideo2 = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/hero-vape-smoke.mp4";
+// const heroBgVideo2 = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/hero-vape-smoke.mp4";
 
 
 interface DealsCardProps {
@@ -27,92 +27,103 @@ const DealsCard: React.FC<DealsCardProps> = ({
 }) => {
     return (
         <div
-            className={`relative group/image rounded-2xl shadow-md text-white overflow-hidden bg-gradient-to-r ${bgGradient}`}
-            style={{ height: "350px", width: "102%" }}
+            className={`relative h-full w-[102%] group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}
+        // style={{ height: "350px", width: "102%" }}
         >
             {/* Background Video */}
-            <VideoPlayer
+            {/* <VideoPlayer
                 src={heroBgVideo2}
                 className="absolute inset-0 w-full rounded-2xl h-full object-cover z-0 opacity-65"
                 autoPlay
                 loop
                 playsInline
                 muted
-            />
+            /> */}
 
-            {/* Background Image */}
-            <Image
-                src={imgSrc}
-                width={500}
-                height={500}
-                alt={`${vape_company} deal`}
-                className="opacity-100 absolute inset-0 object-cover transform transition-transform duration-300 group-hover/image:scale-110"
-                style={{
-                    width: "90%", // Adjust the width to your preference
-                    height: "90%", // Adjust the height to your preference
-                    margin: "auto", // Center the image within the container
 
-                }}
-            />
 
 
             {/* Vape Company Badge */}
             <div
-                className="absolute top-4 left-3 px-4 py-2 rounded-full text-black text-md font-bold flex justify-center items-center bg-gradient-to-r from-lime-500 to-emerald-500 text-opacity-100"
+                className="absolute top-4 left-3 px-4 py-2 rounded-full text-black text-sm md:text-md font-bold flex justify-center items-center bg-gradient-to-r from-lime-500 to-emerald-500 text-opacity-100 z-[15]"
             // style={{
             //     "--pulse-color": "rgba(0, 0, 255, 0.5)", // Tailwind's blue-500 in RGBA
             //     "--duration": "1.5s", // Customize the duration
             // } as React.CSSProperties}
             >
-                <div className="relative z-10">{vape_company}</div>
+                <div className="relative">{vape_company}</div>
                 {/* <div className="absolute top-1/2 left-1/2 w-full h-full rounded-full bg-inherit animate-pulse -translate-x-1/2 -translate-y-1/2" /> */}
             </div>
 
             {/* Discount Percent Badge */}
             <div
-                className="absolute top-4 right-2 rounded-full text-white text-base font-bold flex justify-center items-center bg-red-500 shadow-lg"
+                className="absolute top-4 right-2 w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full text-white text-base font-bold flex justify-center items-center bg-red-500 shadow-lg z-[15]"
                 style={{
                     "--pulse-color": "rgba(255, 0, 0, 0.5)", // Tailwind's red-500 in RGBA
                     "--duration": "1.5s", // Customize the duration
-                    width: "60px", // Ensure consistent sizing
-                    height: "60px",
+
                 } as React.CSSProperties}
             >
                 <div className="relative z-10">{discount_percent}%</div>
                 <div className="absolute top-1/2 left-1/2 w-full h-full rounded-full bg-inherit animate-pulse -translate-x-1/2 -translate-y-1/2" />
             </div>
 
-            {/* Content Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4">
-                <div className="bg-blue-800 bg-opacity-80 p-4 rounded-lg">
-                    <h3 className="text-2xl font-bold mb-2">{short_title}</h3>
-                    <div className="flex items-center justify-between w-full">
-                        <p className="w-[55%] text-xl font-semibold italic mr-4">
-                            {deal_tagline.split(', ').map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {line.split(' ').map((word, i) => (
-                                        <React.Fragment key={i}>
-                                            {/^\d+$/.test(word) || /\$\d+/.test(word) ? ( // Check if the word is a number or matches a price pattern
-                                                <span className="text-3xl bg-clip text-lime-300 font-bold">{word}</span>
-                                            ) : (
-                                                word
-                                            )}
-                                            {' '}
-                                        </React.Fragment>
-                                    ))}
-                                    {index < deal_tagline.split(', ').length - 1 && <br />}
-                                </React.Fragment>
-                            ))}
-                        </p>
-                        <button className="w-[40%] uppercase text-lg bg-gradient-to-r from-yellow-500 to-orange-500 group-hover/image:from-pink-600 group-hover/image:to-red-600 text-black group-hover/image:text-white px-2 py-3 rounded-lg flex items-center justify-center  font-bold group-hover/image:scale-105 duration-200 transition-transform">
-                            Visit
-                            <Store
-                                strokeWidth={2}
-                                className="ml-1 transform transition-transform duration-200 group-hover/image:rotate-12"
-                            />
-                        </button>
+
+            <div className="flex flex-col items-center justify-between w-full h-full backdrop-blur-3xl">
+                {/* Background Image */}
+                <Image
+                    src={imgSrc}
+                    width={500}
+                    height={500}
+                    alt={`${vape_company} deal`}
+                    className="opacity-100 w-full h-full  m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4"
+                />
+
+                {/* Content Overlay */}
+                <div className="flex flex-col justify-end  w-full z-[12] -mt-3">
+                    <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col">
+                        <h3 className="text-xl md:text-2xl text-center font-bold mb-1 md:mb-2">
+                            {short_title}
+                        </h3>
+                        <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-2">
+                            <p className="w-full md:w-[55%] text-center text-lg md:text-xl font-semibold italic md:mr-4">
+                                {deal_tagline.split(', ').map((line, index) => (
+                                    <React.Fragment key={index}>
+                                        {line.split(' ').map((word, i) => (
+                                            <React.Fragment key={i}>
+                                                {/^\d+$/.test(word) || /\$\d+/.test(word) ? ( // Check if the word is a number or matches a price pattern
+                                                    <span className="text-2xl md:text-3xl bg-clip text-lime-300 font-bold">
+                                                        {word}
+                                                    </span>
+                                                ) : (
+                                                    word
+                                                )}
+                                                {' '}
+                                            </React.Fragment>
+                                        ))}
+                                        {index < deal_tagline.split(', ').length - 1 && <br />}
+                                    </React.Fragment>
+                                ))}
+                            </p>
+
+                        </div>
+
                     </div>
+
                 </div>
+
+                <a
+                    href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full uppercase text-lg font-bold font-grotesk gap-x-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white p-2 flex items-center justify-center hover:scale-105 duration-200 transition-transform group/tilt">
+                    Visit Store
+                    <Store
+                        strokeWidth={2}
+                        size={24}
+                        className="transform transition-transform duration-200 group-hover/tilt:rotate-12"
+                    />
+                </a>
             </div>
         </div>
     );

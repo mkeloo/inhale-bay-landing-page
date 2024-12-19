@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full sticky top-0 bg-black/75 backdrop-blur-md mx-auto h-auto shadow-lg shadow-slate-800 z-[99] transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+      className={`w-full sticky top-0 bg-black/75 backdrop-blur-md mx-auto h-auto shadow-lg shadow-slate-800 z-[99] transition-transform duration-200 ${isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -51,10 +51,10 @@ const Navbar = () => {
 
         {/* Links for large screens */}
         <div className="hidden lg:flex items-center space-x-10">
-          <div className="px-6 py-3 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 font-semibold text-md space-x-2 shadow-md shadow-green-700">
+          <div className="px-6 py-3 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 font-semibold text-md space-x-2 shadow-lg shadow-green-700">
             <a
               href="/"
-              className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex justify-center items-center"
+              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex justify-center items-center"
             >
               Home
               {/* <ArrowUpRight
@@ -64,7 +64,7 @@ const Navbar = () => {
             </a>
             <a
               href="#flowerDeals"
-              className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
+              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               THC-A Buds
               {/* <ArrowUpRight
@@ -74,7 +74,7 @@ const Navbar = () => {
             </a>
             <a
               href="#vapeDeals"
-              className="group relative text-black transition-all duration-300 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
+              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
             >
               Vapes
               {/* <ArrowUpRight
@@ -119,26 +119,24 @@ const Navbar = () => {
         {/* Buttons for large screens */}
         <div className="hidden lg:flex justify-center items-center space-x-10 px-4">
           {/* Contact Us */}
-          <button className="p-[3px] relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
+          <button className="p-[3px] relative group">
             <a
               href="#contact"
-              className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent"
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-lg shadow-yellow-400 hover:shadow-pink-500 rounded-[6px] relative group transition duration-200 font-semibold"
             >
-              <Mail className="w-5 h-5" strokeWidth={2} />
+              <Mail className="w-6 h-6" strokeWidth={2} />
               <span>Contact</span>
             </a>
           </button>
           {/* Location */}
-          <button className="p-[3px] relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-lime-500 to-emerald-500 rounded-lg" />
+          <button className="p-[3px] relative group">
             <a
               href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center px-4 py-2 space-x-2 bg-black rounded-[6px] relative group transition duration-300 font-semibold text-white hover:text-black hover:bg-transparent"
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-lg shadow-yellow-400 hover:shadow-pink-500 rounded-[6px] relative group transition duration-200 font-semibold "
             >
-              <MapPin className="w-5 h-5" strokeWidth={2} />
+              <MapPin className="w-6 h-6" strokeWidth={2} />
               <span>Location</span>
             </a>
           </button>

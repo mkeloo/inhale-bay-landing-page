@@ -117,16 +117,16 @@ export function ImageDialog({
                         animate={{ opacity: 1 }}
                         onClick={() => setIsImageOpen(false)}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-md"
+                        className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-md no-doc-scroll"
                     >
-                        <motion.div {...selectedAnimation} className="relative w-full max-w-4xl mx-4 md:mx-0">
+                        <motion.div {...selectedAnimation} className="relative w-full max-w-4xl mx-4 md:mx-0 flex items-center justify-center">
                             <motion.button
                                 onClick={() => setIsImageOpen(false)}
-                                className="absolute -top-10 -right-10 text-xl ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
+                                className="absolute -top-16 -right-2 md:-top-16 md:right-4 lg:-top-10 lg:-right-10 text-xl ring-1 backdrop-blur-md rounded-full p-2 bg-lime-400 text-black"
                             >
                                 <XIcon strokeWidth={2} />
                             </motion.button>
-                            <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative">
+                            <div className="w-full h-full max-w-[90vw] max-h-[80vh] rounded-2xl overflow-hidden isolate z-[1] relative ">
                                 <img
                                     src={currentImage.src}
                                     alt={currentImage.alt || "Gallery Image"}
@@ -135,7 +135,7 @@ export function ImageDialog({
                                     loading="eager"
                                     sizes="100vw"
                                     fetchPriority="high"
-                                    className="w-full h-full object-cover rounded-2xl"
+                                    className="w-full h-full object-cover rounded-2xl "
                                 />
                                 {/* Previous and Next Buttons */}
                                 <button

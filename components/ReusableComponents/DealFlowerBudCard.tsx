@@ -28,8 +28,8 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
 }) => {
     return (
         <div
-            className={`relative group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
-            style={{ height: "550px", width: "102%" }}
+            className={`relative h-[450px] md:h-[500px] lg:h-[550px] w-[102%] group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
+        // style={{ height: "550px", width: "102%" }}
         >
             {/* Overlay Content */}
             <div className="relative flex flex-col items-center justify-end w-full h-full">
@@ -39,16 +39,11 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     width={500}
                     height={500}
                     alt={`${budName} deal`}
-                    className="opacity-100 w-full h-full max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9]"
-                // style={{
-                //     width: "90%",
-                //     height: "90%",
-                //     margin: "auto",
-                // }}
+                    className="opacity-100 w-full h-full max-h-[200px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9]"
                 />
 
                 {/* Badge */}
-                <div className="absolute top-4 left-4 px-4 z-[12] py-2 rounded-full text-black text-md font-bold flex justify-center items-center bg-gradient-to-r from-lime-500 to-emerald-500">
+                <div className="absolute top-4 left-4 px-4 z-[12] py-2 rounded-full text-black text-sm md:text-md font-bold flex justify-center items-center bg-gradient-to-r from-lime-500 to-emerald-500">
                     THC-A
                 </div>
 
@@ -62,25 +57,25 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col gap-2">
                         {/* Header Section */}
                         <div className="flex items-center justify-center mt-2">
-                            <h3 className="text-2xl font-bold">{budName}</h3>
+                            <h3 className="text-xl md:text-2xl font-bold text-center">{budName}</h3>
                         </div>
 
                         {/* Pricing Section */}
-                        <div className="flex justify-center items-center gap-8 text-xl font-semibold italic">
+                        <div className="flex justify-center items-center gap-8 text-lg md:text-xl font-semibold italic">
                             <div className="flex flex-col items-center justify-center">
                                 <p>
-                                    <span className="text-3xl text-lime-300 font-bold">1</span> gram at
+                                    <span className="text-2xl md:text-3xl text-lime-300 font-bold">1</span> gram at
                                 </p>
                                 <p>
-                                    for <span className="text-3xl text-lime-300 font-bold">${OneGramPrice}</span>
+                                    for <span className="text-2xl md:text-3xl text-lime-300 font-bold">${OneGramPrice}</span>
                                 </p>
                             </div>
                             <div className="flex flex-col items-center justify-center">
                                 <p>
-                                    <span className="text-3xl text-lime-300 font-bold">4</span> gram at
+                                    <span className="text-2xl md:text-3xl text-lime-300 font-bold">4</span> gram at
                                 </p>
                                 <p>
-                                    for <span className="text-3xl text-lime-300 font-bold">${FourGramPrice}</span>
+                                    for <span className="text-2xl md:text-3xl text-lime-300 font-bold">${FourGramPrice}</span>
                                 </p>
                             </div>
                         </div>

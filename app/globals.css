@@ -176,3 +176,8 @@ body {
 .underline-animation:hover::after {
   transform: scaleX(1);
 }
+
+
+:root:has(.no-doc-scroll) {
+  overflow:hidden;
+}
