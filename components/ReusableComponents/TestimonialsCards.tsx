@@ -4,7 +4,7 @@ import Marquee from "@/components/ui/marquee";
 import { Quote, Star, ExternalLink } from 'lucide-react';
 import Image from "next/image";
 
-const heroBgImage = "/assets/hero/hero-bg2.jpg";
+const heroBgImage = "/assets/hero/hero-bg2.webp";
 
 const ReviewCard = ({
     name,
