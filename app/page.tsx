@@ -80,7 +80,7 @@ export default function Home() {
           <DealsFlowerBuds />
           <Testimonials />
           <LocationMap />
-          <GalleryView />
+          {/* <GalleryView /> */}
         </div>
         <Footer />
       </div>
