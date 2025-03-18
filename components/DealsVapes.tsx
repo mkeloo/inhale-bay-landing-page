@@ -55,7 +55,7 @@ const Deals = () => {
         quality={100}
         className="absolute object-cover inset-0 z-[-10] opacity-50"
       /> */}
-      <div className="max-w-7xl mx-auto w-full h-full px-4">
+      <div className="max-w-7xl mx-auto w-full h-full px-2">
         <div className="flex items-center justify-center mb-8 py-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-center font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
             Deals & Promotions
@@ -66,7 +66,7 @@ const Deals = () => {
         {error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
             {vapeDeals.map((deal) => (
               <DealsCard
                 key={deal.id}

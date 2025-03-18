@@ -85,9 +85,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="lg:hidden">
+        {/* <div className="lg:hidden">
 
-        </div>
+        </div> */}
 
         {/* Logo */}
         <div className="flex items-center">
