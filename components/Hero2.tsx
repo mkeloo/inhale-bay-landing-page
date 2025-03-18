@@ -129,7 +129,7 @@ const Hero2 = () => {
             initial="offscreen"
             animate={"onscreen"}
             whileInView={"stay"}
-            variants={slideInRightVariants}
+            variants={quickPopUpVariants}
             style={{
               background:
                 "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(46,45,45,0.35) 50%, rgba(255,255,255,0.35) 100%)",

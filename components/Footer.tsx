@@ -123,7 +123,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 pt-4 text-center">
+      <div className="border-t border-gray-700 pt-4 mt-4 text-center">
         <p className="text-sm md:text-md text-gray-400">
           © {new Date().getFullYear()} Inhale Bay. All rights reserved.
         </p>
