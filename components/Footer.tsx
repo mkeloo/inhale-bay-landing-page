@@ -7,7 +7,6 @@ import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
 const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative h-auto lg:h-[40vh] w-full text-white py-8 px-6 flex flex-col justify-between">
