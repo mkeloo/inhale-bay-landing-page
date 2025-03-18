@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/storage/v1/object/public/store-images/**",
       },
+      {
+        protocol: "https",
+        hostname: "dnltndrwudjaskjwczvm.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/inhale-bay-website/**",
+      },
     ],
   },
 };

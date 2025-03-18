@@ -13,6 +13,7 @@ interface DealFlowerBudCardProps {
     FourGramPrice: number;
     imgSrc: string;
     bgGradient: string;
+    is_enabled?: boolean;
 }
 
 // remove 1, 2, 5, 8, 9, 14, 15, 17, 18, 23, 25, 27
@@ -25,7 +26,10 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
     FourGramPrice,
     imgSrc,
     bgGradient,
+    is_enabled,
 }) => {
+    if (is_enabled === false) return null;
+
     return (
         <div
             className={`relative h-[450px] md:h-[500px] lg:h-[550px] w-[102%] group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
@@ -48,9 +52,9 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                 </div>
 
                 {/* ID */}
-                <div className="absolute top-4 right-4 px-4 z-[12] py-2 rounded-full text-black text-md font-bold flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-200 shadow-xl">
+                {/* <div className="absolute top-4 right-4 px-4 z-[12] py-2 rounded-full text-black text-md font-bold flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-200 shadow-xl">
                     {id}
-                </div>
+                </div> */}
 
                 {/* Content Overlay */}
                 <div className="flex flex-col justify-end w-full z-[12] mt-4">

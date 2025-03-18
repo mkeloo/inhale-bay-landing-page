@@ -3,17 +3,17 @@ import React from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
-// const heroBgVideo2 = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/DealsVapesImages/hero-vape-smoke.mp4";
 
 
 interface DealsCardProps {
     vape_company: string;
     base_deal: { buy_1: string; buy_2: string }[];
-    discount_percent: string;
+    discount_percent: number;
     deal_tagline: string;
     short_title: string;
     imgSrc: string;
     bgGradient: string;
+    is_enabled?: boolean;
 }
 
 const DealsCard: React.FC<DealsCardProps> = ({
@@ -24,7 +24,10 @@ const DealsCard: React.FC<DealsCardProps> = ({
     short_title,
     imgSrc,
     bgGradient,
+    is_enabled,
 }) => {
+    if (is_enabled === false) return null;
+
     return (
         <div
             className={`relative h-full w-[102%] group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}

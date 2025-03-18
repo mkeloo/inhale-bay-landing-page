@@ -1,11 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { dealsFlowerBuds } from "@/lib/dealsFlowerBuds";
 import DealFlowerBudCard from "./ReusableComponents/DealFlowerBudCard";
+import { fetchHempFlowerDeals, HempFlowerDeal } from "./../app/actions/hempFlowerDeals";
+import { fetchMediaBucketUrl } from "@/app/actions/mediaBucketURL";
 
 
 const heroBgImage = "/assets/hero/hero-bg2.jpg";
 
+
 const Deals = () => {
+    const [hempFlowerDeal, setHempFlowerDeal] = useState<HempFlowerDeal[]>([]);
+    const [error, setError] = useState<string | null>(null);
+    const [baseUrl, setBaseUrl] = useState<string>("");
+
+    // Fetch deals from Supabase
+    useEffect(() => {
+        async function loadDeals() {
+            try {
+                const res = await fetchHempFlowerDeals();
+                if (res.success) {
+                    setHempFlowerDeal(res.data);
+                    console.log("Hemp Flower Deals", res.data);
+                } else {
+                    setError(res.error || "Error loading deals");
+                }
+            } catch (err: any) {
+                setError(err.message);
+            }
+        }
+        loadDeals();
+    }, []);
+
+
+    // Fetch the media bucket base URL from settings
+    useEffect(() => {
+        async function loadBaseUrl() {
+            try {
+                const url = await fetchMediaBucketUrl();
+                setBaseUrl(url);
+            } catch (err: any) {
+                console.error("Error fetching base URL", err);
+            }
+        }
+        loadBaseUrl();
+    }, []);
+
+
+
     return (
         <div id="flowerDeals" className="relative w-full h-full py-8 pt-16 pb-16 ">
             {/* <Image
@@ -28,15 +69,16 @@ const Deals = () => {
 
                 {/* Deals Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-                    {dealsFlowerBuds.map((deal) => (
+                    {hempFlowerDeal.map((deal) => (
                         <DealFlowerBudCard
                             key={deal.id}
                             id={deal.id}
-                            budName={deal.budName}
-                            OneGramPrice={deal.OneGramPrice}
-                            FourGramPrice={deal.FourGramPrice}
-                            imgSrc={deal.imageSrc}
-                            bgGradient={deal.bgGradient}
+                            budName={deal.bud_name}
+                            OneGramPrice={deal.one_gram_price}
+                            FourGramPrice={deal.four_gram_price}
+                            imgSrc={`${baseUrl}${deal.image_src}`}
+                            bgGradient={deal.bg_gradient}
+                            is_enabled={deal.is_enabled}
                         />
                     ))}
                 </div>
