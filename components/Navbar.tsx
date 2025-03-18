@@ -9,14 +9,18 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
 
+  // New state to control logo size
+  const [logoSize, setLogoSize] = useState({ width: 95, height: 18 });
+
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
-      // If mobile menu is open, don't update navbar visibility
+      // If mobile menu is open, don't update navbar visibility or logo size
       if (isMenuOpen) return;
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
+          // Update navbar visibility
           if (currentScrollY === 0) {
             setIsVisible(true);
           } else if (currentScrollY > lastScrollY) {
@@ -25,6 +29,13 @@ const Navbar = () => {
             setIsVisible(true); // Show on scroll up
           }
           setLastScrollY(currentScrollY);
+
+          // Update logo size: if at the very top, use original size; otherwise, reduce the size
+          if (currentScrollY === 0) {
+            setLogoSize({ width: 95, height: 18 });
+          } else {
+            setLogoSize({ width: 65, height: 14 });
+          }
           ticking = false;
         });
         ticking = true;
@@ -82,6 +93,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Placeholder block for positioning */}
         {/* <div className="lg:hidden">
 
         </div> */}
@@ -92,8 +104,8 @@ const Navbar = () => {
             <Image
               src={navbarLogo}
               alt="Inhale Bay Logo"
-              width={95}
-              height={18}
+              width={logoSize.width}
+              height={logoSize.height}
               priority
             />
           </a>
