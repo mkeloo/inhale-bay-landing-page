@@ -11,12 +11,12 @@ const Navbar = () => {
 
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
+      // If mobile menu is open, don't update navbar visibility
+      if (isMenuOpen) return;
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-
           if (currentScrollY === 0) {
             setIsVisible(true);
           } else if (currentScrollY > lastScrollY) {
@@ -24,7 +24,6 @@ const Navbar = () => {
           } else {
             setIsVisible(true); // Show on scroll up
           }
-
           setLastScrollY(currentScrollY);
           ticking = false;
         });
@@ -33,11 +32,9 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY, isMenuOpen]);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
 
   return (
     <nav
