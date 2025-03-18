@@ -2,24 +2,30 @@
 
 import { useEffect, useState } from 'react';
 import TestimonialsCards from "@/components/ReusableComponents/TestimonialsCards";
-import { fetchReviews } from "@/supabase/api";
-import { Review } from "@/supabase/types";
+import { fetchStoreReviews, StoreReview } from "@/app/actions/storeReviews";
 
 const Testimonials = () => {
-    const [reviews, setReviews] = useState<Review[]>([]); // Use Review type here
+    const [reviews, setReviews] = useState<StoreReview[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        // Fetch reviews when the component mounts
-        fetchReviews()
-            .then((data) => {
-                setReviews(data);
+        fetchStoreReviews()
+            .then(({ success, data, error }) => {
+                if (success) {
+                    setReviews(
+                        data.map((review) => ({
+                            ...review,
+                        }))
+                    );
+                } else {
+                    setError(error || "Failed to load testimonials.");
+                }
             })
             .catch((err) => {
                 console.error("Error fetching reviews:", err);
                 setError("Failed to load testimonials.");
             });
-    }, []); // Empty dependency array ensures this runs only once
+    }, []);
 
     return (
         <div id="testimonials" className="relative w-full h-full py-8 pt-16 pb-16 bg-black">
@@ -29,8 +35,6 @@ const Testimonials = () => {
                         What Customers Say About Us!
                     </h1>
                 </div>
-
-                {/* Render TestimonialsCards if reviews are loaded */}
                 {error ? (
                     <p className="text-center text-red-500">{error}</p>
                 ) : (

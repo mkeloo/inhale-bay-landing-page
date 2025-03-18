@@ -3,6 +3,7 @@
 import Marquee from "@/components/ui/marquee";
 import { Quote, Star, ExternalLink } from 'lucide-react';
 import Image from "next/image";
+import Link from "next/link";
 
 const heroBgImage = "/assets/hero/hero-bg2.webp";
 
@@ -53,15 +54,16 @@ const ReviewCard = ({
                 {/* Reviewer Name & Link */}
                 <div className="flex items-center font-oxanium font-semibold text-lg">
                     - {name}
-                    <a
+                    <Link
                         href={link}
+                        prefetch={false}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 underline flex items-center ml-2"
                     >
                         <span>View Review</span>
                         <ExternalLink size={18} className="ml-1" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </figure>
