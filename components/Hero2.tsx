@@ -148,7 +148,9 @@ const Hero2 = () => {
 
         {/* Bottom Content */}
         <div className="w-full h-[25%] flex flex-col lg:flex-row items-center justify-end gap-4">
-          <div className="w-full md:w-1/4 flex items-center justify-center md:justify-start">
+
+          {/* 1st Div */}
+          <div className="w-full lg:w-1/4 flex items-center justify-center lg:justify-start">
             <motion.h3
               initial="offscreen"
               animate={"onscreen"}
@@ -164,7 +166,8 @@ const Hero2 = () => {
             </motion.h3>
           </div>
 
-          <div className="w-full md:w-1/2 flex items-center justify-center">
+          {/* 2nd Div */}
+          <div className="w-full lg:w-1/2 flex items-center justify-center">
             <motion.p
               initial="offscreen"
               animate={"onscreen"}
@@ -179,7 +182,8 @@ const Hero2 = () => {
             </motion.p>
           </div>
 
-          <div className="w-full md:w-1/4 flex items-center justify-center">
+          {/* 3rd Div */}
+          <div className="w-full lg:w-1/4 flex items-center justify-center">
             <motion.a
               initial="offscreen"
               animate={"onscreen"}
