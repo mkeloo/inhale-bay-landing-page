@@ -12,7 +12,7 @@ export const containerVariants = (delay = 0) => ({
     transition: {
       type: "spring",
       duration: 2,
-      delay: 2.7,
+      delay: 0,
     },
   },
 });
@@ -29,7 +29,7 @@ export const tagVariants = {
     transition: {
       type: "spring",
       duration: 2.8,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
@@ -46,7 +46,7 @@ export const titleVariants = {
     transition: {
       type: "spring",
       duration: 2.2,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
@@ -63,7 +63,7 @@ export const desVariants = {
     transition: {
       type: "spring",
       duration: 2.6,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
@@ -78,7 +78,7 @@ export const fadeVariants = {
     transition: {
       type: "spring",
       duration: 2.4,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
@@ -95,7 +95,7 @@ export const quickPopUpVariants = {
     transition: {
       type: "spring",
       duration: 2.5,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
@@ -112,12 +112,11 @@ export const slideDownVariant = {
     transition: {
       type: "spring",
       duration: 2.2,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
 
-// slide in from left to right using a delay variant
 export const slideInVariants = {
   offscreen: {
     opacity: 0,
@@ -130,12 +129,11 @@ export const slideInVariants = {
     transition: {
       type: "spring",
       duration: 2.2,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };
 
-// slide in from right to left using a delay variant
 export const slideInRightVariants = {
   offscreen: {
     opacity: 0,
@@ -148,7 +146,7 @@ export const slideInRightVariants = {
     transition: {
       type: "spring",
       duration: 2.2,
-      delay: 2.7,
+      delay: 0,
     },
   },
 };

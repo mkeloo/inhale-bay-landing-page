@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
@@ -25,7 +26,7 @@ export default function Home() {
       const currentTime = new Date().getTime();
       const timeDifference = currentTime - Number(verificationTime);
 
-      // Check if 2 hours (7200000ms) have passed
+      // Check if 2 hours (7200000 ms) have passed
       if (timeDifference < 7200000) {
         setIsAgeVerified(true);
       } else {
@@ -62,28 +63,27 @@ export default function Home() {
 
   return (
     <>
-      {/* Show Age Verification first */}
+      {/* 1) Show Age Verification first */}
       {!isAgeVerified && <AgeVerification onAccept={handleAgeAccept} />}
 
-      {/* Show Loader after age is verified */}
+      {/* 2) Show Loader after age is verified */}
       {isAgeVerified && !loadingComplete && <Loader />}
 
-      {/* Show main content after both age verification and loading are complete */}
-      <div
-        className={`${loadingComplete && isAgeVerified ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-300`}
-      >
-        <Navbar />
-        <Hero />
-        <div className="px-4 lg:px-0">
-          <DealsVapes />
-          <DealsFlowerBuds />
-          <Testimonials />
-          <LocationMap />
-          {/* <GalleryView /> */}
-        </div>
-        <Footer />
-      </div>
+      {/* 3) Show main content only after verification + loader */}
+      {isAgeVerified && loadingComplete && (
+        <>
+          <Navbar />
+          <Hero />
+          <div className="px-4 lg:px-0">
+            <DealsVapes />
+            <DealsFlowerBuds />
+            <Testimonials />
+            <LocationMap />
+            {/* <GalleryView /> */}
+          </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }
