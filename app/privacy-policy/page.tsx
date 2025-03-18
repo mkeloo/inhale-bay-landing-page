@@ -9,7 +9,7 @@ const PrivacyPolicyPage = () => {
             <div className="px-6 py-10 pt-20 max-w-3xl mx-auto">
                 <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
                 <p className="mb-4">
-                    At [Your Smoke Shop Name] ("we", "us", or "our"), we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information when you visit our website.
+                    At Inhale Bay Smoke Shop ("we", "us", or "our"), we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal information when you visit our website.
                 </p>
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>
@@ -59,11 +59,11 @@ const PrivacyPolicyPage = () => {
 
                 <h2 className="text-2xl font-semibold mt-8 mb-4">9. Contact Us</h2>
                 <p className="mb-4">
-                    If you have any questions about this Privacy Policy, please contact us at [Your Contact Information].
+                    If you have any questions about these terms, please submit the <a href="/#contact" className="text-blue-600 underline">Contact Us</a> form.
                 </p>
 
                 <p className="mt-8 text-sm text-gray-600">
-                    <em>Last updated: [Today's Date]</em>
+                    <em>Last updated: March 2025</em>
                 </p>
             </div>
             <Footer />
