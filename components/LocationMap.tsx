@@ -15,7 +15,7 @@ const LocationMap = () => {
         How To Reach Us?
       </h1>
 
-      <div className="relative w-full lg:min-h-[800px] flex flex-col lg:flex-row items-stretch gap-8 my-10">
+      <div className="relative w-full lg:min-h-[800px] flex flex-col-reverse lg:flex-row items-stretch gap-8 my-10">
         {/* Left: Contact Form */}
         <div className="w-full lg:w-1/2 flex flex-col flex-1">
           <ContactForm />

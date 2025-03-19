@@ -1,5 +1,5 @@
 // components/AgeVerification.tsx
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import navbarLogo from "@/public/logo/inhalebayLogo-nav1.svg";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
     const handleReject = () => {
         router.push("https://www.google.com");
     };
+    const [isLoaded, setIsLoaded] = useState(false);
 
     return (
         <div className="fixed inset-0 flex items-center justify-center px-4 md:px-6 lg:px-8 py-20 z-50">
@@ -23,7 +24,10 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
                 alt="Background with smoke"
                 width={500}
                 height={500}
-                className="absolute inset-0 w-full h-full object-cover -z-20 opacity-100"
+                priority
+                onLoadingComplete={() => setIsLoaded(true)}
+                className={`absolute inset-0 w-full h-full object-cover -z-20 opacity-100 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                    } transition-all duration-700`}
             />
 
             {/* Content */}
