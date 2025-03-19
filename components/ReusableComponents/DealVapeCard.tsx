@@ -82,7 +82,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
                     height={500}
                     alt={`${vape_company} deal`}
                     loading="lazy"
-                    onLoadingComplete={() => setIsLoaded(true)}
+                    onLoad={() => setIsLoaded(true)}
                     className={`opacity-100 w-full h-full m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                         } transition-all duration-700`}
                 />

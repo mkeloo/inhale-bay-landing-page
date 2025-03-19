@@ -25,7 +25,7 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
                 width={500}
                 height={500}
                 priority
-                onLoadingComplete={() => setIsLoaded(true)}
+                onLoad={() => setIsLoaded(true)}
                 className={`absolute inset-0 w-full h-full object-cover -z-20 opacity-100 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
             />
@@ -53,6 +53,7 @@ const AgeVerification = ({ onAccept }: { onAccept: () => void }) => {
                         alt="Inhale Bay Logo"
                         width={90}
                         height={18}
+                        priority
                         className="my-2 md:my-4"
                     />
                 </div>
