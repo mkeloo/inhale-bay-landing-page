@@ -30,29 +30,29 @@ const ReviewCard = ({
             />
             {/* Quote Icon */}
             <Quote
-                size={40}
+                // size={40}
                 strokeWidth={2}
-                className="absolute top-4 left-4 fill-lime-400 text-lime-400 mb-2"
+                className="absolute w-8 h-8 md:w-10 md:h-10 top-4 left-4 fill-lime-400 text-lime-400 mb-2"
             />
 
             {/* Content */}
             <div className="flex flex-col justify-between h-full mt-10">
-                <blockquote className="text-lg font-inter italic mb-2 flex-grow">{body}</blockquote>
+                <blockquote className="text-base md:text-lg font-inter italic mb-2 flex-grow">{body}</blockquote>
 
                 {/* Star Ratings */}
                 <div className="flex items-center mb-4">
                     {Array.from({ length: stars }).map((_, i) => (
                         <Star
                             key={i}
-                            size={20}
-                            className="text-yellow-500"
+                            // size={20}
+                            className="text-yellow-500 w-5 h-5 md:w-6 md:h-6 mr-1"
                             fill="currentColor"
                         />
                     ))}
                 </div>
 
                 {/* Reviewer Name & Link */}
-                <div className="flex items-center font-oxanium font-semibold text-lg">
+                <div className="flex items-center font-oxanium font-semibold text-base md:text-lg">
                     - {name}
                     <Link
                         href={link}
@@ -84,7 +84,7 @@ export default function TestimonialsCards({ reviews }: TestimonialsCardsProps) {
     const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
     return (
-        <div className="relative flex h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+        <div className="relative flex h-[450px] md:h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
             <Marquee pauseOnHover className="[--duration:50s]">
                 {firstRow.map((review) => (
                     <ReviewCard key={review.name} {...review} />

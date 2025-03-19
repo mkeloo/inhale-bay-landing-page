@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
@@ -28,6 +28,8 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
     bgGradient,
     is_enabled,
 }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
     if (is_enabled === false) return null;
 
     return (
@@ -43,7 +45,10 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     width={500}
                     height={500}
                     alt={`${budName} deal`}
-                    className="opacity-100 w-full h-full max-h-[200px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9]"
+                    loading="lazy"
+                    onLoadingComplete={() => setIsLoaded(true)}
+                    className={`opacity-100 w-full h-full max-h-[200px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9] ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                        } transition-all duration-700`}
                 />
 
                 {/* Badge */}

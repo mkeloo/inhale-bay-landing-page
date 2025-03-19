@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
@@ -26,6 +26,8 @@ const DealsCard: React.FC<DealsCardProps> = ({
     bgGradient,
     is_enabled,
 }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
     if (is_enabled === false) return null;
 
     return (
@@ -68,7 +70,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
                 } as React.CSSProperties}
             >
                 <div className="relative z-10">{discount_percent}%</div>
-                <div className="absolute top-1/2 left-1/2 w-full h-full rounded-full bg-inherit animate-pulse -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-1/2 left-1/2 w-full h-full rounded-full bg-inherit animate-pulsing -translate-x-1/2 -translate-y-1/2" />
             </div>
 
 
@@ -79,7 +81,10 @@ const DealsCard: React.FC<DealsCardProps> = ({
                     width={500}
                     height={500}
                     alt={`${vape_company} deal`}
-                    className="opacity-100 w-full h-full  m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4"
+                    loading="lazy"
+                    onLoadingComplete={() => setIsLoaded(true)}
+                    className={`opacity-100 w-full h-full m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                        } transition-all duration-700`}
                 />
 
                 {/* Content Overlay */}

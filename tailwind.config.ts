@@ -78,14 +78,19 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       animation: {
-        pulse: "pulse var(--duration) ease-out infinite",
+        pulsing: "pulse var(--duration) ease-out infinite",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        'pulse-colors': 'pulseColors 2s ease-in-out infinite',
       },
       keyframes: {
         pulse: {
           "0%, 100%": { boxShadow: "0 0 0 0 var(--pulse-color)" },
           "50%": { boxShadow: "0 0 0 8px var(--pulse-color)" },
+        },
+        pulseColors: {
+          '0%, 100%': { 'background-color': '#e5e7eb' }, // Tailwind gray-200
+          '50%': { 'background-color': '#d1d5db' },       // Tailwind gray-300
         },
         marquee: {
           from: { transform: "translateX(0)" },
