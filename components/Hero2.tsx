@@ -22,9 +22,13 @@ const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
 // const deal5Img = "/assets/deals/geekbar-deals6.png";
 
 // Hero Section Images
-const vapesImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroVapesRaz.webp";
-const flowerBudsImag = 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroTHC-A.webp';
-const bongsImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroBongsGeneric.webp";
+// const vapesImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroVapesRaz.webp";
+// const flowerBudsImag = 'https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroTHC-A.webp';
+// const bongsImg = "https://pugmboivpnkoasgsgfyf.supabase.co/storage/v1/object/public/store-images/SectionImages/HeroBongsGeneric.webp";
+
+import vapesImg from "@/public/assets/hero/Home/HeroVapesRaz.webp";
+import flowerBudsImag from "@/public/assets/hero/Home/HeroTHC-A.webp";
+import bongsImg from "@/public/assets/hero/Home/HeroBongsGeneric.webp";
 
 
 const Hero2 = () => {
