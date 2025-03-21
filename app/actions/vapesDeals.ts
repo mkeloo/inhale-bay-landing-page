@@ -17,6 +17,7 @@ export type VapeDeal = {
     updated_at?: string;
     option_name?: string;
     is_enabled?: boolean;
+    sort?: number;
 };
 
 

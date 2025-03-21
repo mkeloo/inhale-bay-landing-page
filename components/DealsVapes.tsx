@@ -22,7 +22,9 @@ const Deals = () => {
       try {
         const res = await fetchVapeDeals();
         if (res.success) {
-          setVapeDeals(res.data);
+          // Sort by `sort` ascending before setting
+          const sortedDeals = [...res.data].sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0));
+          setVapeDeals(sortedDeals);
         } else {
           setError(res.error || "Error loading deals");
         }
@@ -47,7 +49,7 @@ const Deals = () => {
   }, []);
 
   return (
-    <div id="vapeDeals" className="relative w-full h-full py-8 pt-16 pb-16 ">
+    <div id="vapeDeals" className="relative w-full h-full py-8 pt-16 pb-4 md:pb-16">
       {/* <Image
         src={heroBgImage}
         alt="Background with smoke"
@@ -59,7 +61,7 @@ const Deals = () => {
       <div className="max-w-7xl mx-auto w-full h-full px-2">
         <div className="flex items-center justify-center pb-6 md:mb-8 md:py-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-center font-extrabold bg-gradient-to-r from-lime-500 to-emerald-500 bg-clip-text text-transparent">
-            Deals & Promotions
+            Deals on Vapes
           </h1>
         </div>
 

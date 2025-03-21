@@ -20,7 +20,9 @@ const Deals = () => {
             try {
                 const res = await fetchHempFlowerDeals();
                 if (res.success) {
-                    setHempFlowerDeal(res.data);
+                    // Sort by `sort` ascending before setting
+                    const sortedDeals = [...res.data].sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0));
+                    setHempFlowerDeal(sortedDeals);
                     // console.log("Hemp Flower Deals", res.data);
                 } else {
                     setError(res.error || "Error loading deals");
@@ -49,7 +51,7 @@ const Deals = () => {
 
 
     return (
-        <div id="flowerDeals" className="relative w-full h-full py-8 pt-16 pb-16 ">
+        <div id="flowerDeals" className="relative w-full h-full py-8 pt-16 pb-4 md:pb-16">
             {/* <Image
                 src={heroBgImage}
                 alt="Background with smoke"
