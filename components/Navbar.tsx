@@ -11,6 +11,7 @@ const Navbar = () => {
 
   // New state to control logo size
   const [logoSize, setLogoSize] = useState({ width: 95, height: 18 });
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -106,7 +107,11 @@ const Navbar = () => {
               alt="Inhale Bay Logo"
               width={logoSize.width}
               height={logoSize.height}
-              priority
+              priority={true}
+              loading="eager"
+              onLoad={() => setIsLoaded(true)}
+              className={`${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                } transition-all duration-500`}
             />
           </a>
         </div>

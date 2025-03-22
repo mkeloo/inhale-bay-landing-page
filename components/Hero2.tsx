@@ -4,6 +4,7 @@ import Image from "next/image";
 import CustomSvgCursor from "./CustomSVGCursor";
 import { Gem, ArrowRight } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
+import { AnimatedCardsDemo } from "./ReusableComponents/AnimatedTestDemo";
 import { motion } from "framer-motion";
 import {
   desVariants,
@@ -29,7 +30,6 @@ const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
 import vapesImg from "@/public/assets/hero/Home/HeroVapesRaz.webp";
 import flowerBudsImag from "@/public/assets/hero/Home/HeroTHC-A.webp";
 import bongsImg from "@/public/assets/hero/Home/HeroBongsGeneric.webp";
-import { AnimatedTestimonialsDemo } from "./ReusableComponents/AnimatedTestDemo";
 
 
 const Hero2 = () => {
@@ -46,7 +46,7 @@ const Hero2 = () => {
       {/* Background Video */}
       <VideoPlayer
         src={heroBgVideo2}
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-65 "
+        className={`absolute inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
         autoPlay
         loop
         playsInline
@@ -56,10 +56,10 @@ const Hero2 = () => {
       />
 
       {/* Hero Content Container */}
-      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 pb-8 pt-8">
+      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 lg:gap-4 pb-8 pt-8">
 
         {/* Top Content */}
-        <div className="w-full h-[75%] flex flex-col lg:flex-row items-center justify-center lg:gap-x-8 gap-y-6">
+        <div className="w-full h-[75%] flex flex-col lg:flex-row items-center justify-center lg:gap-x-8">
 
           {/* Left-Top Content */}
           <div className="w-full lg:w-1/2 h-auto lg:h-full gap-4 flex flex-col items-center justify-center">
@@ -116,9 +116,7 @@ const Hero2 = () => {
                   width={500}
                   height={500}
                   loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
-                  }}
+                  blurDataURL={'@/public/assets/skeleton/flower_placeholder.webp'}
                   onLoad={() => setIsLoaded(true)}
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md ${!isLoaded ? "filter blur-lg" : "filter blur-0"
@@ -150,9 +148,7 @@ const Hero2 = () => {
                   height={500}
                   loading="lazy"
                   onLoad={() => setIsLoaded(true)}
-                  onError={(e) => {
-                    e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
-                  }}
+                  blurDataURL={'@/public/assets/skeleton/flower_placeholder.webp'}
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md -mb-6 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
@@ -162,18 +158,17 @@ const Hero2 = () => {
 
           </div>
 
-          {/* Swiper Cube Component */}
+          {/* Swiper Cards Component */}
           <motion.div
             initial="offscreen"
             animate={"onscreen"}
             whileInView={"stay"}
             variants={quickPopUpVariants}
 
-            className="lg:hidden  w-full relative rounded-lg duration-300 transition-shadow flex items-center justify-center px-4"
+            className="lg:hidden w-full overflow-hidden relative rounded-lg duration-300 transition-shadow flex items-center justify-center px-4"
           >
             {/* <SwiperCube /> */}
-            <AnimatedTestimonialsDemo />
-            {/* <HeroImageRotator /> */}
+            <AnimatedCardsDemo />
           </motion.div>
 
 
@@ -197,9 +192,7 @@ const Hero2 = () => {
               height={460}
               loading="lazy"
               onLoad={() => setIsLoaded(true)}
-              onError={(e) => {
-                e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
-              }}
+              blurDataURL={'@/public/assets/skeleton/flower_placeholder.webp'}
               sizes="(max-width: 768px) 100vw, 500px"
               className={`opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                 } transition-all duration-700`}
@@ -250,7 +243,7 @@ const Hero2 = () => {
               animate={"onscreen"}
               whileInView={"stay"}
               variants={slideInRightVariants}
-              href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/"
+              href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3756184,-81.652524,17z/data=!3m1!4b1!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn my-2 text-sm md:text-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 px-6 md:px-10 py-3 md:py-4 rounded-lg flex items-center text-black hover:text-white font-semibold duration-400 transition"

@@ -53,7 +53,7 @@ const Loader: React.FC = () => {
       <div className="absolute inset-0 flex flex-col">
         {/* Top panel with background image */}
         <div
-          className={`relative h-1/2 w-full sm:rounded-bl-[50px] md:rounded-b-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-up slide-out" : "loader-up"
+          className={`relative h-1/2 w-full rounded-b-[25px] md:rounded-b-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-up slide-out" : "loader-up"
             }`}
         >
 
@@ -61,7 +61,7 @@ const Loader: React.FC = () => {
 
         {/* Bottom panel with background image */}
         <div
-          className={`relative h-1/2 w-full sm:rounded-tr-[50px] md:rounded-t-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-down slide-out" : "loader-down"
+          className={`relative h-1/2 w-full rounded-t-[25px] md:rounded-t-[100px] overflow-hidden bg-black transition-transform duration-500 ${startSlideOut ? "loader-down slide-out" : "loader-down"
             }`}
         >
         </div>

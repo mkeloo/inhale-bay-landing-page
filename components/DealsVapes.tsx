@@ -5,7 +5,6 @@ import DealsCard from "./ReusableComponents/DealVapeCard";
 // import { deals } from '@/lib/deals';
 import { fetchVapeDeals, VapeDeal } from "./../app/actions/vapesDeals";
 import { fetchMediaBucketUrl } from "./../app/actions/mediaBucketURL";
-import Image from "next/image";
 import SkeletonVapeCard from "./skeleton/SkeletonVapeCard";
 
 const heroBgImage = "/assets/hero/hero-bg2.jpg";
@@ -70,12 +69,12 @@ const Deals = () => {
           <p className="text-center text-red-500">{error}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
-            {vapeDeals.length > 0
-              ? vapeDeals.map((deal) => (
+            {vapeDeals.length > 0 && baseUrl ? (
+              vapeDeals.map((deal) => (
                 <DealsCard
                   key={deal.id}
                   vape_company={deal.vape_company}
-                  base_deal={[{ buy_1: deal.deal_tagline, buy_2: deal.deal_tagline }]}  // using deal_tagline as base_deal
+                  base_deal={[{ buy_1: deal.deal_tagline, buy_2: deal.deal_tagline }]}
                   discount_percent={deal.discount_percent}
                   deal_tagline={deal.deal_tagline}
                   short_title={deal.short_title}
@@ -84,9 +83,11 @@ const Deals = () => {
                   is_enabled={deal.is_enabled}
                 />
               ))
-              : Array.from({ length: 6 }).map((_, index) => (
+            ) : (
+              Array.from({ length: 6 }).map((_, index) => (
                 <SkeletonVapeCard key={index} />
-              ))}
+              ))
+            )}
           </div>
         )}
       </div>

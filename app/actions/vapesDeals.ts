@@ -34,7 +34,7 @@ export async function fetchVapeDeals(): Promise<{
         const { data, error } = await supabase
             .from("website_vape_deals")
             .select("*")
-            .order("id", { ascending: true });
+            .order("sort", { ascending: true });
         if (error) throw error;
         return { success: true, data: data as VapeDeal[] };
     } catch (err: any) {
