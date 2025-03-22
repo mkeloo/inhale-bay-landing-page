@@ -116,6 +116,9 @@ const Hero2 = () => {
                   width={500}
                   height={500}
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
+                  }}
                   onLoad={() => setIsLoaded(true)}
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md ${!isLoaded ? "filter blur-lg" : "filter blur-0"
@@ -147,6 +150,9 @@ const Hero2 = () => {
                   height={500}
                   loading="lazy"
                   onLoad={() => setIsLoaded(true)}
+                  onError={(e) => {
+                    e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
+                  }}
                   sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md -mb-6 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
@@ -191,6 +197,9 @@ const Hero2 = () => {
               height={460}
               loading="lazy"
               onLoad={() => setIsLoaded(true)}
+              onError={(e) => {
+                e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
+              }}
               sizes="(max-width: 768px) 100vw, 500px"
               className={`opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                 } transition-all duration-700`}

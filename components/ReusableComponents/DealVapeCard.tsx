@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Store } from "lucide-react";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
+import fallbackImg from '@/public/assets/skeleton/flower_placeholder.webp'
+
 
 
 interface DealsCardProps {
@@ -83,6 +85,9 @@ const DealsCard: React.FC<DealsCardProps> = ({
                     alt={`${vape_company} deal`}
                     loading="lazy"
                     onLoad={() => setIsLoaded(true)}
+                    onError={(e) => {
+                        e.currentTarget.src = fallbackImg.src;
+                    }}
                     sizes="(max-width: 768px) 100vw, 500px"
                     className={`opacity-100 w-full h-full m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                         } transition-all duration-700`}

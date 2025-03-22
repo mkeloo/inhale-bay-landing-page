@@ -47,6 +47,9 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     alt={`${budName} deal`}
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 500px"
+                    onError={(e) => {
+                        e.currentTarget.src = '@/public/assets/skeleton/flower_placeholder.webp';
+                    }}
                     onLoad={() => setIsLoaded(true)}
                     className={`opacity-100 w-full h-full max-h-[200px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9] ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                         } transition-all duration-700`}
