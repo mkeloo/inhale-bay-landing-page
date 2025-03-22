@@ -17,6 +17,8 @@ import {
 } from "@/lib/animation";
 
 const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
+const heroBgImage = "/assets/hero/hero-bg2.webp";
+
 
 // const deal1Img = "/assets/deals/vtouch-deals2.png";
 // const deal4Img = "/assets/deals/southconnect-deals4.png";
@@ -44,15 +46,26 @@ const Hero2 = () => {
       onMouseLeave={() => setShowCustomCursor(false)}
     >
       {/* Background Video */}
-      <VideoPlayer
+      {/* <VideoPlayer
         src={heroBgVideo2}
-        className={`absolute inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
+        className={`absolute hidden lg:block inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
         autoPlay
         loop
         playsInline
         muted
         preload="none"
         poster="/assets/hero/hero-bg2.webp"
+      /> */}
+
+      <Image
+        src={heroBgImage}
+        alt="Background with smoke"
+        width={500}
+        height={500}
+        quality={100}
+        sizes="(max-width: 768px) 100vw, 500px"
+        loading="lazy"
+        className={`absolute block lg:hidden inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
       />
 
       {/* Hero Content Container */}
