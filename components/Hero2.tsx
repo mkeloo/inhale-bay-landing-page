@@ -51,6 +51,8 @@ const Hero2 = () => {
         loop
         playsInline
         muted
+        preload="none"
+        poster="/assets/hero/hero-bg2.webp"
       />
 
       {/* Hero Content Container */}
@@ -113,7 +115,7 @@ const Hero2 = () => {
                   alt="Hero Vapes Image"
                   width={500}
                   height={500}
-                  priority
+                  loading="lazy"
                   onLoad={() => setIsLoaded(true)}
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
@@ -142,7 +144,7 @@ const Hero2 = () => {
                   alt="Thc Flower Buds"
                   width={500}
                   height={500}
-                  priority
+                  loading="lazy"
                   onLoad={() => setIsLoaded(true)}
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md -mb-6 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
@@ -185,7 +187,7 @@ const Hero2 = () => {
               alt="Bongs"
               width={460}
               height={460}
-              priority
+              loading="lazy"
               onLoad={() => setIsLoaded(true)}
               className={`opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                 } transition-all duration-700`}

@@ -10,6 +10,7 @@ interface VideoPlayerProps {
   loop?: boolean;
   playsInline?: boolean;
   preload?: "auto" | "metadata" | "none";
+  poster?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -21,6 +22,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   loop = true, // Loop enabled by default
   playsInline = true,
   preload = "auto",
+  poster
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -55,6 +57,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       loop={loop} // Enable looping
       playsInline={playsInline}
       preload={preload}
+      poster={poster}
       onContextMenu={(e) => e.preventDefault()} // Disable right-click context menu
     >
       <source src={src} type="video/mp4" />
