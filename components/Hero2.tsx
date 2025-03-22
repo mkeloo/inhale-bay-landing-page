@@ -56,7 +56,7 @@ const Hero2 = () => {
       />
 
       {/* Hero Content Container */}
-      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 pb-0 lg:pb-8 pt-8">
+      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 pb-8 pt-8">
 
         {/* Top Content */}
         <div className="w-full h-[75%] flex flex-col lg:flex-row items-center justify-center lg:gap-x-8 gap-y-6">
