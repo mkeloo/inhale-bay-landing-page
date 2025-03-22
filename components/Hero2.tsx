@@ -64,7 +64,7 @@ const Hero2 = () => {
         height={500}
         quality={100}
         sizes="(max-width: 768px) 100vw, 500px"
-        loading="lazy"
+        priority
         className={`absolute block lg:hidden inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
       />
 

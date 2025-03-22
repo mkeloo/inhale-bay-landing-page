@@ -36,6 +36,7 @@ const Loader: React.FC = () => {
             alt="Inhale Bay Logo"
             width={120}
             height={25}
+            priority
             className="my-2 md:my-4"
           />
         </div>
