@@ -90,9 +90,9 @@ const DealsCard: React.FC<DealsCardProps> = ({
                 {/* Content Overlay */}
                 <div className="flex flex-col justify-end  w-full z-[12] -mt-3">
                     <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col">
-                        <h3 className="text-xl md:text-2xl text-center font-bold mb-1 md:mb-2">
+                        <h2 className="text-xl md:text-2xl text-center font-bold mb-1 md:mb-2">
                             {short_title}
-                        </h3>
+                        </h2>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-2">
                             <p className="w-full md:w-[55%] text-center text-lg md:text-xl font-semibold italic md:mr-4">
                                 {deal_tagline.split(', ').map((line, index) => (

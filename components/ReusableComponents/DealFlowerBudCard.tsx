@@ -66,7 +66,7 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col gap-2">
                         {/* Header Section */}
                         <div className="flex items-center justify-center mt-2">
-                            <h3 className="text-xl md:text-2xl font-bold text-center">{budName}</h3>
+                            <h2 className="text-xl md:text-2xl font-bold text-center">{budName}</h2>
                         </div>
 
                         {/* Pricing Section */}
