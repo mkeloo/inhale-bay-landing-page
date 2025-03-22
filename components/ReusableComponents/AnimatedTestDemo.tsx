@@ -7,7 +7,7 @@ import vapes2Img from "@/public/assets/hero/Home/HeroQuasarVape.webp"
 import flowerBuds2Img from "@/public/assets/hero/Home/HeroFlowerBud.webp"
 
 export function AnimatedTestimonialsDemo() {
-    const testimonials = [
+    const imageCards = [
         {
             id: 1,
             src: bongsImg.src,
@@ -34,5 +34,5 @@ export function AnimatedTestimonialsDemo() {
             colors: "from-blue-400 via-cyan-300 to-teal-200"
         },
     ];
-    return <AnimatedCards testimonials={testimonials} />;
+    return <AnimatedCards imageCards={imageCards} />;
 }

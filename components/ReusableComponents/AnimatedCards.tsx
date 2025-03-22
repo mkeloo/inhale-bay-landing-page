@@ -5,16 +5,16 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-type Testimonial = {
+type ImageCards = {
     id: number;
     src: string;
     colors: string;
 };
 export const AnimatedCards = ({
-    testimonials,
+    imageCards,
     autoplay = true,
 }: {
-    testimonials: Testimonial[];
+    imageCards: ImageCards[];
     autoplay?: boolean;
 }) => {
     const [active, setActive] = useState(0);
@@ -22,11 +22,11 @@ export const AnimatedCards = ({
 
 
     const handleNext = () => {
-        setActive((prev) => (prev + 1) % testimonials.length);
+        setActive((prev) => (prev + 1) % imageCards.length);
     };
 
     const handlePrev = () => {
-        setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+        setActive((prev) => (prev - 1 + imageCards.length) % imageCards.length);
     };
 
     const isActive = (index: number) => index === active;
@@ -47,9 +47,9 @@ export const AnimatedCards = ({
                 <div>
                     <div className="relative h-80 w-full">
                         <AnimatePresence>
-                            {testimonials.map((testimonial, index) => (
+                            {imageCards.map((imageCard, index) => (
                                 <motion.div
-                                    key={testimonial.id}
+                                    key={imageCard.id}
                                     initial={{
                                         opacity: 0,
                                         scale: 0.9,
@@ -61,7 +61,7 @@ export const AnimatedCards = ({
                                         scale: isActive(index) ? 1 : 0.95,
                                         z: isActive(index) ? 0 : -100,
                                         rotate: isActive(index) ? 0 : randomRotateY(),
-                                        zIndex: isActive(index) ? 40 : testimonials.length + 2 - index,
+                                        zIndex: isActive(index) ? 40 : imageCards.length + 2 - index,
                                         y: isActive(index) ? [0, -80, 0] : 0,
                                     }}
                                     exit={{
@@ -77,15 +77,15 @@ export const AnimatedCards = ({
                                     className="absolute inset-0 origin-bottom"
                                 >
                                     <Image
-                                        src={testimonial.src}
-                                        alt={`Testimonial ${testimonial.id}`}
+                                        src={imageCard.src}
+                                        alt={`Testimonial ${imageCard.id}`}
                                         width={500}
                                         height={500}
                                         loading="lazy"
                                         onLoad={() => setIsLoaded(true)}
                                         draggable={false}
                                         sizes="(max-width: 768px) 100vw, 500px"
-                                        className={`h-full w-full rounded-3xl object-cover object-center bg-gradient-to-br ${testimonial.colors} shadow-lg hover:shadow-blue-600 shadow-gray-300/75 border-dotted border-[3px] border-neutral-200 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                                        className={`h-full w-full rounded-3xl object-cover object-center bg-gradient-to-br ${imageCard.colors} shadow-lg hover:shadow-blue-600 shadow-gray-300/75 border-dotted border-[3px] border-neutral-200 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                                             } transition-all duration-700`}
                                     />
                                 </motion.div>
