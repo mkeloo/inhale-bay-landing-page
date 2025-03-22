@@ -18,6 +18,8 @@ export const AnimatedCards = ({
     autoplay?: boolean;
 }) => {
     const [active, setActive] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+
 
     const handleNext = () => {
         setActive((prev) => (prev + 1) % testimonials.length);
@@ -79,8 +81,11 @@ export const AnimatedCards = ({
                                         alt={`Testimonial ${testimonial.id}`}
                                         width={500}
                                         height={500}
+                                        loading="lazy"
+                                        onLoad={() => setIsLoaded(true)}
                                         draggable={false}
-                                        className={`h-full w-full rounded-3xl object-cover object-center bg-gradient-to-br ${testimonial.colors} shadow-lg hover:shadow-blue-600 shadow-gray-300/75 border-dotted border-[3px] border-neutral-200`}
+                                        className={`h-full w-full rounded-3xl object-cover object-center bg-gradient-to-br ${testimonial.colors} shadow-lg hover:shadow-blue-600 shadow-gray-300/75 border-dotted border-[3px] border-neutral-200 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                                            } transition-all duration-700`}
                                     />
                                 </motion.div>
                             ))}

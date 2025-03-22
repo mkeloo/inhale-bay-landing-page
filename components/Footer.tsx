@@ -4,24 +4,35 @@ import { MapPin, Mail } from "lucide-react";
 import navbarLogo from "@/public/logo/inhalebayLogo-nav1.svg";
 import VideoPlayer from "@/components/ReusableComponents/VideoPlayer";
 
-const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
+// const heroBgVideo = "/assets/hero/hero-bg-video.mp4";
+const heroBgImage = "/assets/hero/hero-bg2.webp";
+
 
 const Footer = () => {
 
   return (
-    <footer className="relative h-auto lg:h-[40vh] w-full text-white py-8 px-6 flex flex-col justify-between">
+    <footer className="relative h-auto lg:h-[400px] w-full text-white py-8 px-6 flex flex-col justify-between">
       {/* Background Video */}
-      <VideoPlayer
+      {/* <VideoPlayer
         src={heroBgVideo}
         className="absolute inset-0 w-full h-full object-cover z-[-10] opacity-50"
         autoPlay
         loop
         playsInline
         muted
+      /> */}
+
+      <Image
+        src={heroBgImage}
+        alt="Background with smoke"
+        width={500}
+        height={500}
+        quality={100}
+        className="absolute inset-0 w-full h-full object-cover z-[-10] opacity-50"
       />
 
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
+      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* Logo */}
         <div className="w-full lg:w-1/3 flex items-center justify-center lg:justify-start mb-6 lg:mb-0">
           <div className="bg-black px-4 py-2 rounded-xl shadow-2xl flex flex-col items-center justify-center">
