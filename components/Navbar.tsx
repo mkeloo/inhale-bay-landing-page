@@ -117,6 +117,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-white focus:outline-none"
           >
+            <span className="sr-only">Hamburger Menu Open & Close buttons</span>
             {isMenuOpen ? (
               <X size={32} strokeWidth={2} />
             ) : (

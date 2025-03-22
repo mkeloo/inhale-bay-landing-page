@@ -29,6 +29,7 @@ const LocationMap = () => {
           {/* Map (fills leftover space) */}
           <div className="h-[350px] md:h-[400px] lg:flex-1 mt-4">
             <iframe
+              title="Google Map of Inhale Bay Smoke Shop"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d399.8839927706971!2d-81.65004248473093!3d30.375641192942126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b1f5522ae43f%3A0x38c6fe019b5911a8!2sInhale%20Bay%20Smoke%20Shop!5e0!3m2!1sen!2sus!4v1731225942948!5m2!1sen!2sus"
               style={{ border: 0, borderRadius: "0.75rem" }}
               allowFullScreen

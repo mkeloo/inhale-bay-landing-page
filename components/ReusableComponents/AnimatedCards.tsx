@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowBigLeft, ArrowBigRight, ExternalLink, Quote, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -94,13 +94,15 @@ export const AnimatedCards = ({
                             onClick={handlePrev}
                             className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
                         >
-                            <ArrowBigLeft className="h-5 w-5 transition-transform duration-300 group-hover/button:rotate-12 text-neutral-400" />
+                            <span className="sr-only">Left Slide Button</span>
+                            <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover/button:rotate-12 text-neutral-400" />
                         </button>
                         <button
                             onClick={handleNext}
                             className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
                         >
-                            <ArrowBigRight className="h-5 w-5 transition-transform duration-300 group-hover/button:-rotate-12 text-neutral-400" />
+                            <span className="sr-only">Right Slide Button</span>
+                            <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/button:-rotate-12 text-neutral-400" />
                         </button>
                     </div>
 

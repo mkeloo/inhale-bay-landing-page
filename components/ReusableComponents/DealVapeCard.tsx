@@ -62,7 +62,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
 
             {/* Discount Percent Badge */}
             <div
-                className="absolute top-4 right-2 w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full text-white text-base font-bold flex justify-center items-center bg-red-500 shadow-lg z-[15]"
+                className="absolute top-4 right-2 w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full text-white text-base font-bold flex justify-center items-center bg-[#B30000] shadow-lg z-[15]"
                 style={{
                     "--pulse-color": "rgba(255, 0, 0, 0.5)", // Tailwind's red-500 in RGBA
                     "--duration": "1.5s", // Customize the duration
