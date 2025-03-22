@@ -84,7 +84,7 @@ export default function TestimonialsCards({ reviews }: TestimonialsCardsProps) {
     const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
     return (
-        <div className="relative flex h-[450px] md:h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+        <div className="relative hidden md:flex h-[550px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
             <Marquee pauseOnHover className="[--duration:50s]">
                 {firstRow.map((review) => (
                     <ReviewCard key={review.name} {...review} />

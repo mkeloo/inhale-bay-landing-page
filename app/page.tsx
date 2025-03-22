@@ -64,26 +64,26 @@ export default function Home() {
   return (
     <>
       {/* 1) Show Age Verification first */}
-      {!isAgeVerified && <AgeVerification onAccept={handleAgeAccept} />}
+      {/* {!isAgeVerified && <AgeVerification onAccept={handleAgeAccept} />} */}
 
       {/* 2) Show Loader after age is verified */}
-      {isAgeVerified && !loadingComplete && <Loader />}
+      {/* {isAgeVerified && !loadingComplete && <Loader />} */}
 
       {/* 3) Show main content only after verification + loader */}
-      {isAgeVerified && loadingComplete && (
-        <>
-          <Navbar />
-          <Hero />
-          <div className="px-4 lg:px-0">
-            <DealsVapes />
-            <DealsFlowerBuds />
-            <Testimonials />
-            <LocationMap />
-            {/* <GalleryView /> */}
-          </div>
-          <Footer />
-        </>
-      )}
+      {/* {isAgeVerified && loadingComplete && ( */}
+      <>
+        <Navbar />
+        <Hero />
+        <div className="px-4 lg:px-0">
+          <DealsVapes />
+          <DealsFlowerBuds />
+          <Testimonials />
+          <LocationMap />
+          {/* <GalleryView /> */}
+        </div>
+        <Footer />
+      </>
+      {/* )} */}
     </>
   );
 }

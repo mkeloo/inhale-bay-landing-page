@@ -82,6 +82,8 @@ const config: Config = {
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         'pulse-colors': 'pulseColors 2s ease-in-out infinite',
+        rotate: "rotate 2s linear infinite",
+        jerkRotate: "jerkRotate 1s linear infinite",
       },
       keyframes: {
         pulse: {
@@ -100,6 +102,14 @@ const config: Config = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+        "rotate": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(-360deg)" },
+        },
+        "jerkRotate": {
+          '0%, 50%': { transform: "rotate(0deg)" },
+          '100%': { transform: "rotate(-270deg)" },
+        }
       },
     },
   },

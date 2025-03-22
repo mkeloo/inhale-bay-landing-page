@@ -52,7 +52,7 @@ const Navbar = () => {
       className={`w-full sticky top-0 bg-black/75 backdrop-blur-md mx-auto h-auto shadow-lg shadow-slate-800 z-[99] transition-transform duration-200 ${isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
-      <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6 py-2 md:py-4">
 
 
 

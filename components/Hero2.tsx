@@ -29,6 +29,7 @@ const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
 import vapesImg from "@/public/assets/hero/Home/HeroVapesRaz.webp";
 import flowerBudsImag from "@/public/assets/hero/Home/HeroTHC-A.webp";
 import bongsImg from "@/public/assets/hero/Home/HeroBongsGeneric.webp";
+import { AnimatedTestimonialsDemo } from "./ReusableComponents/AnimatedTestDemo";
 
 
 const Hero2 = () => {
@@ -38,7 +39,7 @@ const Hero2 = () => {
 
   return (
     <div
-      className="relative w-full h-full lg:h-[85vh] px-4 lg:px-0 flex items-center justify-center text-white bg-black"
+      className="relative w-full h-full lg:h-[85vh] lg:max-h-[800px] px-4 lg:px-0 flex items-center justify-center text-white bg-black"
       onMouseEnter={() => setShowCustomCursor(true)}
       onMouseLeave={() => setShowCustomCursor(false)}
     >
@@ -53,14 +54,14 @@ const Hero2 = () => {
       />
 
       {/* Hero Content Container */}
-      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 pb-8 pt-8">
+      <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 pb-0 lg:pb-8 pt-8">
 
         {/* Top Content */}
         <div className="w-full h-[75%] flex flex-col lg:flex-row items-center justify-center lg:gap-x-8 gap-y-6">
 
           {/* Left-Top Content */}
           <div className="w-full lg:w-1/2 h-auto lg:h-full gap-4 flex flex-col items-center justify-center">
-            <div className="w-full h-1/2 flex items-center justify-center lg:justify-start">
+            <div className="w-full h-1/2 flex flex-col items-center justify-center lg:justify-start">
               <motion.h1
                 initial="offscreen"
                 animate={"onscreen"}
@@ -75,6 +76,21 @@ const Hero2 = () => {
                 </span>
                 <span className="bg-clip text-lime-400">y</span>
               </motion.h1>
+
+              <motion.h3
+                initial="offscreen"
+                animate={"onscreen"}
+                whileInView={"stay"}
+                variants={slideInVariants}
+                className="block lg:hidden w-full text-2xl md:text-4xl font-poppins font-semibold mb-4 text-center"
+              >
+                Where{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+                  Quality
+                </span>
+                <br />
+                meets <span className="bg-clip text-lime-400">Excellence</span>
+              </motion.h3>
             </div>
 
             {/* Image Containers */}
@@ -136,6 +152,22 @@ const Hero2 = () => {
 
           </div>
 
+          {/* Swiper Cube Component */}
+          <motion.div
+            initial="offscreen"
+            animate={"onscreen"}
+            whileInView={"stay"}
+            variants={quickPopUpVariants}
+
+            className="lg:hidden  w-full relative rounded-lg duration-300 transition-shadow flex items-center justify-center px-4"
+          >
+            {/* <SwiperCube /> */}
+            <AnimatedTestimonialsDemo />
+            {/* <HeroImageRotator /> */}
+          </motion.div>
+
+
+
           {/* Right-Top Content */}
           <motion.div
             initial="offscreen"
@@ -146,7 +178,7 @@ const Hero2 = () => {
               background:
                 "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(46,45,45,0.35) 50%, rgba(255,255,255,0.35) 100%)",
             }}
-            className="group/image w-full lg:w-1/2 h-full relative rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-blue-700 duration-300 transition-shadow flex items-center justify-center backdrop-blur-md"
+            className="hidden lg:flex group/image w-full md:w-fit lg:w-1/2 h-full p-4 lg:p-0  relative rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:shadow-blue-700 duration-300 transition-shadow  items-center justify-center backdrop-blur-md"
           >
             <Image
               src={bongsImg}
@@ -165,7 +197,7 @@ const Hero2 = () => {
         <div className="w-full h-[25%] flex flex-col lg:flex-row items-center justify-end gap-4">
 
           {/* 1st Div */}
-          <div className="w-full lg:w-1/4 flex items-center justify-center lg:justify-start">
+          <div className="hidden lg:flex w-full lg:w-1/4 items-center justify-center lg:justify-start">
             <motion.h3
               initial="offscreen"
               animate={"onscreen"}
@@ -182,7 +214,7 @@ const Hero2 = () => {
           </div>
 
           {/* 2nd Div */}
-          <div className="w-full lg:w-1/2 flex items-center justify-center">
+          <div className="hidden lg:flex w-full lg:w-1/2 items-center justify-center">
             <motion.p
               initial="offscreen"
               animate={"onscreen"}
@@ -190,7 +222,7 @@ const Hero2 = () => {
               variants={quickPopUpVariants}
               className="text-sm md:text-lg lg:text-[23px] lg:text-left font-medium font-inter text-center md:text-left"
             >
-              Discover premium vapes, THC-A Flower, Bongs, & more. <br />
+              <span>Discover premium vapes, THC-A Flower, Bongs, & more.</span> <br />
               <span className="font-inter font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-lime-500">
                 Enjoy exclusive deals & promotions for all your smoking needs.
               </span>

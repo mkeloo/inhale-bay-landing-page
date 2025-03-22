@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import TestimonialsCards from "@/components/ReusableComponents/TestimonialsCards";
 import { fetchStoreReviews, StoreReview } from "@/app/actions/storeReviews";
+import SwiperSlider from './ReusableComponents/SwiperSlider';
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState<StoreReview[]>([]);
@@ -38,7 +39,14 @@ const Testimonials = () => {
                 {error ? (
                     <p className="text-center text-red-500">{error}</p>
                 ) : (
-                    <TestimonialsCards reviews={reviews} />
+                    <>
+                        <div className="hidden md:block">
+                            <TestimonialsCards reviews={reviews} />
+                        </div>
+                        <div className="block md:hidden">
+                            <SwiperSlider reviews={reviews} />
+                        </div>
+                    </>
                 )}
             </div>
         </div>
