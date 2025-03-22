@@ -84,6 +84,7 @@ export const AnimatedCards = ({
                                         loading="lazy"
                                         onLoad={() => setIsLoaded(true)}
                                         draggable={false}
+                                        sizes="(max-width: 768px) 100vw, 500px"
                                         className={`h-full w-full rounded-3xl object-cover object-center bg-gradient-to-br ${testimonial.colors} shadow-lg hover:shadow-blue-600 shadow-gray-300/75 border-dotted border-[3px] border-neutral-200 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                                             } transition-all duration-700`}
                                     />

@@ -79,7 +79,7 @@ const Hero2 = () => {
                 <span className="bg-clip text-lime-400">y</span>
               </motion.h1>
 
-              <motion.h3
+              <motion.h2
                 initial="offscreen"
                 animate={"onscreen"}
                 whileInView={"stay"}
@@ -92,7 +92,7 @@ const Hero2 = () => {
                 </span>
                 <br />
                 meets <span className="bg-clip text-lime-400">Excellence</span>
-              </motion.h3>
+              </motion.h2>
             </div>
 
             {/* Image Containers */}
@@ -117,6 +117,7 @@ const Hero2 = () => {
                   height={500}
                   loading="lazy"
                   onLoad={() => setIsLoaded(true)}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
                 />
@@ -146,6 +147,7 @@ const Hero2 = () => {
                   height={500}
                   loading="lazy"
                   onLoad={() => setIsLoaded(true)}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className={`opacity-100 object-contain transform transition-transform duration-200 group-hover/image:scale-110 backdrop-blur-md -mb-6 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                     } transition-all duration-700`}
                 />
@@ -189,6 +191,7 @@ const Hero2 = () => {
               height={460}
               loading="lazy"
               onLoad={() => setIsLoaded(true)}
+              sizes="(max-width: 768px) 100vw, 500px"
               className={`opacity-100 object-cover transform transition-transform duration-200 group-hover/image:scale-110 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                 } transition-all duration-700`}
             />
@@ -200,7 +203,7 @@ const Hero2 = () => {
 
           {/* 1st Div */}
           <div className="hidden lg:flex w-full lg:w-1/4 items-center justify-center lg:justify-start">
-            <motion.h3
+            <motion.h2
               initial="offscreen"
               animate={"onscreen"}
               whileInView={"stay"}
@@ -212,7 +215,7 @@ const Hero2 = () => {
                 Quality{" "}
               </span>
               meets <span className="bg-clip text-lime-400">Excellence</span>
-            </motion.h3>
+            </motion.h2>
           </div>
 
           {/* 2nd Div */}

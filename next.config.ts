@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
         pathname: "/storage/v1/object/public/inhale-bay-website/**",
       },
     ],
+    deviceSizes: [320, 425, 768, 1024, 1200],
+    imageSizes: [16, 32, 48, 64, 96],
   },
 };
 

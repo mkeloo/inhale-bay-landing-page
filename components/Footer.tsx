@@ -28,6 +28,8 @@ const Footer = () => {
         width={500}
         height={500}
         quality={100}
+        sizes="(max-width: 768px) 100vw, 500px"
+        loading="lazy"
         className="absolute inset-0 w-full h-full object-cover z-[-10] opacity-50"
       />
 
