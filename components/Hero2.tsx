@@ -46,7 +46,7 @@ const Hero2 = () => {
       onMouseLeave={() => setShowCustomCursor(false)}
     >
       {/* Background Video */}
-      {/* <VideoPlayer
+      <VideoPlayer
         src={heroBgVideo2}
         className={`absolute hidden lg:block inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
         autoPlay
@@ -55,7 +55,7 @@ const Hero2 = () => {
         muted
         preload="none"
         poster="/assets/hero/hero-bg2.webp"
-      /> */}
+      />
 
       <Image
         src={heroBgImage}
