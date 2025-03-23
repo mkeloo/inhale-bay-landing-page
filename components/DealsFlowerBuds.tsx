@@ -12,8 +12,11 @@ import {
     DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useResponsiveItemsPerPage } from "@/hooks/useResponsiveItemsPerPage";
 
 const DealsFlowerBuds = () => {
+    const itemsPerPage = useResponsiveItemsPerPage();
+
     const [flowerDeals, setFlowerDeals] = useState<HempFlowerDeal[]>([]);
     const [error, setError] = useState<string | null>(null);
     const [baseUrl, setBaseUrl] = useState<string>("");
@@ -21,7 +24,7 @@ const DealsFlowerBuds = () => {
     const [sortCriteria, setSortCriteria] = useState<"default" | "oneGramAsc" | "oneGramDesc" | "fourGramAsc" | "fourGramDesc">("default");
     const [searchQuery, setSearchQuery] = useState<string>("");
 
-    const itemsPerPage = 5;
+    // const itemsPerPage = 5;
 
     useEffect(() => {
         async function loadDeals() {

@@ -14,8 +14,11 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useResponsiveItemsPerPage } from "@/hooks/useResponsiveItemsPerPage";
 
 const DealsVapes = () => {
+  const itemsPerPage = useResponsiveItemsPerPage();
+
   const [vapeDeals, setVapeDeals] = useState<VapeDeal[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [baseUrl, setBaseUrl] = useState<string>("");
@@ -23,7 +26,7 @@ const DealsVapes = () => {
   const [sortCriteria, setSortCriteria] = useState<"default" | "priceAsc" | "priceDesc" | "discountDesc">("default");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const itemsPerPage = 5;
+  // const itemsPerPage = 5;
 
   // Fetch deals from Supabase
   useEffect(() => {
