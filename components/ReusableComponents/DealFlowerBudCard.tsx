@@ -34,7 +34,7 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
 
     return (
         <div
-            className={`relative h-[380px] md:h-[500px] lg:h-[550px] w-[102%] group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
+            className={`relative h-[380px] md:h-[500px] lg:h-[550px] w-[90%] md:w-full group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
         // style={{ height: "550px", width: "102%" }}
         >
             {/* Overlay Content */}

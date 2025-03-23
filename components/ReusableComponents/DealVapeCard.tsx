@@ -34,7 +34,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
 
     return (
         <div
-            className={`relative h-full w-full group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}
+            className={`relative h-full w-[90%] md:w-full group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}
         // style={{ height: "350px", width: "102%" }}
         >
             {/* Background Video */}

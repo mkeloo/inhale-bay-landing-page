@@ -177,7 +177,7 @@ const DealsVapes = () => {
         {error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
+          <div className="flex flex-col items-center justify-center md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
             {paginatedDeals.length > 0 && baseUrl ? (
               paginatedDeals.map((deal) => (
                 <DealsCard
