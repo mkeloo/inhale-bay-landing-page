@@ -84,14 +84,18 @@ const DealsVapes = () => {
       );
     })
     .sort((a, b) => {
+      const parsePrice = (priceString: string): number => {
+        const parsed = parseFloat(priceString.replace(/[^0-9.]/g, ""));
+        return isNaN(parsed) ? 0 : parsed;
+      };
+
       if (sortCriteria === "priceAsc") {
-        return Number(a.deal_tagline) - Number(b.deal_tagline);
+        return parsePrice(a.deal_tagline) - parsePrice(b.deal_tagline);
       } else if (sortCriteria === "priceDesc") {
-        return Number(b.deal_tagline) - Number(a.deal_tagline);
+        return parsePrice(b.deal_tagline) - parsePrice(a.deal_tagline);
       } else if (sortCriteria === "discountDesc") {
         return b.discount_percent - a.discount_percent;
       }
-      // default: keep the original sorted order (by sort property)
       return (a.sort ?? 0) - (b.sort ?? 0);
     });
 
@@ -147,8 +151,8 @@ const DealsVapes = () => {
           {/* Sort Dropdown using shadcn UI */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="min-w-56 px-4 py-2 font-bold rounded-md bg-slate-700 text-cyan-200">
-                Sort: {getSortLabel()}
+              <button className="min-w-56 px-2.5 py-2 font-bold text-sm rounded-md bg-slate-700 text-cyan-200 flex items-center justify-between">
+                <span className="py-1 px-1.5 mr-2 bg-gray-800 font-mono rounded-md text-sm text-gray-100">Sort</span> {getSortLabel()}
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

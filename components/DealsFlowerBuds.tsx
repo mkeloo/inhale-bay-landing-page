@@ -129,8 +129,8 @@ const DealsFlowerBuds = () => {
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <button className="min-w-56 px-4 py-2 font-bold rounded-md bg-slate-700 text-cyan-200">
-                                Sort: {getSortLabel()}
+                            <button className="min-w-56 px-2.5 py-2 font-bold rounded-md text-sm bg-slate-700 text-cyan-200 flex items-center justify-between">
+                                <span className="py-1 px-1.5 mr-2 bg-gray-800 font-mono rounded-md text-sm text-gray-100">Sort</span> {getSortLabel()}
                             </button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
