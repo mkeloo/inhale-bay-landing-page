@@ -97,7 +97,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
                             {short_title}
                         </h2>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-2">
-                            <p className="w-full md:w-[55%] text-center text-base md:text-lg lg:text-xl font-grotesk font-semibold italic md:mr-4">
+                            <p className="w-full text-center text-base md:text-lg lg:text-xl font-grotesk font-semibold italic md:mr-4">
                                 {deal_tagline.split(', ').map((line, index) => (
                                     <React.Fragment key={index}>
                                         {line.split(' ').map((word, i) => (

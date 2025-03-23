@@ -41,7 +41,7 @@ const Hero2 = () => {
 
   return (
     <div
-      className="relative w-full h-full lg:h-[85vh] lg:max-h-[800px] px-4 lg:px-0 flex items-center justify-center text-white bg-black"
+      className="relative w-full h-full lg:h-[85vh] lg:max-h-[800px] px-4 lg:px-4 flex items-center justify-center text-white bg-black"
       onMouseEnter={() => setShowCustomCursor(true)}
       onMouseLeave={() => setShowCustomCursor(false)}
     >
