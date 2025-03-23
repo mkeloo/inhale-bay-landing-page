@@ -178,6 +178,7 @@ const DealsFlowerBuds = () => {
                             disabled={currentPage === 1}
                             className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
                         >
+                            <p className="sr-only">Previous</p>
                             <ChevronLeft className="h-5 w-5" />
                         </button>
 
@@ -264,6 +265,7 @@ const DealsFlowerBuds = () => {
                             disabled={currentPage === totalPages}
                             className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
                         >
+                            <p className="sr-only">Next</p>
                             <ChevronRight className="h-5 w-5" />
                         </button>
                     </div>
