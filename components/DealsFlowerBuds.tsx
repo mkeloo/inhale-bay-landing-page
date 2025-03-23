@@ -52,19 +52,19 @@ const DealsFlowerBuds = () => {
     }, []);
 
     // Scroll to top of component when page changes
-    useEffect(() => {
+    const scrollToFlowerDeals = () => {
         const element = document.getElementById("flowerDeals");
         if (element) {
-            const navbarHeight = 80; // replace 80 with actual navbar height in pixels
+            const navbarHeight = 80; // Adjust this height accordingly
             const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - navbarHeight;
 
             window.scrollTo({
                 top: offsetPosition,
-                behavior: "smooth"
+                behavior: "smooth",
             });
         }
-    }, [currentPage]);
+    };
 
     const filteredDeals = flowerDeals
         .filter((deal) => {
@@ -171,7 +171,10 @@ const DealsFlowerBuds = () => {
                     <div className="flex items-center justify-center gap-2 mt-8 px-4">
                         {/* Prev Button */}
                         <button
-                            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                            onClick={() => {
+                                setCurrentPage((prev) => Math.max(prev - 1, 1));
+                                scrollToFlowerDeals();
+                            }}
                             disabled={currentPage === 1}
                             className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
                         >
@@ -183,7 +186,10 @@ const DealsFlowerBuds = () => {
                             {currentPage > 2 && (
                                 <>
                                     <button
-                                        onClick={() => setCurrentPage(1)}
+                                        onClick={() => {
+                                            setCurrentPage(1);
+                                            scrollToFlowerDeals();
+                                        }}
                                         className="p-2 font-oxanium bg-gray-700 font-bold text-gray-200 rounded"
                                     >
                                         1
@@ -198,7 +204,10 @@ const DealsFlowerBuds = () => {
                                 .map((page) => (
                                     <button
                                         key={page}
-                                        onClick={() => setCurrentPage(page)}
+                                        onClick={() => {
+                                            setCurrentPage(page);
+                                            scrollToFlowerDeals();
+                                        }}
                                         className={`p-2 font-oxanium font-bold rounded ${currentPage === page
                                             ? "bg-cyan-300 text-black"
                                             : "bg-gray-700 text-gray-200"
@@ -212,7 +221,10 @@ const DealsFlowerBuds = () => {
                                 <>
                                     {currentPage < totalPages - 2 && <span className="p-2 text-gray-500">...</span>}
                                     <button
-                                        onClick={() => setCurrentPage(totalPages)}
+                                        onClick={() => {
+                                            setCurrentPage(totalPages);
+                                            scrollToFlowerDeals();
+                                        }}
                                         className="p-2 font-oxanium bg-gray-700 font-bold text-gray-200 rounded"
                                     >
                                         {totalPages}
@@ -228,7 +240,10 @@ const DealsFlowerBuds = () => {
                                 return (
                                     <button
                                         key={page}
-                                        onClick={() => setCurrentPage(page)}
+                                        onClick={() => {
+                                            setCurrentPage(page);
+                                            scrollToFlowerDeals();
+                                        }}
                                         className={`p-2 font-oxanium font-bold rounded ${currentPage === page
                                             ? "bg-cyan-300 text-black"
                                             : "bg-gray-700 text-gray-200"
@@ -242,7 +257,10 @@ const DealsFlowerBuds = () => {
 
                         {/* Next Button */}
                         <button
-                            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                            onClick={() => {
+                                setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+                                scrollToFlowerDeals();
+                            }}
                             disabled={currentPage === totalPages}
                             className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
                         >

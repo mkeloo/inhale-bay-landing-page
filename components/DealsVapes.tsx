@@ -58,19 +58,19 @@ const DealsVapes = () => {
   }, []);
 
   // Scroll to top of component when page changes
-  useEffect(() => {
+  const scrollToVapeDeals = () => {
     const element = document.getElementById("vapeDeals");
     if (element) {
-      const navbarHeight = 80; // replace 80 with actual navbar height in pixels
+      const navbarHeight = 80; // Adjust this height accordingly
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - navbarHeight;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
-  }, [currentPage]);
+  };
 
   // Filter and sort deals based on search and sortCriteria
   const filteredDeals = vapeDeals
@@ -199,7 +199,10 @@ const DealsVapes = () => {
           <div className="flex items-center justify-center gap-2 mt-8 px-4">
             {/* Previous button */}
             <button
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              onClick={() => {
+                setCurrentPage((prev) => Math.max(prev - 1, 1));
+                scrollToVapeDeals();
+              }}
               disabled={currentPage === 1}
               className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
             >
@@ -211,7 +214,10 @@ const DealsVapes = () => {
               {currentPage > 2 && (
                 <>
                   <button
-                    onClick={() => setCurrentPage(1)}
+                    onClick={() => {
+                      setCurrentPage(1);
+                      scrollToVapeDeals();
+                    }}
                     className="p-2 rounded font-oxanium font-bold bg-gray-700 text-gray-200"
                   >
                     1
@@ -226,7 +232,10 @@ const DealsVapes = () => {
                 .map((page) => (
                   <button
                     key={page}
-                    onClick={() => setCurrentPage(page)}
+                    onClick={() => {
+                      setCurrentPage(page);
+                      scrollToVapeDeals();
+                    }}
                     className={`p-2 rounded font-oxanium font-bold ${currentPage === page
                       ? "bg-cyan-300 text-black"
                       : "bg-gray-700 text-gray-200"
@@ -240,7 +249,10 @@ const DealsVapes = () => {
                 <>
                   {currentPage < totalPages - 2 && <span className="px-2 text-gray-500">...</span>}
                   <button
-                    onClick={() => setCurrentPage(totalPages)}
+                    onClick={() => {
+                      setCurrentPage(totalPages);
+                      scrollToVapeDeals();
+                    }}
                     className="p-2 rounded font-oxanium font-bold bg-gray-700 text-gray-200"
                   >
                     {totalPages}
@@ -256,7 +268,10 @@ const DealsVapes = () => {
                 return (
                   <button
                     key={page}
-                    onClick={() => setCurrentPage(page)}
+                    onClick={() => {
+                      setCurrentPage(page);
+                      scrollToVapeDeals();
+                    }}
                     className={`p-2 rounded font-oxanium font-bold ${currentPage === page
                       ? "bg-cyan-300 text-black"
                       : "bg-gray-700 text-gray-200"
@@ -270,7 +285,10 @@ const DealsVapes = () => {
 
             {/* Next button */}
             <button
-              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              onClick={() => {
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+                scrollToVapeDeals();
+              }}
               disabled={currentPage === totalPages}
               className="py-2.5 px-1.5 bg-gray-700 font-bold text-white rounded disabled:opacity-50"
             >
