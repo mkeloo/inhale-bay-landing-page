@@ -23,7 +23,7 @@ const DealsVapes = () => {
   const [sortCriteria, setSortCriteria] = useState<"default" | "priceAsc" | "priceDesc" | "discountDesc">("default");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
 
   // Fetch deals from Supabase
   useEffect(() => {

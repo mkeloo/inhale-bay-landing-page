@@ -21,7 +21,7 @@ const DealsFlowerBuds = () => {
     const [sortCriteria, setSortCriteria] = useState<"default" | "oneGramAsc" | "oneGramDesc" | "fourGramAsc" | "fourGramDesc">("default");
     const [searchQuery, setSearchQuery] = useState<string>("");
 
-    const itemsPerPage = 6;
+    const itemsPerPage = 5;
 
     useEffect(() => {
         async function loadDeals() {
