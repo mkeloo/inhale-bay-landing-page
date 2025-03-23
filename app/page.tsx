@@ -75,8 +75,8 @@ export default function Home() {
           <Navbar />
           <Hero />
           <div className="px-4 lg:px-0">
-            <DealsVapes />
             <DealsFlowerBuds />
+            <DealsVapes />
             <Testimonials />
             <LocationMap />
             {/* <GalleryView /> */}
