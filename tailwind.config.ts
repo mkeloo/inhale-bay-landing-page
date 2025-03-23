@@ -24,7 +24,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        outfit: "var(--font-outfit)",
         grotesk: "var(--font-grotesk)",
         inter: "var(--font-inter)",
         poppins: "var(--font-poppins)",

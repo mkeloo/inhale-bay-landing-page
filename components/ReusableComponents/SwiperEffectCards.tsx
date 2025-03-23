@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards, Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -49,10 +50,16 @@ export default function SwiperEffectCards({
                         key={card.id}
                         className={`flex items-center justify-center rounded-[18px] text-white font-bold text-[22px] shadow-lg shadow-neutral-300 bg-gradient-to-br ${card.colors}`}
                     >
-                        <img
+                        <Image
                             src={card.src}
+                            width={300}
+                            height={300}
                             alt={`Slide ${card.id}`}
                             loading="lazy"
+                            priority={false}
+                            quality={75}
+                            sizes="(max-width: 768px) 220px, 300px"
+                            blurDataURL={fallbackImg.src}
                             onLoad={() => setIsLoaded(true)}
                             className={`w-full h-full p-2 object-contain rounded-[18px] border-dotted border-[3px] border-lime-200 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                                 } transition-all duration-700`}

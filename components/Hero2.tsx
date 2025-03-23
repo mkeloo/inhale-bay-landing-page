@@ -17,7 +17,7 @@ import {
 } from "@/lib/animation";
 
 const heroBgVideo2 = "/assets/hero/hero-smoking.webm";
-const heroBgImage = "/assets/hero/hero-bg2.webp";
+// const heroBgImage = "/assets/hero/hero-bg2.webp";
 
 
 // const deal1Img = "/assets/deals/vtouch-deals2.png";

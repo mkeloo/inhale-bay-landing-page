@@ -4,6 +4,9 @@ import Link from "next/link";
 
 const heroBgImage = "/assets/hero/hero-bg2.webp";
 
+import fallbackImg from '@/public/assets/skeleton/flower_placeholder.webp'
+
+
 export default function ReviewCard({
     name,
     body,
@@ -17,9 +20,16 @@ export default function ReviewCard({
 }) {
     return (
         <figure className="relative w-full h-full max-h-[300px] max-w-md rounded-2xl p-4 overflow-hidden flex flex-col justify-between border-dotted border-2 border-lime-300 shadow-lg shadow-lime-800">
-            <img
+            <Image
+                width={300}
+                height={300}
+                quality={75}
                 src={heroBgImage}
-                alt="Background with smoke"
+                loading="lazy"
+                priority={false}
+                sizes="(max-width: 768px) 220px, 300px"
+                blurDataURL={fallbackImg.src}
+                alt="Background with smoke for review card"
                 className="absolute w-full h-full object-cover inset-0 z-[-10] opacity-50"
             />
 
