@@ -28,7 +28,10 @@ const DealsFlowerBuds = () => {
             try {
                 const res = await fetchHempFlowerDeals();
                 if (res.success) {
-                    setFlowerDeals(res.data.sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0)));
+                    setFlowerDeals(res.data.sort((a, b) => {
+                        const sortDiff = (a.sort ?? 0) - (b.sort ?? 0);
+                        return sortDiff !== 0 ? sortDiff : a.id - b.id;  // Fallback sorting by ID
+                    }));
                 } else {
                     setError(res.error || "Error loading deals");
                 }
@@ -67,6 +70,7 @@ const DealsFlowerBuds = () => {
     };
 
     const filteredDeals = flowerDeals
+        .filter((deal) => deal.is_enabled) // Filter out disabled deals
         .filter((deal) => {
             if (!searchQuery.trim()) return true;
             return deal.bud_name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -82,7 +86,8 @@ const DealsFlowerBuds = () => {
                 case "fourGramDesc":
                     return b.four_gram_price - a.four_gram_price;
                 default:
-                    return (a.sort ?? 0) - (b.sort ?? 0);
+                    const sortDiff = (a.sort ?? 0) - (b.sort ?? 0);
+                    return sortDiff !== 0 ? sortDiff : a.id - b.id;
             }
         });
 

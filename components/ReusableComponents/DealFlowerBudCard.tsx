@@ -34,7 +34,7 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
 
     return (
         <div
-            className={`relative h-[450px] md:h-[500px] lg:h-[550px] w-[102%] group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
+            className={`relative h-[380px] md:h-[500px] lg:h-[550px] w-[102%] group/image flex flex-col items-center justify-center rounded-2xl shadow-md text-white  overflow-clip  bg-gradient-to-r ${bgGradient}`}
         // style={{ height: "550px", width: "102%" }}
         >
             {/* Overlay Content */}
@@ -49,7 +49,7 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     sizes="(max-width: 768px) 100vw, 500px"
                     blurDataURL={'@/public/assets/skeleton/flower_placeholder.webp'}
                     onLoad={() => setIsLoaded(true)}
-                    className={`opacity-100 w-full h-full max-h-[200px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9] ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                    className={`opacity-100 w-full h-full mt-10 md:mt-0 p-2 max-h-[230px] md:max-h-[250px] lg:max-h-[300px] object-contain transform transition-transform duration-300 group-hover/image:scale-110 z-[9] ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                         } transition-all duration-700`}
                 />
 
@@ -64,29 +64,29 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                 </div> */}
 
                 {/* Content Overlay */}
-                <div className="flex flex-col justify-end w-full z-[12] mt-4">
-                    <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col gap-2">
+                <div className="flex flex-col justify-end w-full z-[12] mt-0 md:mt-4">
+                    <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col md:gap-2">
                         {/* Header Section */}
-                        <div className="flex items-center justify-center mt-2">
-                            <h2 className="text-xl md:text-2xl font-bold text-center">{budName}</h2>
+                        <div className="flex items-center justify-center mt-0 md:mt-2">
+                            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-center font-grotesk tracking-wider">{budName}</h2>
                         </div>
 
                         {/* Pricing Section */}
-                        <div className="flex justify-center items-center gap-8 text-lg md:text-xl font-semibold italic">
+                        <div className="flex justify-between md:justify-center px-10 md:px-0 items-center font-grotesk gap-4 md:gap-8 text-base md:text-lg lg:text-xl font-semibold italic">
                             <div className="flex flex-col items-center justify-center">
                                 <p>
-                                    <span className="text-2xl md:text-3xl text-lime-300 font-bold">1</span> gram at
+                                    <span className="text-xl md:text-2xl lg:text-3xl text-lime-300 font-bold">1</span> gram at
                                 </p>
                                 <p>
-                                    for <span className="text-2xl md:text-3xl text-lime-300 font-bold">${OneGramPrice}</span>
+                                    for <span className="text-xl md:text-2xl lg:text-3xl text-lime-300 font-bold">${OneGramPrice}</span>
                                 </p>
                             </div>
                             <div className="flex flex-col items-center justify-center">
                                 <p>
-                                    <span className="text-2xl md:text-3xl text-lime-300 font-bold">4</span> gram at
+                                    <span className="text-xl md:text-2xl lg:text-3xl text-lime-300 font-bold">4</span> gram at
                                 </p>
                                 <p>
-                                    for <span className="text-2xl md:text-3xl text-lime-300 font-bold">${FourGramPrice}</span>
+                                    for <span className="text-xl md:text-2xl lg:text-3xl text-lime-300 font-bold">${FourGramPrice}</span>
                                 </p>
                             </div>
                         </div>
@@ -97,12 +97,12 @@ const DealFlowerBudCard: React.FC<DealFlowerBudCardProps> = ({
                     href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full uppercase text-lg font-bold font-grotesk gap-x-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white p-2 flex items-center justify-center hover:scale-105 duration-200 transition-transform group/tilt">
+                    className="w-full uppercase text-lg font-bold font-oxanium gap-x-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white p-2 flex items-center justify-center hover:scale-105 duration-200 transition-transform group/tilt">
                     Visit Store
                     <Store
                         strokeWidth={2}
                         size={24}
-                        className="transform transition-transform duration-200 group-hover/tilt:rotate-12"
+                        className="hidden md:block transform transition-transform duration-200 group-hover/tilt:rotate-12"
                     />
                 </a>
 

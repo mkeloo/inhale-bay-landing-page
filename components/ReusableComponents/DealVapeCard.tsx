@@ -34,7 +34,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
 
     return (
         <div
-            className={`relative h-full w-[102%] group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}
+            className={`relative h-full w-full group/image rounded-2xl shadow-md text-white overflow-hidden  bg-gradient-to-r ${bgGradient} `}
         // style={{ height: "350px", width: "102%" }}
         >
             {/* Background Video */}
@@ -64,7 +64,7 @@ const DealsCard: React.FC<DealsCardProps> = ({
 
             {/* Discount Percent Badge */}
             <div
-                className="absolute top-4 right-2 w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full text-white text-base font-bold flex justify-center items-center bg-[#B30000] shadow-lg z-[15]"
+                className="absolute top-4 right-2 w-[50px] h-[50px] md:w-[60px] md:h-[60px] rounded-full text-white text-sm md:text-base font-bold flex justify-center items-center bg-[#B30000] shadow-lg z-[15]"
                 style={{
                     "--pulse-color": "rgba(255, 0, 0, 0.5)", // Tailwind's red-500 in RGBA
                     "--duration": "1.5s", // Customize the duration
@@ -86,24 +86,24 @@ const DealsCard: React.FC<DealsCardProps> = ({
                     loading="lazy"
                     onLoad={() => setIsLoaded(true)}
                     sizes="(max-width: 768px) 100vw, 500px"
-                    className={`opacity-100 w-full h-full m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
+                    className={`opacity-100 w-[210px] h-auto md:w-full md:h-full m-auto object-cover transform transition-transform duration-300 group-hover/image:scale-110 mt-10 px-4 ${!isLoaded ? "filter blur-lg" : "filter blur-0"
                         } transition-all duration-700`}
                 />
 
                 {/* Content Overlay */}
                 <div className="flex flex-col justify-end  w-full z-[12] -mt-3">
                     <div className="bg-blue-800 bg-opacity-80 px-4 py-2 flex flex-col">
-                        <h2 className="text-xl md:text-2xl text-center font-bold mb-1 md:mb-2">
+                        <h2 className="text-lg md:text-xl lg:text-2xl text-center font-bold font-oxanium md:mb-1">
                             {short_title}
                         </h2>
                         <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-2">
-                            <p className="w-full md:w-[55%] text-center text-lg md:text-xl font-semibold italic md:mr-4">
+                            <p className="w-full md:w-[55%] text-center text-base md:text-lg lg:text-xl font-grotesk font-semibold italic md:mr-4">
                                 {deal_tagline.split(', ').map((line, index) => (
                                     <React.Fragment key={index}>
                                         {line.split(' ').map((word, i) => (
                                             <React.Fragment key={i}>
                                                 {/^\d+$/.test(word) || /\$\d+/.test(word) ? ( // Check if the word is a number or matches a price pattern
-                                                    <span className="text-2xl md:text-3xl bg-clip text-lime-300 font-bold">
+                                                    <span className="text-xl md:text-2xl lg:text-3xl bg-clip text-lime-300 font-bold">
                                                         {word}
                                                     </span>
                                                 ) : (
@@ -127,12 +127,12 @@ const DealsCard: React.FC<DealsCardProps> = ({
                     href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/@30.3758011,-81.6515435,18.1z/data=!4m6!3m5!1s0x88e5b1f5522ae43f:0x38c6fe019b5911a8!8m2!3d30.3756184!4d-81.6499491!16s%2Fg%2F11w8z4vl7w?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full uppercase text-lg font-bold font-grotesk gap-x-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white p-2 flex items-center justify-center hover:scale-105 duration-200 transition-transform group/tilt">
+                    className="w-full uppercase text-lg font-bold font-oxanium gap-x-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white p-2 flex items-center justify-center hover:scale-105 duration-200 transition-transform group/tilt">
                     Visit Store
                     <Store
                         strokeWidth={2}
                         size={24}
-                        className="transform transition-transform duration-200 group-hover/tilt:rotate-12"
+                        className="hidden md:block transform transition-transform duration-200 group-hover/tilt:rotate-12"
                     />
                 </a>
             </div>

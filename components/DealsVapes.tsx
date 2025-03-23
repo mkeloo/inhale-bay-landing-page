@@ -74,6 +74,7 @@ const DealsVapes = () => {
 
   // Filter and sort deals based on search and sortCriteria
   const filteredDeals = vapeDeals
+    .filter((deal) => deal.is_enabled) // Filter out disabled deals
     .filter((deal) => {
       // Filter by search query in vape_company or deal_tagline (case-insensitive)
       if (!searchQuery.trim()) return true;
