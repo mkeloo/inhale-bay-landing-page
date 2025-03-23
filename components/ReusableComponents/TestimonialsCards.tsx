@@ -31,7 +31,7 @@ const ReviewCard = ({
                 priority={false}
                 sizes="(max-width: 768px) 220px, 300px"
                 blurDataURL={fallbackImg.src}
-                className="absolute object-cover inset-0 z-[-10] opacity-50"
+                className="absolute w-full h-full object-cover inset-0 z-[-10] opacity-50"
             />
             {/* Quote Icon */}
             <Quote

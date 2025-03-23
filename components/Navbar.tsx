@@ -59,39 +59,25 @@ const Navbar = () => {
 
 
         {/* Links for large screens */}
-        <div className="hidden lg:flex items-center space-x-10">
-          <div className="px-6 py-3 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 font-semibold text-md space-x-2 shadow-lg shadow-green-700">
-            <a
-              href="/"
-              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex justify-center items-center"
-            >
-              Home
-              {/* <ArrowUpRight
-                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
-                strokeWidth={2}
-              /> */}
-            </a>
+        <div className="hidden lg:flex justify-center items-center space-x-10 px-4">
+          {/* Contact Us */}
+          <button className="w-32 p-[3px] relative group">
             <a
               href="#flowerDeals"
-              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-md shadow-cyan-400 hover:shadow-pink-500 rounded-xl relative group transition duration-200 font-semibold"
             >
-              THC-A Buds
-              {/* <ArrowUpRight
-                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
-                strokeWidth={2}
-              /> */}
+              <span>Flower</span>
             </a>
+          </button>
+          {/* Location */}
+          <button className="w-32 p-[3px] relative group">
             <a
-              href="#vapeDeals"
-              className="group relative text-black transition-all duration-200 py-1.5 px-2 rounded-lg hover:bg-lime-500 hover:translate-x-1 flex items-center"
+              href="#flowerDeals"
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-blue-500 to-emerald-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-md shadow-cyan-400 hover:shadow-pink-500 rounded-xl relative group transition duration-200 font-semibold "
             >
-              Vapes
-              {/* <ArrowUpRight
-                className="transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:-translate-y-1"
-                strokeWidth={2}
-              /> */}
+              <span>Vapes</span>
             </a>
-          </div>
+          </button>
         </div>
 
         {/* Placeholder block for positioning */}
@@ -137,7 +123,7 @@ const Navbar = () => {
           <button className="p-[3px] relative group">
             <a
               href="#contact"
-              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-lg shadow-yellow-400 hover:shadow-pink-500 rounded-[6px] relative group transition duration-200 font-semibold"
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-md shadow-yellow-400 hover:shadow-pink-500 rounded-xl relative group transition duration-200 font-semibold"
             >
               <Mail className="w-6 h-6" strokeWidth={2} />
               <span>Contact</span>
@@ -149,7 +135,7 @@ const Navbar = () => {
               href="https://www.google.com/maps/place/Inhale+Bay+Smoke+Shop/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-lg shadow-yellow-400 hover:shadow-pink-500 rounded-[6px] relative group transition duration-200 font-semibold "
+              className="flex justify-center items-center group-hover:scale-105 px-4 py-2 space-x-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-black hover:text-white shadow-md shadow-yellow-400 hover:shadow-pink-500 rounded-xl relative group transition duration-200 font-semibold "
             >
               <MapPin className="w-6 h-6" strokeWidth={2} />
               <span>Location</span>
