@@ -196,7 +196,7 @@ const DealsVapes = () => {
                 />
               ))
             ) : (
-              Array.from({ length: 6 }).map((_, index) => (
+              Array.from({ length: itemsPerPage - 2 }).map((_, index) => (
                 <SkeletonVapeCard key={index} />
               ))
             )}

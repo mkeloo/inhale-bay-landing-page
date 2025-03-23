@@ -168,7 +168,7 @@ const DealsFlowerBuds = () => {
                                     is_enabled={deal.is_enabled}
                                 />
                             ))
-                        ) : Array.from({ length: 6 }).map((_, idx) => (
+                        ) : Array.from({ length: itemsPerPage - 2 }).map((_, idx) => (
                             <SkeletonFlowerCard key={idx} />
                         ))}
                     </div>
