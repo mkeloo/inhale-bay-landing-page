@@ -16,7 +16,7 @@ import {
   quickPopUpVariants,
 } from "@/lib/animation";
 
-const heroBgVideo2 = "/assets/hero/hero-smoking.mp4";
+const heroBgVideo2 = "/assets/hero/hero-smoking.webm";
 const heroBgImage = "/assets/hero/hero-bg2.webp";
 
 
@@ -48,7 +48,7 @@ const Hero2 = () => {
       {/* Background Video */}
       <VideoPlayer
         src={heroBgVideo2}
-        className={`absolute hidden lg:block inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
+        className={`absolute  inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
         autoPlay
         loop
         playsInline
@@ -57,7 +57,7 @@ const Hero2 = () => {
         poster="/assets/hero/hero-bg2.webp"
       />
 
-      <Image
+      {/* <Image
         src={heroBgImage}
         alt="Background with smoke"
         width={500}
@@ -66,7 +66,7 @@ const Hero2 = () => {
         sizes="(max-width: 768px) 100vw, 500px"
         priority
         className={`absolute block lg:hidden inset-0 w-full h-full object-cover z-0 opacity-65 ${isLoaded ? "hidden" : "block"}`}
-      />
+      /> */}
 
       {/* Hero Content Container */}
       <div className="w-full h-full relative z-10 max-w-7xl mx-auto flex flex-col items-center justify-center gap-2 lg:gap-4 pb-8 pt-8">
