@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Keep this empty or add other necessary configurations
   reactStrictMode: true,
+  reactCompiler: true,
   images: {
     remotePatterns: [
       {
